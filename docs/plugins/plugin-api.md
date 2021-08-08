@@ -20,49 +20,42 @@ export interface HttpyacHooksApi{
 
 ## version
 
-Type: `string`
+* Type: `string`
 
 The version string for the httpYac api version that is loading the plugin.
 
 ## rootDir
 
-Type: `string`
+* Type: `string`
 
 The project root directory of current http File.
 
 
 ## httpFile
 
-[http file]((https://github.com/AnWeber/httpyac/blob/main/src/models/httpFile.ts#L7)) prepared for parsing, which has no regions yet.
+
+* Type: [`HttpFile`](https://github.com/AnWeber/httpyac/blob/main/src/models/httpFile.ts#L7)
+
+http file prepared for parsing, which has no regions yet.
 
 ## config
 
-[Environment configuration](https://github.com/AnWeber/httpyac/blob/main/src/models/environmentConfig.ts#L7) determined for the current execution
+* Type: [`EnvironmentConfig`](https://github.com/AnWeber/httpyac/blob/main/src/models/environmentConfig.ts#L7)
+
+Environment configuration determined for the current execution
 
 
 ## log
 
-The [log](https://github.com/AnWeber/httpyac/blob/main/src/models/logHandler.ts#L13) module provides a simple debugging console. The output channel is redirected per use case
+* Type: [`LogHander`](https://github.com/AnWeber/httpyac/blob/main/src/models/logHandler.ts#L13)
+
+The log module provides a simple debugging console. The output channel is redirected per use case
 
 ## fileProvider
 
-[Data access layer](https://github.com/AnWeber/httpyac/blob/main/src/io/fileProvider.ts#L7-L18) for file access
+* Type: [`FileProvider`](https://github.com/AnWeber/httpyac/blob/main/src/io/fileProvider.ts#L7-L18)
 
-
-```ts
-export interface FileProvider{
-  exists(fileName: PathLike): Promise<boolean>;
-  joinPath(fileName: PathLike, path: string): PathLike;
-  extname(fileName: PathLike): string;
-  dirname(fileName: PathLike): PathLike | undefined;
-  isAbsolute(fileName: PathLike): boolean;
-  readFile(fileName: PathLike, encoding: FileEnconding): Promise<string>;
-  readBuffer(fileName: PathLike): Promise<Buffer>;
-  readdir: (dirname: PathLike) => Promise<string[]>;
-  fsPath(fileName: PathLike): string;
-  toString(fileName: PathLike): string;
-}
-```
+Data access layerfor file access
 
 ::: warning
 The VS Code extension also supports loading [virtual documents](https://code.visualstudio.com/api/extension-guides/virtual-documents). Direct access via `fs` is not always possible.
@@ -71,44 +64,27 @@ The VS Code extension also supports loading [virtual documents](https://code.vis
 
 ## sessionStore
 
-[Location](https://github.com/AnWeber/httpyac/blob/main/src/models/userSession.ts#L8) to store user sessions. The user has the possibility to delete them manually
+* Type: [`UserSessionStore`](https://github.com/AnWeber/httpyac/blob/main/src/models/userSession.ts#L8)
 
-```ts
-export interface SessionStore {
-  reset(): Promise<void>;
-  getUserSession(id: string): UserSession | undefined;
-  setUserSession(userSession: UserSession): void;
-  removeUserSession(id: string): void;
-}
-export interface UserSession {
-  id: string;
-  title: string;
-  description: string;
-  logout?: () => void;
-}
-```
+Service to store user sessions. The user has the possibility to delete them manually
 
 ## userInteractionProvider
 
+* Type: [`UserInteractionProvider`](https://github.com/AnWeber/httpyac/blob/main/src/models/environmentConfig.ts#L38)
+
 enables interaction with the user
 
-```ts
-export interface UserInteractonProvider{
-  showNote: (note: string) => Promise<boolean>;
-  showInputPrompt: (message: string, defaultValue?: string) => Promise<string | undefined>,
-  showListPrompt: (message: string, values: string[]) => Promise<string | undefined>,
-  showWarnMessage?: (message: string) => Promise<void>,
-  showErrorMessage?: (message: string) => Promise<void>,
-}
-```
-
 ## getHookCancel
+
+* Type: [`HookCancel Symbol`](https://github.com/AnWeber/httpyac/blob/main/src/models/hook.ts#L9)
 
 function to retrieve javascript symbol, which is used to cancel execution of hooks
 
 ## hooks
 
-List of [hooks](https://github.com/AnWeber/httpyac/blob/main/src/models/httpFileHooks.ts) for which own program logic can be registered
+* Type: [HttpFileHooks](https://github.com/AnWeber/httpyac/blob/main/src/models/httpFileHooks.ts)
+
+List of hooks for which own program logic can be registered
 
 
 ```ts
@@ -129,7 +105,25 @@ export interface HttpFileHooks{
 
 ### ParseHook
 
-hook for parsing http file
+* Type: `function`
+* Arguments:
+  * [`getHttpLineGenerator`](https://github.com/AnWeber/httpyac/blob/main/src/models/parserContext.ts#L9) Generator to read lines of file
+  * [`ParserContext`](https://github.com/AnWeber/httpyac/blob/main/src/models/parserContext.ts#L12) context of file parsing
+
+* Return: [`HttpRegionParserResult`](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRegionParserResult.ts#L8)
+
+
+hook for parsing http file. The goal is to determine and register the necessary actions for this line.
+
+::: tip
+As soon as a hook determines a result, the processing for this row is aborted and the subsequent hooks are not processed (BailHook).
+:::
+
+
+::: warning
+Hook `requestBody` always returns a result. It is necessary to register the own parser before this one
+:::
+
 
 ### ParseAfterRegionHook
 

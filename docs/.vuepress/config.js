@@ -16,9 +16,6 @@ module.exports = {
     ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],
-  markdown: {
-    lineNumbers: true
-  },
   plugins: {
     '@vuepress/pwa': {
       serviceWorker: true,
@@ -32,11 +29,13 @@ module.exports = {
     'vuepress-plugin-code-copy': {
       color: '#F6EEE9',
       backgroundColor: "#706B69",
-      }
+    },
+    'flowchart': true
+
   },
   theme: '@vuepress/theme-default',
   themeConfig: {
-    repo: 'httpyac/docs',
+    repo: 'AnWeber/httpyac',
     docsDir: 'docs',
     docsBranch: 'main',
     editLinks: true,
@@ -66,7 +65,7 @@ module.exports = {
             {
               title: 'Installation',
               path: '/guide/installation',
-              collapsable: true,
+              collapsable: false,
               children: [
                 '/guide/installation_cli',
                 '/guide/installation_vscode',

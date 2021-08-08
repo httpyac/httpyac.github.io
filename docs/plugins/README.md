@@ -65,3 +65,39 @@ The minimal required code in the service plugin file is the following:
 module.exports = () => {}
 ```
 
+
+## Parsing FlowChart
+
+
+@flowstart
+st=>start: Start
+e=>end: End
+parse=>operation: Parse File|current
+parseCondition=>condition: has Lines
+createActions=>operation: Create Actions
+parseAfterCondition=>condition: new request
+parseHook=>subroutine: ParseHook
+parseAfterHook=>subroutine: ParseAfterRegionHook
+fileParsed=>operation: File Parsed
+
+provideVariablesHook=>subroutine: ProvideVariablesHook
+
+
+cond=>condition: Yes or No?|approved:>http://www.google.com
+c2=>condition: Good idea|rejected
+io=>inputoutput: catch something...|future
+
+st->parse(right)->parseCondition
+parseCondition(yes)->parseHook
+parseCondition(no)->fileParsed
+parseHook->createActions
+createActions->parseAfterCondition
+
+parseAfterCondition(yes)->parseAfterHook
+parseAfterCondition(no)->parseCondition
+parseAfterHook->parseCondition
+
+fileParsed->e
+
+@flowend
+
