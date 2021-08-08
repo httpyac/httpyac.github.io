@@ -1,0 +1,4 @@
+
+@query = {{$input input app? $value: foo}}
+
+GET https://httpbin.org/json?q={{query}} HTTP/1.1

@@ -1,0 +1,2 @@
+# @loop for 4
+GET https://httpbin.org/anything?item={{$index}} HTTP/1.1

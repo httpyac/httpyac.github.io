@@ -1,0 +1,3 @@
+# @name save
+# @extension gson
+GET https://httpbin.org/json HTTP/1.1

@@ -1,0 +1,33 @@
+{
+  "name": "httpyac-docs",
+	"displayName": "httpyac-docs - Documentation of httpyYac",
+  "version": "1.0.0",
+  "description": "github pages of httpyac",
+  "main": "index.js",
+  "scripts": {
+    "serve": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "keywords": [
+    "httpyac",
+    "vuepress",
+    "docs"
+  ],
+  "homepage": "https://github.com/httpyac/docs",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/httpyac/docs"
+	},
+	"bugs": {
+		"url": "https://github.com/httpyac/docs/issues"
+	},
+	"publisher": "weber.andreas",
+  "author": "weber.andreas",
+  "license": "MIT",
+  "dependencies": {
+    "@vuepress/plugin-pwa": "^1.8.2",
+    "@vuepress/theme-default": "^1.8.2",
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-code-copy": "^1.0.6"
+  }
+}

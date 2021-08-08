@@ -1,0 +1,20 @@
+{{
+  //pre request script
+  const crypto = require('crypto');
+  const date = new Date();
+  const signatureBase64 = crypto.createHmac('sha256', 'secret')
+  .update(`${request.method}\u2028${request.url}\u2028${date.getTime()}`).digest("base64");
+  exports.authDate = date.toUTCString();
+  exports.authentcation = `Basic ${signatureBase64}`;
+}}
+GET https://httpbin.org/json HTTP/1.1
+Date: {{authDate}}
+Authentication: {{authentcation}}
+
+{{
+  // post request script
+  const assert = require('assert');
+  test("author is valid", () => {
+    assert.equal(response.parsedBody.slideshow.author, "Yours Truly", );
+  });
+}}

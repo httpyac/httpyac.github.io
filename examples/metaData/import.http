@@ -1,0 +1,4 @@
+# @import ./name.http
+# @ref json
+POST https://httpbin.org/anything HTTP/1.1
+{{json.slideshow.author}}

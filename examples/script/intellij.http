@@ -1,0 +1,15 @@
+POST https://httpbin.org/anything HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+accept: application/json
+
+email=user@domain.loc&password=2
+
+> ./intellij.js
+
+POST https://httpbin.org/anything HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+accept: application/json
+
+email=user@domain.loc&password=3
+
+> {% client.global.set("email", response.body.form.email); %}

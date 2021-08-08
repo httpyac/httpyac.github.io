@@ -1,0 +1,2 @@
+@foo=bar
+GET https://httpbin.org/anything?q={{foo}} HTTP/1.1

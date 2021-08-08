@@ -1,0 +1,6 @@
+# no version = http/1.1
+GET https://www.google.de
+
+GET https://www.google.de HTTP/1.1
+
+GET https://www.google.de HTTP/2.0

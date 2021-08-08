@@ -1,0 +1,5 @@
+{{
+  exports.data = [1, 2, 3];
+}}
+# @loop for item of data
+GET https://httpbin.org/anything?item={{item}} HTTP/1.1

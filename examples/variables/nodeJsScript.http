@@ -1,0 +1,3 @@
+@foo = test
+
+GET https://www.google.de?foo={{foo}}q={{new Date().toUtcString()}}

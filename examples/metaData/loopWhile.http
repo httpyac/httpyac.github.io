@@ -1,0 +1,7 @@
+{{
+  exports.expression = {
+    index: 0,
+  };
+}}
+# @loop while expression.index < 3
+GET /anything?item={{expression.index++}} HTTP/1.1

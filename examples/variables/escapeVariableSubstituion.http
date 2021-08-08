@@ -1,0 +1,4 @@
+POST https://httpbin.org/anything HTTP/1.1
+{
+  "template": "My \{\{someVerb\}\} template!!"
+}
