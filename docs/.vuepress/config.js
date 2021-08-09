@@ -86,6 +86,7 @@ module.exports = {
               ]
             },
             '/guide/troubleshooting',
+            '/guide/examples',
             {
               title: 'Examples',
               collapsable: false,
@@ -102,6 +103,7 @@ module.exports = {
             '/plugins/',
             {
               title: 'API reference',
+              collapsable: false,
               children: [
                 '/plugins/plugin-api.md'
               ]

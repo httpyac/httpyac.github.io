@@ -1,6 +1,6 @@
 # Plugin API
 
-By means of the [plugin api](https://github.com/AnWeber/httpyac/blob/main/src/models/environmentConfig.ts#L46-L57) it is possible to register hooks at important program points of httpYac.
+By means of the [plugin api](https://github.com/AnWeber/httpyac/blob/main/src/models/httpHooksApi.ts) it is possible to register hooks at important program points of httpYac.
 
 
 ```ts
@@ -53,7 +53,7 @@ The log module provides a simple debugging console. The output channel is redire
 
 ## fileProvider
 
-* Type: [`FileProvider`](https://github.com/AnWeber/httpyac/blob/main/src/io/fileProvider.ts#L7-L18)
+* Type: [`FileProvider`](https://github.com/AnWeber/httpyac/blob/main/src/models/fileProvider.ts)
 
 Data access layerfor file access
 
@@ -64,7 +64,7 @@ The VS Code extension also supports loading [virtual documents](https://code.vis
 
 ## sessionStore
 
-* Type: [`UserSessionStore`](https://github.com/AnWeber/httpyac/blob/main/src/models/userSession.ts#L8)
+* Type: [`SessionStore`](https://github.com/AnWeber/httpyac/blob/main/src/models/sessionStore.ts)
 
 Service to store user sessions. The user has the possibility to delete them manually
 
@@ -90,7 +90,7 @@ List of hooks for which own program logic can be registered
 ```ts
 export interface HttpFileHooks{
   readonly parse: ParseHook,
-  readonly parseAfterRegion: ParseAfterRegionHook,
+  readonly parseEndRegion: ParseEndRegionHook,
   readonly replaceVariable: ReplaceVariableHook;
   readonly provideEnvironments: ProvideEnvironmentsHook;
   readonly provideVariables: ProvideVariablesHook;
@@ -100,8 +100,11 @@ export interface HttpFileHooks{
   readonly afterRequest: AfterRequestHook,
   readonly responseLogging: ResponseLoggingHook,
 }
-
 ```
+
+::: tip
+httpYac uses most of the hooks itself for its own application logic. Just look in the source code
+:::
 
 ### ParseHook
 
@@ -125,30 +128,118 @@ Hook `requestBody` always returns a result. It is necessary to register the own 
 :::
 
 
-### ParseAfterRegionHook
+### ParseEndRegionHook
+
+* Type: `function`
+* Arguments:
+  * [`ParserContext`](https://github.com/AnWeber/httpyac/blob/main/src/models/parserContext.ts#L12) context of file parsing
+
+* Return: `void`
+
 
 hook after identifing new http region
 
 ### ReplaceVariableHook
 
+
+
 hook to replace variable in request line, header or request body
 
 ### ProvideVariablesHook
+
+* Type: `function`
+* Arguments:
+  * `string[] | undefined` list of environments
+  * [`VariableProviderContext`](https://github.com/AnWeber/httpyac/blob/main/src/models/variableProviderContext.ts) context to determine variables
+
+* Return: [`Promise<Variables>`](https://github.com/AnWeber/httpyac/blob/main/src/models/variables.ts) promise with Variables
+
 
 hook to provide custom variables
 
 ### ProvideEnvironmentsHook
 
-hook to provide environments for custom variables
+* Type: `function`
+* Arguments:
+  * [`VariableProviderContext`](https://github.com/AnWeber/httpyac/blob/main/src/models/variableProviderContext.ts) context to determine variables
+
+* Return: `Promise<string[]>` list of possible environments
+
+hook to provide environments
+
+```js
+module.exports = {
+	configureHooks: function (api) {
+		api.hooks.provideEnvironments.addHook('default_dev', function (context) {
+			return ['dev','prev'];
+		});
+	}
+}
+```
 
 ### BeforeRequestHook
 
+* Type: `function`
+* Arguments:
+  * [`HttpRequest`](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRequest.ts) current request
+  * [`ProcessorContext`](https://github.com/AnWeber/httpyac/blob/main/src/models/processorContext.ts#L39)
+
+* Return: `Promise<void>`
+
 hook called before every request call
+
+```js
+module.exports = {
+	configureHooks: function (api) {
+		api.hooks.beforeRequestHook.addHook('add_authentication_header', function (request) {
+			request.headers.Authentication = 'Bearer foo';
+		});
+	}
+}
+```
 
 ### AfterRequestHook
 
+* Type: `function`
+* Arguments:
+  * [`HttpResponse`](https://github.com/AnWeber/httpyac/blob/main/src/models/httpResponse.ts) response of request
+  * [`ProcessorContext`](https://github.com/AnWeber/httpyac/blob/main/src/models/processorContext.ts#L39)
+
+* Return: `Promise<void>`
+
 hook called after every request call
+
+```js
+module.exports = {
+	configureHooks: function (api) {
+		api.hooks.responseLogging.addHook('delete_auth', function (response) {
+			...
+		});
+	}
+}
+```
 
 ### ResponseLoggingHook
 
+* Type: `function`
+* Arguments:
+  * [`HttpResponse`](https://github.com/AnWeber/httpyac/blob/main/src/models/httpResponse.ts) response of request
+  * [`ProcessorContext`](https://github.com/AnWeber/httpyac/blob/main/src/models/processorContext.ts#L39)
+
+* Return: `Promise<HttpResponse>`
+
+
 hook called for every logging of a response.
+
+```js
+module.exports = {
+	configureHooks: function (api) {
+		api.hooks.responseLogging.addHook('removeSensitiveData', function (response) {
+			if (response.request) {
+				delete response.request.headers['authorization'];
+			}
+			return response;
+		});
+	}
+}
+```
