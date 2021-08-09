@@ -85,7 +85,18 @@ module.exports = {
                 '/guide/hooks'
               ]
             },
-            '/guide/troubleshooting'
+            '/guide/troubleshooting',
+            {
+              title: 'Examples',
+              collapsable: false,
+              children: [
+                '/guide/examples_github',
+                '/guide/examples_httpbin',
+                '/guide/examples_learnwebservices',
+                '/guide/examples_spacex',
+                '/guide/examples_springboot'
+              ]
+            },
           ],
           '/plugins/': [
             '/plugins/',

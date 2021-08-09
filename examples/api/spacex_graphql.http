@@ -1,0 +1,26 @@
+POST https://api.spacex.land/graphql HTTP/1.1
+Content-Type: application/json
+
+
+query launchesQuery($limit: Int!){
+  launchesPast(limit: $limit) {
+    mission_name
+    launch_date_local
+    launch_site {
+      site_name_long
+    }
+    rocket {
+      rocket_name
+      rocket_type
+    }
+    ships {
+      name
+      home_port
+      image
+    }
+  }
+}
+
+{
+    "limit": 10
+}

@@ -3,7 +3,7 @@
 
 ###
 
-GET https://api.spacexdata.com/v4/launches/latest
+GET /launches/latest HTTP/1.1
 
 
-GET /capsules
+GET /capsules HTTP/1.1

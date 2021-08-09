@@ -1,5 +1,5 @@
 
-POST  http://www.learnwebservices.com/services/hello
+POST http://www.learnwebservices.com/services/hello HTTP/1.1
 Content-Type: application/xml
 
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">

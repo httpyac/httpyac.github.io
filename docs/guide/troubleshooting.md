@@ -21,3 +21,10 @@ module.exports = {
   }
 }
 ```
+
+## Protocol "https:" not supported. Expected "http:" in VS Code with HTTP/2.0
+The cause is the proxy configuration of VS Code. This is set to `https.proxysupport=override` by default. For the use of http2 a [http2wrapper](https://github.com/szmarczak/http2-wrapper) is used. However, this is not recognized [correctly](https://github.com/TooTallNate/node-agent-base/blob/master/src/index.ts#L15-L19) when using the [VS Code Proxy Agent](https://github.com/microsoft/vscode-proxy-agent/blob/main/package.json#L32). To work around this behavior, proxy support must be disabled
+
+```
+https.proxysupport=off
+```
