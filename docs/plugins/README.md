@@ -75,9 +75,9 @@ e=>end: End
 parse=>operation: Parse File|current
 parseCondition=>condition: has Lines
 createActions=>operation: Create Actions
-parseAfterCondition=>condition: new request
+parseEndCondition=>condition: new request
 parseHook=>subroutine: ParseHook
-parseAfterHook=>subroutine: ParseAfterRegionHook
+parseEndRegionHook=>subroutine: ParseEndRegionHook
 fileParsed=>operation: File Parsed
 
 provideVariablesHook=>subroutine: ProvideVariablesHook
@@ -91,11 +91,11 @@ st->parse(right)->parseCondition
 parseCondition(yes)->parseHook
 parseCondition(no)->fileParsed
 parseHook->createActions
-createActions->parseAfterCondition
+createActions->parseEndCondition
 
-parseAfterCondition(yes)->parseAfterHook
-parseAfterCondition(no)->parseCondition
-parseAfterHook->parseCondition
+parseEndCondition(yes)->parseEndRegionHook
+parseEndCondition(no)->parseCondition
+parseEndRegionHook->parseCondition
 
 fileParsed->e
 

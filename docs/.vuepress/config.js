@@ -86,11 +86,12 @@ module.exports = {
               ]
             },
             '/guide/troubleshooting',
-            '/guide/examples',
             {
               title: 'Examples',
               collapsable: false,
+              path: '/guide/examples',
               children: [
+                '/guide/examples_arbeitsagentur',
                 '/guide/examples_github',
                 '/guide/examples_httpbin',
                 '/guide/examples_learnwebservices',

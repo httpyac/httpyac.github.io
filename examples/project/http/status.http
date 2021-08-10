@@ -1,5 +1,6 @@
+@host=https://httpbin.org
 
-
+###
 GET /status/200
 
 GET /status/201

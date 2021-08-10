@@ -82,7 +82,8 @@ To configure the flow, the following variables must be specified
 | <span v-pre>{{prefix}}</span>_audience | audience | x | x | - | - |
 | <span v-pre>{{prefix}}</span>_username | username| - | - | x | - |
 | <span v-pre>{{prefix}}</span>_password | password | - | - | x | - |
-| <span v-pre>{{prefix}}</span>_keepAlive |  AccessToken is automatically renewed in the background, if request_token is provided | x | - | x | x |
+| <span v-pre>{{prefix}}</span>_keepAlive |  AccessToken is automatically renewed in the background, if request_token is provided (default: false)| x | - | x | x |
+| <span v-pre>{{prefix}}</span>_useAuthorizationHeader  | use Authorization Header for request (default: true) | x | x | x | x |
 
 ::: warning
 To get the code from the Open ID server, a http server is started for the Authorization Flow and Implicit Flow on port 3000. The server is stopped after receiving the code (delay 2 minutes). You need to configure your OpenId Provider to allow localhost:3000 as valid redirect url
@@ -99,6 +100,8 @@ To get the code from the Open ID server, a http server is started for the Author
 GET /secured_service HTTP/1.1
 Authorization: openid client_credentials local
 ```
+
+<<< ./examples/api/arbeitsagentur.http
 
 It is possible to convert the generated token into a token of another realm using [Token Exchange](https://tools.ietf.org/html/rfc8693)
 

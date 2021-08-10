@@ -226,7 +226,7 @@ module.exports = {
   * [`HttpResponse`](https://github.com/AnWeber/httpyac/blob/main/src/models/httpResponse.ts) response of request
   * [`ProcessorContext`](https://github.com/AnWeber/httpyac/blob/main/src/models/processorContext.ts#L39)
 
-* Return: `Promise<HttpResponse>`
+* Return: `Promise<void>`
 
 
 hook called for every logging of a response.
@@ -238,7 +238,6 @@ module.exports = {
 			if (response.request) {
 				delete response.request.headers['authorization'];
 			}
-			return response;
 		});
 	}
 }

@@ -16,7 +16,6 @@ module.exports = {
 			if (response.request) {
 				delete response.request.headers['authorization'];
 			}
-			return response;
 		});
 	}
 }
