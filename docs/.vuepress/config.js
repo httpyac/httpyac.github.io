@@ -35,7 +35,7 @@ module.exports = {
   },
   theme: '@vuepress/theme-default',
   themeConfig: {
-    repo: 'AnWeber/httpyac',
+    repo: 'httpyac/httpyac.github.io',
     docsDir: 'docs',
     docsBranch: 'main',
     editLinks: true,
