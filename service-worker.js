@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "ee12c8e08a6c9a902ac10ca17c20468e"
+    "revision": "ab201bd5644b520fffd7dc1007b9ae76"
   },
   {
     "url": "assets/css/0.styles.f1c581b5.css",
@@ -166,8 +166,8 @@ self.__precacheManifest = [
     "revision": "33779fdf2c594f3c74bb49255d9103f5"
   },
   {
-    "url": "assets/js/app.6ff20cd4.js",
-    "revision": "e9b0621974f4470937307c2483c88fe7"
+    "url": "assets/js/app.1c8030f2.js",
+    "revision": "766276ae9961f9ee41e7cf60d1644304"
   },
   {
     "url": "assets/js/vendors~flowchart.9a672344.js",
@@ -187,7 +187,7 @@ self.__precacheManifest = [
   },
   {
     "url": "config/index.html",
-    "revision": "fc16f81e18322a894626182d30943e9e"
+    "revision": "47badbe71e71c37328d143b6992a95f5"
   },
   {
     "url": "favicon.png",
@@ -199,87 +199,87 @@ self.__precacheManifest = [
   },
   {
     "url": "guide/badges.html",
-    "revision": "0ebd40b752029488bb4670881f36c49f"
+    "revision": "1da81df36d936163706fb8be110224d3"
   },
   {
     "url": "guide/comment.html",
-    "revision": "a510c5919e7aafdbd9a55f2f86c830e4"
+    "revision": "16531e822579407c1c916629b8cfdca2"
   },
   {
     "url": "guide/environments.html",
-    "revision": "11b72ef22f5bbc9f85d41a63c9cf60aa"
+    "revision": "bd18a243d253eb4f7620f85d9e564950"
   },
   {
     "url": "guide/examples_arbeitsagentur.html",
-    "revision": "78539c75eeff3b7cfd0974ec518efb2a"
+    "revision": "7b0e6aba83bf3d78472ad0dc548f3fa1"
   },
   {
     "url": "guide/examples_github.html",
-    "revision": "fb25141c08f16258e826d20155ade434"
+    "revision": "0eccbf6fbce9fd85715fa505f22bf14e"
   },
   {
     "url": "guide/examples_httpbin.html",
-    "revision": "f32e9eaf12af8c19b52f658b7338a611"
+    "revision": "a8e29f5975756c83a18032f3c94062a2"
   },
   {
     "url": "guide/examples_learnwebservices.html",
-    "revision": "de0563428e46255e0346ea30602f807f"
+    "revision": "89fdf2e1dd8f1cb12e457aebd0cbf943"
   },
   {
     "url": "guide/examples_spacex.html",
-    "revision": "dbb4682ea4da3405b4604b1b589d023f"
+    "revision": "30f35310a7cc026651ad7ace8be3f733"
   },
   {
     "url": "guide/examples_springboot.html",
-    "revision": "803b7ef777d4d1975b4d09d2a149ce5e"
+    "revision": "1d29e5e95d03ee5ddb702323b24fd452"
   },
   {
     "url": "guide/examples.html",
-    "revision": "ca13fcb82e9fc149d10501762c0b39ab"
+    "revision": "04ab1ee1c048d3e31a4ccdc7b89b722e"
   },
   {
     "url": "guide/hooks.html",
-    "revision": "0cf8eb698cd2ae91ab8015a644e91fd7"
+    "revision": "a4f595aeea37edf98f4107039a39d613"
   },
   {
     "url": "guide/index.html",
-    "revision": "c820b11f71baa579f44c30450e29135b"
+    "revision": "c4444a5dd4a37b8af5d216f9b145891e"
   },
   {
     "url": "guide/installation_cli.html",
-    "revision": "0856deb35ed3fa9cfa138db6c96233ce"
+    "revision": "64946e7266be11df219aeb0eb640651a"
   },
   {
     "url": "guide/installation_httpbook.html",
-    "revision": "99f30d6e72ff3d726e9a4d3aaef962d2"
+    "revision": "a592f91f603a0e3a338f27a0840946f3"
   },
   {
     "url": "guide/installation_vscode.html",
-    "revision": "2a037a8c08a0d82a9bc84aaeeca20413"
+    "revision": "0536f813233c53ea9e5065c4ec66c173"
   },
   {
     "url": "guide/installation.html",
-    "revision": "cbeb564b0fc622f420e108b37e972e4a"
+    "revision": "3bf7d5749e8c2ece08bb80e5414ff1a2"
   },
   {
     "url": "guide/metaData.html",
-    "revision": "eade267ed7882737be750cb91cd09069"
+    "revision": "e2a8a0b26449b2000f278cb61b3141d6"
   },
   {
     "url": "guide/request.html",
-    "revision": "96015b543aa66fb6335f02feb446b257"
+    "revision": "6c96669093536276cd15c987852fd216"
   },
   {
     "url": "guide/scripting.html",
-    "revision": "916d42c3784ea47b288adbd0b3ace3e7"
+    "revision": "7d47d0568a9cdad5e8e0dd4d8831ee53"
   },
   {
     "url": "guide/troubleshooting.html",
-    "revision": "1134e1589ff10395c15d7fbf02cbe04b"
+    "revision": "4e773a08070ee669d771b0eb461d78a6"
   },
   {
     "url": "guide/variables.html",
-    "revision": "45abf7fb7765c1e6787c9a084ba22c64"
+    "revision": "e6954b17c02d5aca15d7c8d3ee0bf94c"
   },
   {
     "url": "httpbook_oauth2.gif",
@@ -343,15 +343,15 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "370d1f2e6256b38ba76b9a2f9d57a57e"
+    "revision": "1eaf3601db25507995e41514b6263226"
   },
   {
     "url": "plugins/index.html",
-    "revision": "d17d6d7bdccf7792236e600ae1f20de6"
+    "revision": "1e52fc59861452a6d79d6a3bd91988a0"
   },
   {
     "url": "plugins/plugin-api.html",
-    "revision": "914e484bb60682935af6659bb911738f"
+    "revision": "9294d776e4de1a0a3758e3d595754b1b"
   },
   {
     "url": "vscode_preview.gif",
