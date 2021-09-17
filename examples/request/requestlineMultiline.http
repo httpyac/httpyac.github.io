@@ -1,3 +1,2 @@
-
 GET https://httpbin.org
-  /post
+  /get

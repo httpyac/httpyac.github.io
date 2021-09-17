@@ -1,3 +1,5 @@
+@host=https://httpbin.org
+###
 
 GET /cookies/set?foo=bar
 

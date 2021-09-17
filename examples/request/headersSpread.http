@@ -1,8 +1,12 @@
-{{
+{{+
+  const token = "test"
   exports.defaultHeaders = {
     'Content-Type': 'text/html',
     'Authorization': `Bearer ${token}`
   };
 }}
-GET https://www.google.de HTTP/1.1
+###
+GET https://httpbin.org/anything HTTP/1.1
+...defaultHeaders
+GET https://httpbin.org/anything HTTP/1.1
 ...defaultHeaders

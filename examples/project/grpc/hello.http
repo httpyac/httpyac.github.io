@@ -1,0 +1,57 @@
+proto < ./hello.proto
+
+@host=grpcb.in:9000/hello.HelloService
+
+
+###
+
+GRPC /sayHello
+{
+  "greeting": "2342"
+}
+
+GRPC /LotsOfReplies
+{
+  "greeting": "2342"
+}
+
+
+GRPC /lotsOfGreetings
+{
+  "greeting": "world."
+}
+
+{{@streaming
+
+  async function writeStream(){
+    sleep(1000);
+    grpcStream.write({
+      greeting: 'How are you?',
+    });
+    sleep(1000);
+    grpcStream.write({
+      greeting: 'I can stream.',
+    });
+  }
+  exports.waitPromise = writeStream();
+}}
+
+GRPC /BidiHello
+{
+  "greeting": "world"
+}
+
+{{@streaming
+
+  async function writeStream(){
+    sleep(1000);
+    grpcStream.write({
+      greeting: ', how are you?',
+    });
+    sleep(1000);
+    grpcStream.write({
+      greeting: ', I can stream.',
+    });
+  }
+  exports.waitPromise = writeStream();
+}}

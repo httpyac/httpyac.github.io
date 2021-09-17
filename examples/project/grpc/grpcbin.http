@@ -1,0 +1,41 @@
+proto < ./grpcbin.proto
+
+@host=grpcb.in:9000/grpcbin.GRPCBin
+
+###
+
+GRPC /Index
+
+GRPC /Empty
+
+GRPC /DummyUnary
+{
+  "fString": "Meaning of life",
+  "fInt32": 42
+}
+GRPC /DummyServerStream
+{
+  "fString": "Meaning of life",
+  "fInt32": 42
+}
+GRPC /DummyClientStream
+{
+  "fString": "bar"
+}
+GRPC /DummyBidirectionalStreamStream
+{
+  "fString": "bar"
+}
+GRPC /SpecificError
+{
+  "code": 2,
+  "reason": "error test"
+}
+GRPC /RandomError
+{
+  "fString": "bar"
+}
+GRPC /HeadersUnary
+
+
+GRPC /NoResponseUnary

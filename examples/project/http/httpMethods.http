@@ -1,3 +1,6 @@
+@host=https://httpbin.org
+###
+
 GET /get
 
 POST /post

@@ -1,0 +1,20 @@
+@host=https://httpbin.org
+###
+POST /anything
+Content-Type: text/markdown; charset=UTF-8
+
+---
+some:
+  - markdown
+  - frontmatter
+  - as yaml
+---
+
+# Main header
+
+## Some header
+
+The quick brown fox...
+
+###
+POST /anything
