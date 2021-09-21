@@ -1,2 +1,7 @@
 # @disabled
 GET https://httpbin.org/json HTTP/1.1
+###
+
+// @disabled
+
+GET /xml

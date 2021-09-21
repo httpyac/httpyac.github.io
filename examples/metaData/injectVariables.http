@@ -1,4 +1,5 @@
 # @injectVariables
+@foo=bar
 
 POST https://httpbin.org/anything HTTP/1.1
 < ./variables.json

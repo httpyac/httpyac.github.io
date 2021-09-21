@@ -1,6 +1,5 @@
 
 GET https://httpbin.org/json HTTP/1.1
 {{
-  const { equal } = require('assert');
   test.status(200);
 }}

@@ -7,6 +7,6 @@ POST https://httpbin.org/anything HTTP/1.1
 {{json.slideshow.author}}
 
 ###
-# @forceRef keycloak
+# @forceRef json
 POST https://httpbin.org/anything HTTP/1.1
 {{json.slideshow.author}}

@@ -1,4 +1,3 @@
-
 POST /post
 Content-Type: multipart/form-data; boundary=WebKitFormBoundary
 
@@ -14,7 +13,7 @@ invoice_title
 Content-Disposition: form-data; name="invoice"; filename="invoice.pdf"
 Content-Type: application/pdf
 
-< ../assets/sample.pdf
+< ./sample.pdf
 --WebKitFormBoundary--
 
 
@@ -22,6 +21,6 @@ Content-Type: application/pdf
 ###
 
 @testVariable=foo
-POST https://httpbin.org/anything
+POST /anything
 accept: application/json
-<@ ../assets/variables.json
+<@ ./variables.json

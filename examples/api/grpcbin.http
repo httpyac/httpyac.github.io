@@ -7,12 +7,12 @@ proto < ./grpcbin.proto
 
 GRPC /hello.HelloService/sayHello
 {
-  "greeting": "2342"
+  "greeting": "world"
 }
 
 GRPC /hello.HelloService/LotsOfReplies
 {
-  "greeting": "2342"
+  "greeting": "world"
 }
 
 

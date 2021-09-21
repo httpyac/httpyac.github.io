@@ -15,8 +15,7 @@ https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js
 
 ###
 
-https://github.com/AnWeber/httpbook/blob/main/.eslintrc.yml
-
+https://raw.githubusercontent.com/AnWeber/httpbook/main/.eslintrc.yml
 ###
 
 POST https://httpbin.org/response-headers?Content-Type=text%2Fyaml

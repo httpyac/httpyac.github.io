@@ -1,4 +1,4 @@
 GET https://client.badssl.com/ HTTP/1.1
-ClientCert: pfx: ../badssl.com-client.p12 passphrase: badssl.com
+ClientCert: pfx: ./badssl.com-client.p12 passphrase: badssl.com
 GET https://client.badssl.com/ HTTP/1.1
-X-ClientCert: pfx: ../badssl.com-client.p12 passphrase: badssl.com
+X-ClientCert: pfx: ./badssl.com-client.p12 passphrase: badssl.com

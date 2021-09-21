@@ -1,1 +1,1 @@
-GET https://httpbin.org/json?test={{host}}
+GET /json?test={{host}}

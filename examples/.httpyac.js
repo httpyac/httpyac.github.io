@@ -5,7 +5,7 @@ module.exports = {
 	},
 	"clientCertificates": {
 		"client.badssl.com": {
-			"pfx": "./assets/badssl.com-client.p12",
+			"pfx": "./variables/badssl.com-client.p12",
 			"passphrase": "badssl.com"
 		}
 	},

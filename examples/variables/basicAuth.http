@@ -1,10 +1,14 @@
-
 @user = doe
 @password = 12345678
-
 ###
 GET /basic-auth/{{user}}/{{password}} HTTP/1.1
 Authorization: Basic {{user}} {{password}}
 
 GET /basic-auth/{{user}}/{{password}} HTTP/1.1
+Authorization: Basic {{user}}:{{password}}
+
+GET /basic-auth/{{user}}/{{password}} HTTP/1.1
 Authorization: Basic {{Buffer.from( user + ":" + password).toString('base64')}}
+
+GET /basic-auth/john doe/123456 HTTP/1.1
+Authorization: Basic john doe:123456

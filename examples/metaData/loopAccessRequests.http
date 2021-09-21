@@ -3,4 +3,5 @@
 GET https://httpbin.org/anything?item={{$index}} HTTP/1.1
 
 ###
-POST https://httpbin.org/anything?item={{foo3.args.item}} HTTP/1.1
+# @ref foo
+POST https://httpbin.org/anything?result={{foo3.args.item}} HTTP/1.1

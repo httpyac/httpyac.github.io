@@ -15,7 +15,6 @@ GRPC /LotsOfReplies
   "greeting": "2342"
 }
 
-
 GRPC /lotsOfGreetings
 {
   "greeting": "world."
