@@ -17,6 +17,9 @@ The goal is to create a simple, free and extensible development tool that follow
 | Feature | httpYac | [Postman](https://www.postman.com/) | [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) | [Intellij Idea](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html) |
 | - | :-: | :-: | :-: | :-: |
 | Send Request and View | ✓ | ✓ | ✓ | ✓ |
+| -- Rest | ✓ | ✓ | ✓ | ✓ |
+| -- GraphQL | ✓ | ✓ | ✓ | - |
+| -- gRPC | ✓ | ✓ | - | - |
 | Variable support | ✓ | ✓ | ✓ | ✓ |
 | Custom Scripting support | ✓ | ✓ | - ([pull request](https://github.com/Huachao/vscode-restclient/pull/674)) | partially |
 | Test/ Assert Response | ✓ | ✓ | - ([pull request](https://github.com/Huachao/vscode-restclient/pull/773)) | ✓ |

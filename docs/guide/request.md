@@ -1,7 +1,7 @@
 
-# Request
+# HTTP Request
 
-An HTTP request starts with a request line followed by optional header fields, message body, response handler, and previous response references. Message body must be separated from the request line or header fields with an empty line.
+An HTTP request starts with a request line followed by optional header fields, message body, response handler, and previous response references.
 
 ## Request-Line
 
@@ -135,3 +135,34 @@ GET https://httpbin.org/post HTTP/1.1
 
 GET https://httpbin.org/post HTTP/1.1
 ```
+
+## gRPC
+
+It is also possible to send gRPC requests. The same request line format is used as for Http requests, but `GRPC` must be specified as the request method.
+
+
+<<< ./examples/request/grpc.http
+
+
+### Protobuf Loader
+
+To use the gRPC call, the proto file associated with the call must first be loaded. This is loaded using [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader). This can be configured using options in the header format
+
+<<< ./examples/request/proto.http
+
+The import of the proto file can also be done globally
+
+<<< ./examples/request/protoGlobalImport.http
+
+
+### Unary RPC
+
+[Unary RPC]( https://grpc.io/docs/what-is-grpc/core-concepts/#unary-rpc) behaves identically to Http requests. The url has the following format
+
+```
+GRPC {{server}}/{{service}}/{{method}}
+```
+
+<<< ./examples/request/grpcUnary.http
+
+By means of the header notation it is also possible to send meta data. Header `ChannelCredentials` or `Authorization`are special and defines the [authentication](https://grpc.io/docs/guides/auth/#nodejs) used by gRPC. If no such header is specified, `grpc.credentials.createInsecure()` is used automatically

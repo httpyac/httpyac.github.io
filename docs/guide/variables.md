@@ -154,6 +154,10 @@ A support method is provided for using Basic Authentication. Just specify the us
 
 <<< ./examples/variables/basicAuth.http
 
+If the username or password contains spaces, a `:` can be used alternatively.
+
+<<< ./examples/variables/basicAuthColon.http
+
 ### Digest Authentication
 A support method is provided for using Digest Authentication. Just specify the username and password separated by spaces and the digest access authentication will be applied automatically
 

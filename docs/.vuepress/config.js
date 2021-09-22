@@ -3,7 +3,7 @@ module.exports = {
     '/': {
       lang: 'en-US',
       title: 'httpYac',
-      description: 'Quickly and easily send REST, SOAP, and GraphQL requests'
+      description: 'Quickly and easily send REST, SOAP, GraphQL and gRPC requests'
     }
   },
   head: [
