@@ -93,6 +93,7 @@ module.exports = {
               children: [
                 '/guide/examples_arbeitsagentur',
                 '/guide/examples_github',
+                '/guide/examples_grpcbin',
                 '/guide/examples_httpbin',
                 '/guide/examples_learnwebservices',
                 '/guide/examples_spacex',

@@ -9,7 +9,7 @@ footer: MIT Licensed | Copyright © 2020-present Andreas Weber
 <div class="features">
   <div class="feature">
     <h2>Feature Rich</h2>
-    <p>Create and execute any REST, SOAP, and GraphQL queries from within VS Code or CLI</p>
+    <p>Create and execute any REST, SOAP, GraphQL and gRPC queries from within VS Code or CLI</p>
   </div>
   <div class="feature">
     <h2>Extensible</h2>

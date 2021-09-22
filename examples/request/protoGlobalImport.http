@@ -1,3 +1,13 @@
 proto < ./hello.proto
 
-GRPC grpcb.in/grpcb...
+###
+GRPC grpcb.in:9000/hello.HelloService/sayHello
+{
+  "greeting": "world"
+}
+
+
+GRPC grpcb.in:9000/hello.HelloService/sayHello
+{
+  "greeting": "john"
+}

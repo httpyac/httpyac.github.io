@@ -1,6 +1,6 @@
 proto < ./hello.proto
 
-GRPC grpcb.in:9000/hello.HelloService/sayHello
+GRPC /hello.HelloService/LotsOfReplies
 {
   "greeting": "world"
 }

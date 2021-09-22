@@ -1,5 +1,5 @@
 
-# HTTP Request
+# Request
 
 An HTTP request starts with a request line followed by optional header fields, message body, response handler, and previous response references.
 
@@ -148,7 +148,7 @@ It is also possible to send gRPC requests. The same request line format is used 
 
 To use the gRPC call, the proto file associated with the call must first be loaded. This is loaded using [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader). This can be configured using options in the header format
 
-<<< ./examples/request/proto.http
+<<< ./examples/request/protoImport.http
 
 The import of the proto file can also be done globally
 
@@ -166,3 +166,24 @@ GRPC {{server}}/{{service}}/{{method}}
 <<< ./examples/request/grpcUnary.http
 
 By means of the header notation it is also possible to send meta data. Header `ChannelCredentials` or `Authorization`are special and defines the [authentication](https://grpc.io/docs/guides/auth/#nodejs) used by gRPC. If no such header is specified, `grpc.credentials.createInsecure()` is used automatically
+
+### Server Streaming RPC
+
+[Server Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#server-streaming-rpc)
+
+
+<<< ./examples/request/grpcServerStreaming.http
+
+### Client Streaming RPC
+
+[Client Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#client-streaming-rpc)
+
+
+<<< ./examples/request/grpcClientStreaming.http
+
+### Bidirectional Streaming RPC
+
+[Bidirectional Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#bidirectional-streaming-rpc)
+
+
+<<< ./examples/request/grpcBidirectional.http

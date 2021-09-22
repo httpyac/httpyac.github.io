@@ -1,3 +1,6 @@
 proto < ./hello.proto
-
-GRPC grpcb.in/grpcb...
+keepCase: true,
+longs: String,
+enums: String,
+defaults: true,
+oneofs: true
