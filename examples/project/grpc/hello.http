@@ -1,7 +1,5 @@
 proto < ./hello.proto
-
 @host=grpcb.in:9000/hello.HelloService
-
 
 ###
 
@@ -23,11 +21,11 @@ GRPC /lotsOfGreetings
 {{@streaming
 
   async function writeStream(){
-    sleep(1000);
+    await sleep(1000);
     grpcStream.write({
       greeting: 'How are you?',
     });
-    sleep(1000);
+    await sleep(1000);
     grpcStream.write({
       greeting: 'I can stream.',
     });
@@ -43,11 +41,11 @@ GRPC /BidiHello
 {{@streaming
 
   async function writeStream(){
-    sleep(1000);
+    await sleep(1000);
     grpcStream.write({
       greeting: ', how are you?',
     });
-    sleep(1000);
+    await sleep(1000);
     grpcStream.write({
       greeting: ', I can stream.',
     });

@@ -1,6 +1,5 @@
 proto < ./hello.proto
 proto < ./grpcbin.proto
-
 @host=grpcb.in:9000
 
 ###
@@ -24,11 +23,11 @@ GRPC /hello.HelloService/lotsOfGreetings
 {{@streaming
 
   async function writeStream(){
-    sleep(1000);
+    await sleep(1000);
     grpcStream.write({
       greeting: 'How are you?',
     });
-    sleep(1000);
+    await sleep(1000);
     grpcStream.write({
       greeting: 'I can stream.',
     });
@@ -44,11 +43,11 @@ GRPC /hello.HelloService/BidiHello
 {{@streaming
 
   async function writeStream(){
-    sleep(1000);
+    await sleep(1000);
     grpcStream.write({
       greeting: ', how are you?',
     });
-    sleep(1000);
+    await sleep(1000);
     grpcStream.write({
       greeting: ', I can stream.',
     });
@@ -56,6 +55,9 @@ GRPC /hello.HelloService/BidiHello
   exports.waitPromise = writeStream();
 }}
 
+
+
+###
 
 GRPC /grpcbin.GRPCBin/SpecificError
 {
