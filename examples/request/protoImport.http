@@ -4,3 +4,8 @@ longs: String,
 enums: String,
 defaults: true,
 oneofs: true
+
+GRPC grpcb.in:9000/hello.HelloService/sayHello
+{
+  "greeting": "world"
+}
