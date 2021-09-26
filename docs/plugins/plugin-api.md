@@ -96,8 +96,8 @@ export interface HttpFileHooks{
   readonly provideVariables: ProvideVariablesHook;
 
 
-  readonly beforeRequest: BeforeRequestHook;
-  readonly afterRequest: AfterRequestHook,
+  readonly onRequest: OnRequestHook;
+  readonly onResponse: OnResponseHook,
   readonly responseLogging: ResponseLoggingHook,
 }
 ```
@@ -260,7 +260,7 @@ module.exports = {
 }
 ```
 
-### BeforeRequestHook
+### OnRequest Hook
 
 * Type: `function`
 * Arguments:
@@ -274,14 +274,14 @@ hook called before every request call
 ```js
 module.exports = {
 	configureHooks: function (api) {
-		api.hooks.beforeRequestHook.addHook('add_authentication_header', function (request) {
+		api.hooks.onRequest.addHook('add_authentication_header', function (request) {
 			request.headers.Authentication = 'Bearer foo';
 		});
 	}
 }
 ```
 
-### AfterRequestHook
+### OnResponse Hook
 
 * Type: `function`
 * Arguments:
@@ -290,12 +290,12 @@ module.exports = {
 
 * Return: `Promise<void>`
 
-hook called after every request call
+hook called after every response
 
 ```js
 module.exports = {
 	configureHooks: function (api) {
-		api.hooks.responseLogging.addHook('delete_auth', function (response) {
+		api.hooks.onResponse.addHook('response', function (response) {
 			...
 		});
 	}

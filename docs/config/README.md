@@ -81,7 +81,7 @@ A changed value is not used in the Project Root determination
 - Type: `object`
 - Default: `undefined`
 
-This setting is used for environment detection using [JSON](/guide/environments/#json). Each key of first level of the object is used as environment. Value of the Object is used as Variables.
+This setting is used for environment detection using [JSON](/guide/environments.html#json). Each key of first level of the object is used as environment. Value of the Object is used as Variables.
 
 ### request
 

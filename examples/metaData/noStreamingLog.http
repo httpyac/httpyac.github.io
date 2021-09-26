@@ -1,0 +1,8 @@
+proto < ./hello.proto
+
+# @noStreamingLog
+
+GRPC grpcb.in:9000/hello.HelloService/LotsOfReplies
+{
+  "greeting": "world"
+}

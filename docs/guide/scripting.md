@@ -22,6 +22,7 @@ In addition to the defined variables, the following values are also set on globa
 | response | [http response](https://github.com/AnWeber/httpyac/blob/main/src/models/httpResponse.ts) of the last request |
 | httpRegion | current [httpRegion](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRegion.ts) |
 | httpFile | current [httpFile](https://github.com/AnWeber/httpyac/blob/main/src/models/httpFile.ts) |
+| sleep | [Method](https://github.com/AnWeber/httpyac/blob/main/src/utils/promiseUtils.ts#L7) to wait for a fixed period of time
 | test | method to simplify [tests](https://github.com/AnWeber/httpyac/blob/main/src/actions/jsAction.ts#L40) ([assert](https://github.com/AnWeber/httpyac/blob/main/examples/script/assert.http) or [chai](https://github.com/AnWeber/httpyac/blob/main/examples/script/chai.http)) |
 
 ## Require
@@ -32,7 +33,7 @@ External scripts can be imported using require, but you need to install dependen
 
 
 ::: tip
-External dependencies must be installed independently, exceptions are [vscode](https://www.npmjs.com/package/@types/vscode), [got](https://www.npmjs.com/package/got) and [httpYac](https://www.npmjs.com/package/httpyac) Dependency, which are provided from the extension.
+External dependencies must be installed independently, exceptions are [vscode](https://www.npmjs.com/package/@types/vscode), [got](https://www.npmjs.com/package/got), [grpc-js](https://www.npmjs.com/package/@grpc/grpc-js) and [httpYac](https://www.npmjs.com/package/httpyac) Dependency, which are provided from the extension.
 :::
 
 ::: warning
@@ -74,15 +75,28 @@ Scripts with no request in the same region are always executed (Global Scripts).
 
 <<< ./examples/script/globalScripts.http
 
-Global Scripts initialized with <code v-pre>{{+</code> are executed before every region.
+## Events
 
-<<< ./examples/script/globalScriptOnEveryHttpRegion.http{1}
+Scripts can automatically register for specific hooks.
 
-Global Scripts initialized with <code v-pre>{{+after</code> are executed after every region.
+<<< ./examples/script/events.http{1}
+
+The following events are possible.
+
+| Events | Description |
+| - | - |
+| request | event triggered before every request |
+| streaming | event triggered while client streaming |
+| response | event triggered on response of request |
+| after | event triggered after all actions are executed |
+
+The events can be registered automatically globally by means of `+`.
 
 <<< ./examples/script/globalScriptOnEveryHttpRegionAfter.http{1}
 
+If no event is specified for global registration, the script is executed before every request.
 
+<<< ./examples/script/globalScriptOnEveryHttpRegion.http{1}
 
 
 ## Intellij Script

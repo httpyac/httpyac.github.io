@@ -1,0 +1,4 @@
+{{@response
+  console.info("on every request");
+}}
+GET https://httpbin.org/json HTTP/1.1

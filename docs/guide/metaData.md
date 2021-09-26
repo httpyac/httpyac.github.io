@@ -129,6 +129,12 @@ Prevent logging of request data in output console
 
 <<< ./examples/metaData/noLog.http{1}
 
+## No Streaming Log
+
+Prevent logging of intermediate responses while streaming data in output console
+
+<<< ./examples/metaData/noStreamingLog.http{3}
+
 ## No CookieJar
 
 cookieJar support is disabled for this request

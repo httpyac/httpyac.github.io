@@ -157,7 +157,7 @@ The import of the proto file can also be done globally
 
 ### Unary RPC
 
-[Unary RPC]( https://grpc.io/docs/what-is-grpc/core-concepts/#unary-rpc) behaves identically to Http requests. The url has the following format
+[Unary RPC]( https://grpc.io/docs/what-is-grpc/core-concepts/#unary-rpc) behaves identically to Http requests. The url need to be in the following format
 
 ```
 GRPC {{server}}/{{service}}/{{method}}
@@ -165,25 +165,34 @@ GRPC {{server}}/{{service}}/{{method}}
 
 <<< ./examples/request/grpcUnary.http
 
-By means of the header notation it is also possible to send meta data. Header `ChannelCredentials` or `Authorization`are special and defines the [authentication](https://grpc.io/docs/guides/auth/#nodejs) used by gRPC. If no such header is specified, `grpc.credentials.createInsecure()` is used automatically
+Using [header notation](/guide/request.html#headers) it is also possible to send meta data. 
+
+Header `ChannelCredentials` or `Authorization`are special and defines the [authentication](https://grpc.io/docs/guides/auth/#nodejs) used by gRPC. If no such header is specified, `grpc.credentials.createInsecure()` is used automatically
 
 ### Server Streaming RPC
 
-[Server Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#server-streaming-rpc)
-
+[Server Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#server-streaming-rpc) is similar to a unary RPC, except that the server returns a stream of messages in response to a client’s request.
 
 <<< ./examples/request/grpcServerStreaming.http
 
+All responses are output as an intermediate result and summarized at the end as one overall response. If the intermediate results are not needed, they can be deactivated using `# @noStreamingLog`.
+
+<<< ./examples/metaData/noStreamingLog.http
+
 ### Client Streaming RPC
 
-[Client Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#client-streaming-rpc)
-
+[Client Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#client-streaming-rpc) is similar to a unary RPC, except that the client sends a stream of messages to the server instead of a single message. To enable this, a custom script can be used that registers for the @streaming hook. This script must export a Promise at the end of which the client stream is terminated.
 
 <<< ./examples/request/grpcClientStreaming.http
 
+::: tip
+To control the wait time more easily, a method `sleep` is provided that waits the number of milliseconds.
+:::
+
+
 ### Bidirectional Streaming RPC
 
-[Bidirectional Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#bidirectional-streaming-rpc)
+[Bidirectional Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#bidirectional-streaming-rpc) is a combination of client streaming and server streaming.
 
 
 <<< ./examples/request/grpcBidirectional.http
