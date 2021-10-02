@@ -64,11 +64,13 @@ The following [Open ID Connect](https://openid.net/specs/openid-connect-basic-1_
 * Client Credentials Grant (grant_type = client_credentials)
 
 ```html
-
 GET /secured_service
 Authorization: openid {{grant_type}} {{prefix}}
-
 ```
+::: tip
+If no `grant_type` is provided `client_credentials` flow is used. If no `prefix` is provided value `oauth2` is used.
+:::
+
 To configure the flow, the following variables must be specified
 
 | variable | description | authorization_code | implicit | password | client_credentials |

@@ -68,6 +68,7 @@ The .env files are searched from the following locations:
 * same location as *.http file
 * [project root](/config/#project-root)
 * `env` folder in [project root](/config/#project-root)
+* value of global environment variable `HTTPYAC_ENV`
 
 ::: warning
 httpYac tries to detect changes in .env files and clean the cache. However, if the change is made outside of VS Code, command `httpyac.reset` must be run manually.

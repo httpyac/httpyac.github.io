@@ -1,4 +1,6 @@
-proto < ./hello.proto
+@assetsDir=./
+
+proto < {{assetsDir}}hello.proto
 keepCase: true
 longs: String
 enums: String

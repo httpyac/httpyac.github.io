@@ -5,7 +5,22 @@
 GET /actuator/info
 Authorization: openid client_credentials local
 
+GET /actuator/info
+Authorization: openid client local
 
+
+GET /actuator/info
+Authorization: openid
+GET /actuator/info
+Authorization: oauth2
+
+
+GET /actuator/info
+Authorization: oauth
+
+
+GET /actuator/info
+Authorization: oauth2 local
 
 ###
 # @name authorization_code
@@ -13,10 +28,17 @@ GET /actuator/info
 Authorization: openid authorization_code local
 
 
+GET /actuator/info
+Authorization: openid code local
+
+
 ###
 # @name implicit
 GET /actuator/info
 Authorization: openid implicit local
+GET /actuator/info
+Authorization: openid hybrid local
+
 
 
 ###

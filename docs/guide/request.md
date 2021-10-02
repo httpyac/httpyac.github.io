@@ -87,16 +87,22 @@ A body can also be imported by using `< ...`.
 
 If you want to replace variables in the file please import it with `<@`
 
-<<< ./examples/request/requestBodyImportReplace.http{4}
+<<< ./examples/request/requestBodyImportReplace.http{5}
 
 All files are read with UTF-8 encoding. If a different encoding is desired, provide it.
 
 
-<<< ./examples/request/requestBodyImportReplaceEncoding.http{4}
+<<< ./examples/request/requestBodyImportReplaceEncoding.http{5}
 
 ::: warning
 If the request body is configured in-place, whitespaces around it will be trimmed. To send leading or trailing whitespaces as part of the request body, send it from a separate file.
 :::
+
+::: tip
+You can use Variable Substitution in file import.
+:::
+
+<<< ./examples/request/requestBodyImportVariable.http{7}
 
 ## multipart/form-data
 
@@ -117,6 +123,11 @@ GraphQL fragments are also supported and are included in the body by name.
 To import GraphQL File you need to use special GraphQL Import Directive.
 
 <<< ./examples/request/graphqlImport.http{5}
+
+::: tip
+You can use Variable Substitution in file import.
+:::
+<<< ./examples/request/graphqlImportVariables.http{6}
 
 ## Request Separators
 
@@ -154,6 +165,11 @@ The import of the proto file can also be done globally
 
 <<< ./examples/request/protoGlobalImport.http
 
+
+::: tip
+You can use Variable Substitution in file import.
+:::
+<<< ./examples/request/protoImportVariables.http{3}
 
 ### Unary RPC
 
