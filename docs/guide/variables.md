@@ -13,10 +13,17 @@ Inline Variables can be easily created with the following scheme. Variable Subst
 
 ## Import Variables
 
-The variables are also imported from other files using `@import`and `@ref` meta data.
+The variables are also imported from other files using `@import`.
 
+<<< ./examples/variables/variablesImport.http
 
-<<< ./examples/variables/variablesDefinition.http
+You can also `@ref`erence `@name`d meta data from results of calls defined in `@import`ed files:
+
+<<< ./examples/metaData/import.http
+
+`name.http`:
+
+<<< ./examples/metaData/name.http
 
 
 
