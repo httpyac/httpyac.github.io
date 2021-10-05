@@ -11,6 +11,19 @@ Inline Variables can be easily created with the following scheme. Variable Subst
 
 <<< ./examples/variables/variablesDefinition.http
 
+::: tip
+Inline Variables in global scripts are set for each request in the file
+:::
+
+```http
+@host=https://httpbin.org
+###
+GET /post HTTP/1.1
+
+GET /post HTTP/1.1
+```
+
+
 ## Import Variables
 
 The variables are also imported from other files using `@import`.

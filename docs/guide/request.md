@@ -147,6 +147,16 @@ GET https://httpbin.org/post HTTP/1.1
 GET https://httpbin.org/post HTTP/1.1
 ```
 
+Using `###` Regions without a request can be defined. These global regions are executed and interpreted for all requests within the file. This way [meta data](/guide/metaData.html), [variables](/guide/variables.html) and [scripts](/guide/scripting.html) can be set for each request.
+
+```http
+@host=https://httpbin.org
+###
+GET /post HTTP/1.1
+
+GET /post HTTP/1.1
+```
+
 ## gRPC
 
 It is also possible to send gRPC requests. The same request line format is used as for Http requests, but `GRPC` must be specified as the request method.
