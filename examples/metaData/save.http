@@ -1,2 +1,2 @@
-# @name save
+# @save
 GET https://httpbin.org/json HTTP/1.1
