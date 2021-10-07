@@ -1,0 +1,10 @@
+{{
+  async function wait(){
+    const date = new Date();
+    await sleep(10000);
+    const afterDate = new Date();
+    return afterDate.getTime() - date.getTime();
+  }
+  exports.wait = wait();
+}}
+GET https://httpbin.org/anything?delay={{wait}} HTTP/1.1
