@@ -7,7 +7,7 @@ It is possible to use NodeJS scripts. All scripts before the request line are ex
 <<< ./examples/script/script.http
 
 ::: tip
-If it is necessary to wait for a Promise in script, it is necessary to export the Promise. In this case, the program waits for the Promise to be completed.
+If the execution of the script is `async`, it is necessary to export this Promise. In this case, the program waits for the Promise to be completed.
 :::
 
 <<< ./examples/script/scriptPromise.http
