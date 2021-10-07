@@ -97,7 +97,9 @@ default configuration for each http request. httpYac uses [got](https://github.c
     }
 }
 ```
-
+::: warning
+This configuration is passed directly to `got` without further adjustment. No files are loaded and no variable substitution takes place.
+:::
 
 ### proxy
 
