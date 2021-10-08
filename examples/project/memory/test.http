@@ -1,0 +1,3 @@
+POST /anything
+
+<@ ./test.json
