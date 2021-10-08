@@ -2,5 +2,6 @@ POST https://httpbin.org/anything HTTP/1.1
 
 {
   "foo": "{{new Date().toString()}}",
-  "bar": {{Math.random()}}
+  "bar": {{Math.random()}},
+  "foobar": "{{new Date().toString()}} and {{Math.random()}}"
 }
