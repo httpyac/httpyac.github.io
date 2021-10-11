@@ -1,0 +1,4 @@
+# @name memory
+POST /post
+
+<@ ./test.json

@@ -1,0 +1,6 @@
+# @import ./memory2.http
+# @name memory3
+# @ref memory2
+POST /anything
+
+<@ ./test.json
