@@ -89,7 +89,7 @@ If you want to replace variables in the file please import it with `<@`
 
 <<< ./examples/request/requestBodyImportReplace.http{5}
 
-All files are read with UTF-8 encoding. If a different encoding is desired, provide it.
+All files are read with UTF-8 encoding. If a different encoding is desired, provide it. All [encodings](https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings) supported by NodeJS are available.
 
 
 <<< ./examples/request/requestBodyImportReplaceEncoding.http{5}
