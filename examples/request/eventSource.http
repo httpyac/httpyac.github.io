@@ -1,0 +1,8 @@
+SSE https://express-eventsource.herokuapp.com/events
+
+{{@streaming
+  async function writeStream(){
+    await sleep(10000);
+  }
+  exports.waitPromise = writeStream();
+}}
