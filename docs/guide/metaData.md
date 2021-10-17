@@ -129,6 +129,12 @@ Prevent logging of request data in output console
 
 <<< ./examples/metaData/noLog.http{1}
 
+## No Response View
+
+Prevent open response in editor of VSCode
+
+<<< ./examples/metaData/noResponseView.http{1}
+
 ## No Streaming Log
 
 Prevent logging of intermediate responses while streaming data in output console
@@ -150,6 +156,5 @@ SSL client certificate is not send for this request
 ## No Reject Unauthorized
 
 All invalid SSL certificates will be ignored and no error will be thrown.
-
 
 <<< ./examples/metaData/noRejectUnauthorized.http{1}
