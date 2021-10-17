@@ -1,0 +1,9 @@
+MQTT mqtt://test.mosquitto.org:8883
+Topic: Test
+
+{{@streaming
+  async function writeStream(){
+    await sleep(100000);
+  }
+  exports.waitPromise = writeStream();
+}}

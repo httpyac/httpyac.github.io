@@ -1,0 +1,9 @@
+MQTT tcp://broker.hivemq.com
+Topic: testtopic/1
+
+{{@streaming
+  async function writeStream(){
+    await sleep(100000);
+  }
+  exports.waitPromise = writeStream();
+}}
