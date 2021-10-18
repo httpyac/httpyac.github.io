@@ -123,6 +123,13 @@ Change Extension of file for save or openWith.
 Meta Data is ignored in CLI and Httpbook
 :::
 
+## Sleep
+
+Sleep/ Wait defined milliseconds
+
+<<< ./examples/metaData/sleep.http{1}
+
+
 ## No log
 
 Prevent logging of request data in output console
