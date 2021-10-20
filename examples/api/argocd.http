@@ -1,0 +1,49 @@
+@host=http://argocd-server:8080
+@app=testapp
+@revision=master
+@profile=dev
+
+###
+# @name session
+POST {{host}}/argocd/api/v1/session
+{
+    "username": "admin",
+    "password": "password"
+}
+
+###
+# get applications
+# @ref session
+GET {{host}}/argocd/api/v1/applications
+Authorization: Bearer {{session.token}}
+
+
+###
+# create application
+# @ref session
+POST {{host}}/argocd/api/v1/applications
+Authorization: Bearer {{session.token}}
+{
+    "metadata": {
+        "name": "{{app}}",
+        "namespace": "argocd"  
+    },
+    "spec": {
+        "source": {
+            "repoURL": "https://github.com/httpyac/argocd.git",
+            "path": "argocd/{{app}}",
+            "targetRevision": "{{revision}}",
+            "helm": {
+                "valueFiles": ["values-{{profile}}.yaml","values.yaml"]
+            }
+        },
+        "destination": {
+            "server": "https://kubernetes.default.svc",
+            "namespace": "argocd"
+        },
+        "project": "default",
+        "syncPolicy": {
+            "automated":{}
+        }
+    }  
+}

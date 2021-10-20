@@ -97,7 +97,8 @@ module.exports = {
                 '/guide/examples_httpbin',
                 '/guide/examples_learnwebservices',
                 '/guide/examples_spacex',
-                '/guide/examples_springboot'
+                '/guide/examples_springboot',
+                '/guide/examples_argocd'
               ]
             },
           ],
