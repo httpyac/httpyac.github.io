@@ -2,10 +2,10 @@ WS wss://demo.piesocket.com/v3/channel_1?api_key=oCdCMcMPQpbvNjUIzqtvF1d2X2okWpD
 {"foo": "bar"}
 
 {{@streaming
-async function writeStream(){
-  await sleep(10000);
-  websocketClient.send('Hello World');
-  await sleep(1000);
+  async function writeStream(){
+    await sleep(10000);
+    websocketClient.send('Hello World');
+    await sleep(1000);
   }
   exports.waitPromise = writeStream();
 }}

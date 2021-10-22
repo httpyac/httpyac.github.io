@@ -165,3 +165,21 @@ SSL client certificate is not send for this request
 All invalid SSL certificates will be ignored and no error will be thrown.
 
 <<< ./examples/metaData/noRejectUnauthorized.http{1}
+
+## Debug
+
+enable debug log level
+
+<<< ./examples/metaData/debug.http{1}
+
+## Verbose
+
+enable trace log level
+
+<<< ./examples/metaData/verbose.http{1}
+
+## keepStreaming
+
+keep streaming of MQTT, Server-Sent-Events or WebSocket until the session is ended manually. 
+
+<<< ./examples/metaData/keepStreaming.http{1}

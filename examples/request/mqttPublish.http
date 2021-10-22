@@ -3,7 +3,9 @@ Topic: testtopic/1
 
 {{@streaming
   async function writeStream(){
-    await sleep(100000);
+    await sleep(1000);
+    mqttClient.publish('testtopic/1', 'Hello World');
+    await sleep(1000);
   }
   exports.waitPromise = writeStream();
 }}
