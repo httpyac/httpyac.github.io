@@ -299,3 +299,7 @@ All received messages are output as an intermediate result and summarized at the
 :::tip
 If more options are needed for the initialization, they could be configured in a NodeJS script using [`request.options`](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRequest.ts#L36).
 :::
+
+
+As long as the connection of the MQTT instance to the MessageQueue exists, messages can also be published from other NodeJS blocks.
+<<< ./examples/request/mqttScript.http{8}
