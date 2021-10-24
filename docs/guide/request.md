@@ -272,7 +272,7 @@ By means of the method `MQTT` a MQTT Client can be created. [MQTT.js](https://gi
 
 If a body is specified, it will be published immediately after connecting.
 
-<<< ./examples/request/mqttBody{4}
+<<< ./examples/request/mqttBody.http{4}
 
 :::tip
 If the topic used for publishing is different from the topic used for replying, the headers `subscribe` and `publish` can be used instead.
