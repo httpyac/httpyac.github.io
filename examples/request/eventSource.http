@@ -1,4 +1,5 @@
 SSE https://express-eventsource.herokuapp.com/events
+Event: data
 
 {{@streaming
   async function writeStream(){

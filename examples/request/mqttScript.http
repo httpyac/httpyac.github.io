@@ -1,0 +1,9 @@
+# @keepStreaming
+MQTT tcp://broker.hivemq.com
+Topic: testtopic/1
+
+###
+# @name test
+{{
+  mqttClient.publish('testtopic/1', 'hello johnny')
+}}

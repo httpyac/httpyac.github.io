@@ -24,12 +24,16 @@ In addition to the defined variables, the following values are also set on globa
 
 | name | description |
 | - | - |
+| grpcStream | currently active [Grpc Writable Stream](https://nodejs.org/api/stream.html#writable-streams) |
+| httpFile | current [httpFile](https://github.com/AnWeber/httpyac/blob/main/src/models/httpFile.ts) |
+| httpRegion | current [httpRegion](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRegion.ts) |
+| mqttClient | currently active [MQTT Client](https://github.com/mqttjs/MQTT.js#example) |
+| oauth2Session | [OAuth2 Response](https://github.com/AnWeber/httpyac/blob/main/src/variables/replacer/oauth/openIdInformation.ts#L6-L14) if [OAuth2/ OpenId Connect](/guide/variables.html#oauth2-openid-connect) is used |
 | request | request of the next [http request](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRequest.ts) |
 | response | [http response](https://github.com/AnWeber/httpyac/blob/main/src/models/httpResponse.ts) of the last request |
-| httpRegion | current [httpRegion](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRegion.ts) |
-| httpFile | current [httpFile](https://github.com/AnWeber/httpyac/blob/main/src/models/httpFile.ts) |
 | sleep | [Method](https://github.com/AnWeber/httpyac/blob/main/src/utils/promiseUtils.ts#L7) to wait for a fixed period of time
 | test | method to simplify [tests](https://github.com/AnWeber/httpyac/blob/main/src/actions/jsAction.ts#L40) ([assert](https://github.com/AnWeber/httpyac/blob/main/examples/script/assert.http) or [chai](https://github.com/AnWeber/httpyac/blob/main/examples/script/chai.http)) |
+| websocketClient | currently active [Websocket Client](https://www.npmjs.com/package/ws#sending-and-receiving-text-data) |
 
 ## Require
 

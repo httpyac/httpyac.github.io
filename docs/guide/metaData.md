@@ -123,11 +123,24 @@ Change Extension of file for save or openWith.
 Meta Data is ignored in CLI and Httpbook
 :::
 
+## Sleep
+
+Sleep/ Wait defined milliseconds
+
+<<< ./examples/metaData/sleep.http{1}
+
+
 ## No log
 
 Prevent logging of request data in output console
 
 <<< ./examples/metaData/noLog.http{1}
+
+## No Response View
+
+Prevent open response in editor of VSCode
+
+<<< ./examples/metaData/noResponseView.http{1}
 
 ## No Streaming Log
 
@@ -151,5 +164,22 @@ SSL client certificate is not send for this request
 
 All invalid SSL certificates will be ignored and no error will be thrown.
 
-
 <<< ./examples/metaData/noRejectUnauthorized.http{1}
+
+## Debug
+
+enable debug log level
+
+<<< ./examples/metaData/debug.http{1}
+
+## Verbose
+
+enable trace log level
+
+<<< ./examples/metaData/verbose.http{1}
+
+## keepStreaming
+
+keep streaming of MQTT, Server-Sent-Events or WebSocket until the session is ended manually. 
+
+<<< ./examples/metaData/keepStreaming.http{1}

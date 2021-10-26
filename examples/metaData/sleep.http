@@ -1,0 +1,2 @@
+# @sleep 10000
+GET https://httpbin.org/json HTTP/1.1

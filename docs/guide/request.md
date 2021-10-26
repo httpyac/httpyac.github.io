@@ -222,3 +222,84 @@ To control the wait time more easily, a method `sleep` is provided that waits th
 
 
 <<< ./examples/request/grpcBidirectional.http
+
+## Server-Sent Events / EventSource
+
+By means of the method `SSE` an [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) instance can be created. This opens a persistent connection to an HTTP server, which sends events in text/event-stream format. By means of the header `event` the list of events to be output is specified
+
+<<< ./examples/request/eventSource.http{2}
+
+The events of the server can be waited for by means of [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated.
+
+<<< ./examples/request/eventSource.http{4-9}
+
+::: tip
+Meta Data `keepStreaming` can be used to respond to events until manually aborted.
+:::
+
+<<< ./examples/request/eventSourceKeepStreaming.http{1}
+
+
+## WebSocket
+
+By means of the method `WS` a [WebSocket connection](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) to a server can be opened. If a body is included in the request, it is sent immediately after the connection is established. 
+
+<<< ./examples/request/websocket.http{1}
+
+The events of the server can be waited for by means of [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated. Within the `streaming` block it is possible to send further message using [`websocketClient`](https://www.npmjs.com/package/ws#sending-and-receiving-text-data).
+
+<<< ./examples/request/websocket.http{7}
+
+::: tip
+Meta Data `keepStreaming` can be used to respond to events until manually aborted.
+:::
+
+<<< ./examples/request/websocketKeepStreaming.http{1}
+
+:::tip
+All received messages are output as an intermediate result and summarized at the end as one overall response. If the intermediate results are not needed, they can be deactivated using `# @noStreamingLog`.
+:::
+
+:::tip
+If special options are needed for initialization, they can be configured in a NodeJS script using [`request.options`](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRequest.ts#L26).
+:::
+
+## MQTT
+
+By means of the method `MQTT` a MQTT Client can be created. [MQTT.js](https://github.com/mqttjs/MQTT.js) opens a TCP or WebSocket Connection to a MQTT Broker. The header `Topic` specifies the topic to be registered (multiple specification allowed)
+
+<<< ./examples/request/mqtt.http{2}
+
+If a body is specified, it will be published immediately after connecting.
+
+<<< ./examples/request/mqttBody.http{4}
+
+:::tip
+If the topic used for publishing is different from the topic used for replying, the headers `subscribe` and `publish` can be used instead.
+::: 
+
+The messages of the server can be waited for by means of [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated. Within the `streaming` block it is possible to publish further message using [`mqttClient`](https://github.com/mqttjs/MQTT.js#publish).
+
+<<< ./examples/request/mqttPublish.http{7}
+
+::: tip
+Meta Data `keepStreaming` can be used to respond to events until manually aborted.
+:::
+
+<<< ./examples/request/mqtt.http{1}
+
+:::tip
+All received messages are output as an intermediate result and summarized at the end as one overall response. If the intermediate results are not needed, they can be deactivated using `# @noStreamingLog`.
+:::
+
+[QoS](https://github.com/mqttjs/MQTT.js#qos), [retain, username, password, keepAlive (10seconds default) and clean](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) can be configured using header notation.
+
+<<< ./examples/request/mqttHeaders.http{4-6}
+
+:::tip
+If more options are needed for the initialization, they could be configured in a NodeJS script using [`request.options`](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRequest.ts#L36).
+:::
+
+
+As long as the connection of the MQTT instance to the MessageQueue exists, messages can also be published from other NodeJS blocks.
+<<< ./examples/request/mqttScript.http{8}
