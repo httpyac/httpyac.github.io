@@ -101,6 +101,15 @@ module.exports = {
                 '/guide/examples_argocd'
               ]
             },
+            {
+              title: 'Develop',
+              collapsable: true,
+              path: '/guide/develop',
+              children: [
+                '/guide/develop/debugging',
+              ]
+            },
+            
           ],
           '/plugins/': [
             '/plugins/',
