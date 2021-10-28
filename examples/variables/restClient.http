@@ -2,6 +2,12 @@ GET /anything?q={{$guid}} HTTP/1.1
 
 GET /anything?q={{$randomInt 100 200}} HTTP/1.1
 
+GET /anything?q={{$randomInt -100 100}} HTTP/1.1
+
+GET /anything?q={{$randomInt -100 -50}} HTTP/1.1
+
+GET /anything?q={{$randomInt -50 -100}} HTTP/1.1
+
 GET /anything?q={{$timestamp]}} HTTP/1.1
 
 GET /anything?q={{$timestamp 2 h}} HTTP/1.1
