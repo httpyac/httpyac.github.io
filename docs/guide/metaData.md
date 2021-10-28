@@ -18,6 +18,10 @@ additional title of region (used in cli output and outline view). It is possible
 
 <<< ./examples/metaData/title_shorthand.http{1}
 
+::: tip
+If no other name is specified title after `###` is also used as name
+:::
+
 ## Description
 additional description of region (used in cli output and outline view)
 
