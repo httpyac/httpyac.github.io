@@ -1,0 +1,23 @@
+GET https://httpbin.org/get HTTP/1.1
+
+HTTP/1.1 200 - OK
+date: Mon, 21 Jun 2021 19:38:05 GMT
+content-type: application/json
+content-length: 295
+connection: close
+server: gunicorn/19.9.0
+access-control-allow-origin: *
+access-control-allow-credentials: true
+
+{
+  "args": {},
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Host": "httpbin.org",
+    "User-Agent": "httpyac",
+    "X-Amzn-Trace-Id": "Root=1-60d0ea9d-3dfb873f497a9e6d50b2eccc"
+  },
+  "origin": "79.243.57.74",
+  "url": "https://httpbin.org/get"
+}

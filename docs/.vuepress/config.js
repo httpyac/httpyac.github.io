@@ -82,7 +82,8 @@ module.exports = {
                 '/guide/environments',
                 '/guide/scripting',
                 '/guide/comment',
-                '/guide/hooks'
+                '/guide/hooks',
+                '/guide/response'
               ]
             },
             '/guide/troubleshooting',
