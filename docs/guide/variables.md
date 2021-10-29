@@ -8,7 +8,6 @@ Variables are used for avoiding unnecessary data duplication in requests or for 
 ## Inline Variables
 Inline Variables can be easily created with the following scheme. Variable Substitution is supported
 
-
 <<< ./examples/variables/variablesDefinition.http
 
 ::: tip
@@ -23,6 +22,15 @@ GET /post HTTP/1.1
 GET /post HTTP/1.1
 ```
 
+::: tip
+Variables are only replaced when NodeJS scripts are called or when a request is made. Until then, it is possible to refer to variables that do not yet exist.
+:::
+
+<<< ./examples/variables/variablesLazy.http
+
+::: warn
+When a request is sent, all variables in it must be present, otherwise an error is generated.
+:::
 
 ## Import Variables
 

@@ -1,0 +1,13 @@
+@domain = postman-echo.com
+// @path = path0
+@baseUrl = https://{{domain}}/{{path}}
+
+###
+
+@path = path1
+GET {{baseUrl}}
+
+###
+
+@path = path2
+GET {{baseUrl}}
