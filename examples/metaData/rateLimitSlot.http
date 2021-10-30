@@ -1,0 +1,5 @@
+# @ratelimit slot bar minIdleTime 10000
+GET /json HTTP/1.1
+###
+# @ratelimit slot foo minIdleTime 10000
+GET /json HTTP/1.1
