@@ -127,6 +127,26 @@ Change Extension of file for save or openWith.
 Meta Data is ignored in CLI and Httpbook
 :::
 
+## RateLimit
+
+throttle requests to limit network traffic.
+
+It is possible to force a minimum idle time between 2 requests (minIdleTime in milliseconds)
+
+<<< ./examples/metaData/rateLimit.http{1}
+
+The maximum number of requests in a defined period of time  can also be enforced (expire in milliseconds).
+
+<<< ./examples/metaData/rateLimitMax.http{1}
+
+The network cap can also be divided into slots
+
+<<< ./examples/metaData/rateLimitSlot.http{1}
+
+All limitations can also be combined
+
+<<< ./examples/metaData/rateLimitAll.http{1}
+
 ## Sleep
 
 Sleep/ Wait defined milliseconds
