@@ -1,0 +1,6 @@
+POST /anything
+
+{
+  "a": {{$randomInt -10 10}},
+  "b": {{$randomInt -10 10}}
+}
