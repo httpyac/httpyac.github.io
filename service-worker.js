@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "34e85232210d46c8d5d4f90a4fe30d00"
+    "revision": "c9d0982f5cc76c63efcfaa3759eceeb6"
   },
   {
     "url": "assets/css/0.styles.f1c581b5.css",
@@ -82,8 +82,8 @@ self.__precacheManifest = [
     "revision": "3b3add2eb319f17a74e8693b08dcd2a0"
   },
   {
-    "url": "assets/js/21.a1a77a39.js",
-    "revision": "8781538373aca113a69662fcfa322a75"
+    "url": "assets/js/21.dbe29a24.js",
+    "revision": "a36ab01d492aecf7ebe8c0c143db8df2"
   },
   {
     "url": "assets/js/22.7e593e6e.js",
@@ -102,8 +102,8 @@ self.__precacheManifest = [
     "revision": "73052721bb72a08162c04d95edcf3e1e"
   },
   {
-    "url": "assets/js/26.a7e74f7c.js",
-    "revision": "1f4be572e02dc3d3048d93edcdd05e7a"
+    "url": "assets/js/26.91267040.js",
+    "revision": "06fc26172991e0256eee27dac073710e"
   },
   {
     "url": "assets/js/27.17aafe6e.js",
@@ -146,8 +146,8 @@ self.__precacheManifest = [
     "revision": "2085e6e3be9d97189bf1f229fb5e843b"
   },
   {
-    "url": "assets/js/app.b38299ee.js",
-    "revision": "f5c1e18c77e9555edbac7511deffbdc1"
+    "url": "assets/js/app.ab112cc0.js",
+    "revision": "963df36f110eb558a1751fa89b1fa20f"
   },
   {
     "url": "assets/js/vendors~flowchart.9a672344.js",
@@ -167,7 +167,7 @@ self.__precacheManifest = [
   },
   {
     "url": "config/index.html",
-    "revision": "34c84ff0faf8ef916f8538eade30e6ba"
+    "revision": "877fe235b52c114893139d5b5feaf219"
   },
   {
     "url": "favicon.png",
@@ -179,67 +179,67 @@ self.__precacheManifest = [
   },
   {
     "url": "guide/badges.html",
-    "revision": "14c89b0f63b4a64200ea4db5f8e334a0"
+    "revision": "7eca10c335c0938b4e4b3dd1af7926fb"
   },
   {
     "url": "guide/comment.html",
-    "revision": "c749cf1b6fe9acb78879cdc299e102d4"
+    "revision": "c26bb7c91c0f2b0c5d892abdb247b12e"
   },
   {
     "url": "guide/environments.html",
-    "revision": "92d341c504b3fc8ce9a31a48f002ecb9"
+    "revision": "24246fe65d79b9e17ab438311210c1dd"
   },
   {
     "url": "guide/examples.html",
-    "revision": "57b64039519eef80997282b7ab07a42d"
+    "revision": "9509ec08af618b95ae344b2500391b9d"
   },
   {
     "url": "guide/hooks.html",
-    "revision": "a0578ab3a0c77fbfef67de66e2075d87"
+    "revision": "395da79eac3b2efda9868f94f5586f00"
   },
   {
     "url": "guide/index.html",
-    "revision": "0f38cf86ad381bb221030bf5dae910bb"
+    "revision": "582307aab187e5a79dece67420482745"
   },
   {
     "url": "guide/installation_cli.html",
-    "revision": "56d56ec691b60bafdf8c1ae92cba20af"
+    "revision": "a37f29133c457fe1fe6aea36184334e3"
   },
   {
     "url": "guide/installation_httpbook.html",
-    "revision": "d8626f7dc345e1105e7b8b0e52fecacc"
+    "revision": "2e102933760c9b85fbc44a5a9c8033d0"
   },
   {
     "url": "guide/installation_vscode.html",
-    "revision": "80f26510b2d74350915f9dd41b58d583"
+    "revision": "d181890240f426e49f3f9b41e51343dd"
   },
   {
     "url": "guide/installation.html",
-    "revision": "abc4d2dd0df7ed0acb5f772a5df195e2"
+    "revision": "05092c12a91d07e04970ae8f2fefd775"
   },
   {
     "url": "guide/metaData.html",
-    "revision": "dfc1ce287fc65292ccf6f698aba27503"
+    "revision": "dafb2bae5c347c393c1169cd2f1546c3"
   },
   {
     "url": "guide/request.html",
-    "revision": "09a9740655999c757c3555be9e840565"
+    "revision": "9dc9f147a0e6819198c913ce6e795b82"
   },
   {
     "url": "guide/response.html",
-    "revision": "85d5389081a379db19746f5788d1cea7"
+    "revision": "02576aa37afa30c50cfe90903ff8b6f5"
   },
   {
     "url": "guide/scripting.html",
-    "revision": "37767f9b8f7fb53e252942cdeb3e0810"
+    "revision": "d621ee18685d392b30ece7e7245a7cd8"
   },
   {
     "url": "guide/troubleshooting.html",
-    "revision": "c6d2f0b7178cb7f669492b763c2044a8"
+    "revision": "0db8637edfe8ed15474e51a4d27ff190"
   },
   {
     "url": "guide/variables.html",
-    "revision": "bf9c2ea17263539e2e6498886609a9be"
+    "revision": "261a51a5600abf98e0796b8d77c2e32f"
   },
   {
     "url": "httpbook_oauth2.gif",
@@ -303,15 +303,15 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "2e1ab7aecaea35286c97eef7c5ba48c2"
+    "revision": "989d2238a8b48e9fe5265a282f546103"
   },
   {
     "url": "plugins/index.html",
-    "revision": "53ad3d530d177c2f0e1a1f29c397a202"
+    "revision": "4c5f26269547d8ff952f8e0d0986b884"
   },
   {
     "url": "plugins/plugin-api.html",
-    "revision": "743d88832c2cc4d20997588a413dea5d"
+    "revision": "d3b8abbc6e07a4f74e8412a8f2a1b7b0"
   },
   {
     "url": "vscode_preview.gif",
