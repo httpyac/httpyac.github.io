@@ -22,18 +22,18 @@ Since all variables are placed on the global scope of the script, they may overw
 
 In addition to the defined variables, the following values are also set on global scope
 
-| name | description |
-| - | - |
-| grpcStream | currently active [Grpc Writable Stream](https://nodejs.org/api/stream.html#writable-streams) |
-| httpFile | current [httpFile](https://github.com/AnWeber/httpyac/blob/main/src/models/httpFile.ts) |
-| httpRegion | current [httpRegion](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRegion.ts) |
-| mqttClient | currently active [MQTT Client](https://github.com/mqttjs/MQTT.js#example) |
-| oauth2Session | [OAuth2 Response](https://github.com/AnWeber/httpyac/blob/main/src/variables/replacer/oauth/openIdInformation.ts#L6-L14) if [OAuth2/ OpenId Connect](/guide/variables.html#oauth2-openid-connect) is used |
-| request | request of the next [http request](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRequest.ts) |
-| response | [http response](https://github.com/AnWeber/httpyac/blob/main/src/models/httpResponse.ts) of the last request |
-| sleep | [Method](https://github.com/AnWeber/httpyac/blob/main/src/utils/promiseUtils.ts#L7) to wait for a fixed period of time
-| test | method to simplify [tests](https://github.com/AnWeber/httpyac/blob/main/src/actions/jsAction.ts#L40) ([assert](https://github.com/AnWeber/httpyac/blob/main/examples/script/assert.http) or [chai](https://github.com/AnWeber/httpyac/blob/main/examples/script/chai.http)) |
-| websocketClient | currently active [Websocket Client](https://www.npmjs.com/package/ws#sending-and-receiving-text-data) |
+| name | description | condition |
+| - | - | - |
+| grpcStream | currently active [Grpc Writable Stream](https://nodejs.org/api/stream.html#writable-streams) | only if grpc stream is active |
+| httpFile | current [httpFile](https://github.com/AnWeber/httpyac/blob/main/src/models/httpFile.ts) | - |
+| httpRegion | current [httpRegion](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRegion.ts) | - |
+| mqttClient | currently active [MQTT Client](https://github.com/mqttjs/MQTT.js#example) | only if mqtt client is active |
+| oauth2Session | [OAuth2 Response](https://github.com/AnWeber/httpyac/blob/main/src/variables/replacer/oauth/openIdInformation.ts#L6-L14) |only if [OAuth2/ OpenId Connect](/guide/variables.html#oauth2-openid-connect) is used |
+| request | request of the next [http request](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRequest.ts) | - |
+| response | [http response](https://github.com/AnWeber/httpyac/blob/main/src/models/httpResponse.ts) of the last executed request | only use it in post request scripts or for responses imported with `@forceRef` |
+| sleep | [Method](https://github.com/AnWeber/httpyac/blob/main/src/utils/promiseUtils.ts#L7) to wait for a fixed period of time | - |
+| test | method to simplify [tests](https://github.com/AnWeber/httpyac/blob/main/src/actions/jsAction.ts#L40) ([assert](https://github.com/httpyac/httpyac.github.io/blob/main/examples/project/tests/assert.http) or [chai](https://github.com/httpyac/httpyac.github.io/blob/main/examples/project/tests/chai.http)) | - |
+| websocketClient | currently active [Websocket Client](https://www.npmjs.com/package/ws#sending-and-receiving-text-data) | if websocket client is active |
 
 ## Require
 
