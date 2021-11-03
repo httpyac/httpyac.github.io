@@ -28,23 +28,23 @@ Variables are only replaced when NodeJS scripts are called or when a request is 
 
 <<< ./examples/variables/variablesLazy.http
 
-::: warn
+::: warning
 When a request is sent, all variables in it must be present, otherwise an error is generated.
 :::
 
 ## Import Variables
 
-The variables are also imported from other files using `@import`.
+The variables are also imported from other files using [`@import`](/guide/metaData.html#import).
 
-<<< ./examples/variables/variablesImport.http
+<<< ./examples/variables/variablesImport.http{1}
 
-You can also `@ref`erence `@name`d meta data from results of calls defined in `@import`ed files:
+You can also  reference ([`@ref`](/guide/metaData.html#ref-and-forceref)) named responses ([`@name`](/guide/metaData.html#name)) from other files.
 
-<<< ./examples/metaData/import.http
+<<< ./examples/metaData/import.http{1,2}
 
 `name.http`:
 
-<<< ./examples/metaData/name.http
+<<< ./examples/metaData/name.http{1}
 
 
 

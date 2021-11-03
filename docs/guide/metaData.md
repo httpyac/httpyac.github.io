@@ -3,13 +3,22 @@
 All lines starting with `#` are interpreted as meta data lines. Lines in Format `# @foo bar` are interpreted as meta data (or alternatively `// @foo` because of [Intellij](https://www.jetbrains.com/help/idea/exploring-http-syntax.html#enable-disable-redirects)). It is possible to attach meta data that influences the processing of the request
 
 ## Name
-Responses of a requests with a Name are automatically added as Variables and can be reused by other Requests
+Responses of a requests with a Name are automatically added as Variables and can be reused by other Requests. The variable contains the response body. If the body is valid JSON, this will be parsed automatically.
 
 <<< ./examples/metaData/name.http{1}
 
 ::: warning
 Name must be unique in all imported files, there is no scope support and first found request with name will be used.
 :::
+
+::: warning
+Variable Name must be a valid Javascript Variable Name. No Javascript keywords like import, var, ... are allowed.
+:::
+
+To access response headers, the variable [`response`](https://httpyac.github.io/guide/scripting.html#access-to-variables) can be used in post request scripts
+
+<<< ./examples/script/postRequestScript.http{5}
+
 
 ## Title
 additional title of region (used in cli output and outline view). It is possible to define title in region delimiter
@@ -41,6 +50,10 @@ Requests can reference other requests. When the request is called, it is ensured
 
 ::: tip
 It is possible to reference any number of requests.
+:::
+
+::: tip
+Referencing also makes the variables of the other region accessible and thus also the [named response body](/guide/metaData.html#name).
 :::
 
 ## Import
