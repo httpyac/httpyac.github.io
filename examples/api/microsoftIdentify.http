@@ -1,0 +1,6 @@
+@oauth2_deviceCodeEndpoint=https://login.microsoftonline.com/organizations/oauth2/v2.0/devicecode
+@oauth2_clientId=6731de76-14a6-49ae-97bc-6eba6914391e
+@oauth2_tokenEndpoint=https://login.microsoftonline.com/organizations/oauth2/v2.0/token
+
+GET https://httpbin.org/json
+Authorization: oauth2 device_code
