@@ -90,6 +90,7 @@ The following [Open ID Connect](https://openid.net/specs/openid-connect-basic-1_
 * Implicit (or Hybrid) Flow (grant_type = implicit)
 * Resource Owner Password Grant (grant_type = password)
 * Client Credentials Grant (grant_type = client_credentials)
+* Device Authorization Grant (grant_type = device_code)
 
 ```html
 GET /secured_service
@@ -101,19 +102,20 @@ If no `grant_type` is provided `client_credentials` flow is used. If no `prefix`
 
 To configure the flow, the following variables must be specified
 
-| variable | description | authorization_code | implicit | password | client_credentials |
+| variable | description | authorization_code | implicit | password | client_credentials | device_code |
 | - | - | -  |- | - | - |
-| <span v-pre>{{prefix}}</span>_tokenEndpoint | Token Endpoint URI | x | x | x | x |
-| <span v-pre>{{prefix}}</span>_clientId |OAuth 2.0 Client Identifier | x | x | x | x |
-| <span v-pre>{{prefix}}</span>_clientSecret | OAuth 2.0 Client Secret | x | x | x | x |
-| <span v-pre>{{prefix}}</span>_authorizationEndpoint |  Authorization Endpoint URI | x | x | - | - |
-| <span v-pre>{{prefix}}</span>_scope | Scope | x (default: openid) | x (default: openid) | x | x |
-| <span v-pre>{{prefix}}</span>_responseType | response type of auth server | - | x (default: code) | - | - |
-| <span v-pre>{{prefix}}</span>_audience | audience | x | x | - | - |
-| <span v-pre>{{prefix}}</span>_username | username| - | - | x | - |
-| <span v-pre>{{prefix}}</span>_password | password | - | - | x | - |
-| <span v-pre>{{prefix}}</span>_keepAlive |  AccessToken is automatically renewed in the background, if request_token is provided (default: false)| x | - | x | x |
-| <span v-pre>{{prefix}}</span>_useAuthorizationHeader  | use Authorization Header for request (default: true) | x | x | x | x |
+| <span v-pre>{{prefix}}</span>_tokenEndpoint | Token Endpoint URI | x | x | x | x | x |
+| <span v-pre>{{prefix}}</span>_clientId |OAuth 2.0 Client Identifier | x | x | x | x | x |
+| <span v-pre>{{prefix}}</span>_clientSecret | OAuth 2.0 Client Secret | x | x | x | x | - |
+| <span v-pre>{{prefix}}</span>_authorizationEndpoint |  Authorization Endpoint URI | x | x | - | - | - |
+| <span v-pre>{{prefix}}</span>_scope | Scope | x (default: openid) | x (default: openid) | x | x | x |
+| <span v-pre>{{prefix}}</span>_responseType | response type of auth server | - | x (default: code) | - | - | - |
+| <span v-pre>{{prefix}}</span>_audience | audience | x | x | - | - | - |
+| <span v-pre>{{prefix}}</span>_username | username| - | - | x | - | - |
+| <span v-pre>{{prefix}}</span>_password | password | - | - | x | - | - |
+| <span v-pre>{{prefix}}</span>_keepAlive |  AccessToken is automatically renewed in the background, if request_token is provided (default: false)| x | - | x | x | - |
+| <span v-pre>{{prefix}}</span>_useAuthorizationHeader  | use Authorization Header for request (default: true) | x | x | x | x | - |
+| <span v-pre>{{prefix}}</span>_deviceCodeEndpoint |  Device Code Endpoint URI | - | - | - | - | x |
 
 ::: warning
 To get the code from the Open ID server, a http server is started for the Authorization Flow and Implicit Flow on port 3000. The server is stopped after receiving the code (delay 2 minutes). You need to configure your OpenId Provider to allow localhost:3000 as valid redirect url
