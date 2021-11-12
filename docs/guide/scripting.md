@@ -12,6 +12,10 @@ If the execution of the script is `async`, it is necessary to export this Promis
 
 <<< ./examples/script/scriptPromise.http
 
+::: warning
+Scripts are executed in a custom context/ execution environment. This context should behave identically to [NodeJS Default execution environment](https://nodejs.org/api/vm.html#what-does-it-mean-to-contextify-an-object), but there may be variations. These can be bypassed using require.
+:::
+
 ## Access to Variables
 
 All Variables already defined can be accessed via the global scope.
