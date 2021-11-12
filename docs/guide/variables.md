@@ -103,7 +103,7 @@ If no `grant_type` is provided `client_credentials` flow is used. If no `prefix`
 To configure the flow, the following variables must be specified
 
 | variable | description | authorization_code | implicit | password | client_credentials | device_code |
-| - | - | -  |- | - | - |
+| - | - | - | - | - | - | - |
 | <span v-pre>{{prefix}}</span>_tokenEndpoint | Token Endpoint URI | x | x | x | x | x |
 | <span v-pre>{{prefix}}</span>_clientId |OAuth 2.0 Client Identifier | x | x | x | x | x |
 | <span v-pre>{{prefix}}</span>_clientSecret | OAuth 2.0 Client Secret | x | x | x | x | - |
