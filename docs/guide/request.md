@@ -177,9 +177,13 @@ The import of the proto file can also be done globally
 
 
 ::: tip
-You can use Variable Substitution in file import.
+You can use Variable Substitution in file import and in proto-loader options.
 :::
 <<< ./examples/request/protoImportVariables.http{3}
+
+::: warn
+IncludeDirs of @grpc/proto-loader currently supports only absolute paths. 
+:::
 
 ### Unary RPC
 

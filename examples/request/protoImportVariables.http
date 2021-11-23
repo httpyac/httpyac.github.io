@@ -6,7 +6,7 @@ longs: String
 enums: String
 defaults: true
 oneofs: true
-includeDirs: ["../request"]
+includeDirs: [`${assetsDir}/request`]
 
 GRPC grpcb.in:9000/hello.HelloService/sayHello
 {
