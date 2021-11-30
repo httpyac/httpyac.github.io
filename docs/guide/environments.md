@@ -27,7 +27,7 @@ The VS Code extension supports switching to different environments. A different 
 :::
 
 ## JSON
-Environments can be provided with setting `environments` in [.httpyac.js](/config/) . All settings with key `$shared` are shared between all environments
+Environments can be provided with setting `environments` in [.httpyac.js](/config/) . All settings with key `$shared` are shared between all environments All settings with key `$default` are used only if no environment is selected
 
 ```json
 {
