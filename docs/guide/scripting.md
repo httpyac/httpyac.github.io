@@ -51,10 +51,8 @@ External dependencies must be installed independently, exceptions are [vscode](h
 :::
 
 ::: warning
-[NodeJS](https://nodejs.org/api/modules.html#modules_require_cache) caches all loaded scripts. Since in VS Code the script is executed in the context of the extension, the content of the script is not reloaded. Therefore, the script must be manually removed from the cache. A helper method requireUncached is provided.
+[NodeJS](https://nodejs.org/api/modules.html#modules_require_cache) caches all loaded scripts. Since in VS Code the script is executed in the context of the extension, the content of the script is not reloaded. Therefore, the script must be manually removed from the cache.
 :::
-
-<<< ./examples/script/scriptRequireUncached.http{3}
 
 ## Console
 
