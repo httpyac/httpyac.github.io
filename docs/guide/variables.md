@@ -75,11 +75,13 @@ If the url starts with / and a variable host is defined the URL of this host wil
 <<< ./examples/variables/host.http
 
 
-### Input und QuickPick
-Dynamic Variable Resolution with showInputBox and showQuickPick is supported
+### Input, Password und QuickPick
+Dynamic Variable Resolution with input field, password field or quick pick is supported.
 
 
 <<< ./examples/variables/input.http
+
+<<< ./examples/variables/password.http
 
 <<< ./examples/variables/pick.http
 
