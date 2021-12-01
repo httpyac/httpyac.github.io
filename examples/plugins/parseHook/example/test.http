@@ -1,0 +1,5 @@
+
+GET https://httpbin.org/anything
+
+### coffee
+GET coffee
