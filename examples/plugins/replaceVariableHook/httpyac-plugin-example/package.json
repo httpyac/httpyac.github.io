@@ -1,0 +1,11 @@
+{
+  "name": "httpyac-plugin-example",
+  "version": "0.0.1",
+  "description": "example for replaceVariableHook",
+  "main": "index.js",
+  "keywords": [
+    "httpyac"
+  ],
+  "author": "weber.andreas",
+  "license": "ISC"
+}

@@ -1,0 +1,5 @@
+
+GET https://httpbin.org/anything
+X-Coffee: coffee with milk, no sugar
+
+
