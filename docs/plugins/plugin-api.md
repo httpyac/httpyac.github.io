@@ -124,58 +124,12 @@ As soon as a hook determines a result, the processing for this row is aborted an
 
 
 ::: warning
-Hook `requestBody` always returns a result. It is necessary to register the own parser before this one
+Hook `request` and `requestBody` always returns a result. It is necessary to register your own parser before this one
 :::
 
-```ts
+<<< ./examples/plugins/parseHook/httpyac-plugin-example/index.js
 
-export async function parseJavascript(
-  getLineReader: models.getHttpLineGenerator,
-  { httpRegion, data }: models.ParserContext
-): Promise<models.HttpRegionParserResult> {
-  const lineReader = getLineReader();
-  let next = lineReader.next();
-
-  if (!next.done) {
-    // regex match if line is javascript start line
-    const match = ParserRegex.javascript.scriptStart.exec(next.value.textLine);
-    if (!match) {
-      return false;
-    }
-    const lineOffset = next.value.line;
-    next = lineReader.next();
-    const script: Array<string> = [];
-    while (!next.done) {
-      // regex match if line is javascript end line
-      if (ParserRegex.javascript.scriptEnd.test(next.value.textLine)) {
-        const scriptData: ScriptData = {
-          script: utils.toMultiLineString(script),
-          lineOffset,
-        };
-        if (!match.groups?.executeOnEveryRequest) {
-          // add hook to execute script on request send
-          httpRegion.hooks.execute.addObjHook(obj => obj.process, new JavascriptAction(scriptData));
-        }
-        return { // return nextParserLine and symbol for lines
-          nextParserLine: next.value.line,
-          symbols: [{
-            name: 'script',
-            description: 'nodejs script',
-            kind: models.HttpSymbolKind.script,
-            startLine: lineOffset,
-            startOffset: 0,
-            endLine: next.value.line,
-            endOffset: next.value.textLine.length,
-          }]
-        };
-      }
-      script.push(next.value.textLine);
-      next = lineReader.next();
-    }
-  }
-  return false;
-}
-```
+[full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/parseHook)
 
 
 ### ParseEndRegionHook
@@ -201,17 +155,10 @@ hook after identifing new http region
 
 hook to replace variable in request line, header or request body
 
-```ts
-export async function hostVariableReplacer(text: string, type: VariableType | string, { variables }: ProcessorContext): Promise<string | undefined> {
-  if (VariableType.url === type && !!variables.host) {
-    if (text.startsWith('/')) {
-      return `${variables.host}${text}`;
-    }
-  }
-  return text;
-}
 
-```
+<<< ./examples/plugins/replaceVariablesHook/httpyac-plugin-example/index.js
+
+[full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/replaceVariableHook)
 
 ### ProvideVariablesHook
 
@@ -225,20 +172,10 @@ export async function hostVariableReplacer(text: string, type: VariableType | st
 
 hook to provide custom variables
 
-```ts
-import { VariableProviderContext, Variables } from '../../models';
-const DEFAULT_ENV = '$shared';
 
-export async function provideConfigVariables(envs: string[] | undefined, context: VariableProviderContext): Promise<Variables> {
-  const variables: Variables[] = [];
-  if (envs && context.config?.environments) {
-    const environments = context.config.environments;
-    variables.push(environments[DEFAULT_ENV]);
-    variables.push(...envs.map(env => environments[env]));
-  }
-  return Object.assign({}, ...variables);
-}
-```
+<<< ./examples/plugins/provideVariablesHook/httpyac-plugin-example/index.js{2-13}
+
+[full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/provideVariablesHook)
 
 ### ProvideEnvironmentsHook
 
@@ -250,15 +187,9 @@ export async function provideConfigVariables(envs: string[] | undefined, context
 
 hook to provide environments
 
-```js
-module.exports = {
-	configureHooks: function (api) {
-		api.hooks.provideEnvironments.addHook('default_dev', function (context) {
-			return ['dev','prev'];
-		});
-	}
-}
-```
+<<< ./examples/plugins/provideVariablesHook/httpyac-plugin-example/index.js{14-16}
+
+[full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/provideVariablesHook)
 
 ### OnRequest Hook
 
@@ -271,15 +202,10 @@ module.exports = {
 
 hook called before every request call
 
-```js
-module.exports = {
-	configureHooks: function (api) {
-		api.hooks.onRequest.addHook('add_authentication_header', function (request) {
-			request.headers.Authentication = 'Bearer foo';
-		});
-	}
-}
-```
+
+<<< ./examples/plugins/requestHook/httpyac-plugin-example/index.js
+
+[full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/requestHook)
 
 ### OnResponse Hook
 
@@ -292,15 +218,10 @@ module.exports = {
 
 hook called after every response
 
-```js
-module.exports = {
-	configureHooks: function (api) {
-		api.hooks.onResponse.addHook('response', function (response) {
-			...
-		});
-	}
-}
-```
+
+<<< ./examples/plugins/responseHook/httpyac-plugin-example/index.js
+
+[full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/responseHook)
 
 ### ResponseLoggingHook
 
@@ -314,14 +235,6 @@ module.exports = {
 
 hook called for every logging of a response.
 
-```js
-module.exports = {
-	configureHooks: function (api) {
-		api.hooks.responseLogging.addHook('removeSensitiveData', function (response) {
-			if (response.request) {
-				delete response.request.headers['authorization'];
-			}
-		});
-	}
-}
-```
+<<< ./examples/plugins/responseLoggingHook/httpyac-plugin-example/index.js
+
+[full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/responseLoggingHook)
