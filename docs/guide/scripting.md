@@ -93,7 +93,7 @@ Scripts with no request in the same region are always executed (Global Scripts).
 
 ## Events
 
-Scripts can automatically register for specific hooks.
+The normal script registration is executed in order of occurence in http File. For the execution of a request, several steps have to be executed besides the actual request: Replace Variables, Prepare Body, Pretty Print Body. With events scripts can be hooked into concrete steps in this process. 
 
 <<< ./examples/script/events.http{1}
 
@@ -101,12 +101,15 @@ The following events are possible.
 
 | Events | Description |
 | - | - |
-| request | event triggered before every request |
+| request | event triggered before every request (but after replaceVariableHook) |
 | streaming | event triggered while client streaming |
 | response | event triggered on response of request |
+| responseLogging | event triggered on output of response, used for altering output |
 | after | event triggered after all actions are executed |
 
-The events can be registered automatically globally by means of `+`.
+::: tip
+The events can be registered automatically globally using `+`.
+:::
 
 <<< ./examples/script/globalScriptOnEveryHttpRegionAfter.http{1}
 
