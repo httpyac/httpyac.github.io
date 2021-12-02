@@ -156,7 +156,7 @@ hook after identifing new http region
 hook to replace variable in request line, header or request body
 
 
-<<< ./examples/plugins/replaceVariablesHook/httpyac-plugin-example/index.js
+<<< ./examples/plugins/replaceVariableHook/httpyac-plugin-example/index.js
 
 [full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/replaceVariableHook)
 
