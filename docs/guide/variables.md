@@ -75,7 +75,7 @@ If the url starts with / and a variable host is defined the URL of this host wil
 <<< ./examples/variables/host.http
 
 
-### Input, Password und QuickPick
+### Input, Password and QuickPick
 Dynamic Variable Resolution with input field, password field or quick pick is supported.
 
 
