@@ -34,10 +34,9 @@ yarn global upgrade --latest httpyac
 ```shell
 > httpyac --help
 
-usage: httpyac [options...] <file or glob pattern>
+usage: httpyac <file or glob pattern> [options] 
        --all           execute all http requests in a http file
        --bail          stops when a test case fails
-       --editor        enter a new request and execute it
   -e   --env           list of environments
        --filter        filter requests output (only-failed)
   -h   --help          help
@@ -55,7 +54,6 @@ usage: httpyac [options...] <file or glob pattern>
   -s   --silent        log only request
        --timeout       maximum time allowed for connections
   -v   --verbose       make the operation more talkative
-       --version       version of httpyac
 
 ```
 
