@@ -1,0 +1,17 @@
+GET https://httpbin.org/anything HTTP/1.1
+
+> {% client.global.set("header", "h1") %}
+
+###
+
+GET https://httpbin.org/anything HTTP/1.1
+X-Header: {{header}}
+
+> {% client.global.set("header", "h2") %}
+
+###
+
+GET https://httpbin.org/anything HTTP/1.1
+X-Header: {{header}}
+
+###
