@@ -1,0 +1,10 @@
+{{
+module.exports = {
+    body: {
+      id: 1
+    }
+  }
+}}
+
+POST http://httpbin.org/anything
+{{body}}
