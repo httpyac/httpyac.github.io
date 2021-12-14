@@ -1,0 +1,2 @@
+@foo-bar=bard
+GET /anything?foo={{foo-bar}}&foo2={{new Date()}}
