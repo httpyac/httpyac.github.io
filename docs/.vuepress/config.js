@@ -29,8 +29,7 @@ module.exports = {
     'vuepress-plugin-code-copy': {
       color: '#F6EEE9',
       backgroundColor: "#706B69",
-    },
-    'flowchart': true
+    }
 
   },
   theme: '@vuepress/theme-default',

@@ -68,65 +68,14 @@ module.exports = () => {}
 
 ## Parsing FlowChart
 
+<img src="/flows/parse_flow.svg">
 
-@flowstart
-st=>start: Start
-e=>end: End
-parse=>operation: Parse File|current
-parseCondition=>condition: has more Lines
-createActions=>operation: Create Actions
-parseEndCondition=>condition: new request
-parseHook=>subroutine: ParseHook
-parseEndRegionHook=>subroutine: ParseEndRegionHook
-fileParsed=>inputoutput: HttpFile with HttpRegion and Actions created
-
-provideVariablesHook=>subroutine: ProvideVariablesHook
-
-
-st->parse(right)->parseCondition
-parseCondition(yes)->parseHook
-parseCondition(no)->fileParsed
-parseHook->createActions
-createActions->parseEndCondition
-
-parseEndCondition(yes)->parseEndRegionHook
-parseEndCondition(no)->parseCondition
-parseEndRegionHook->parseCondition
-
-fileParsed->e
-
-@flowend
 
 ## Sending FlowChart
 
-
-@flowstart
-start=>start: Start
-end=>end: End
-
-provideVariablesHook=>subroutine: ProvideVariablesHook
-executeGlobalActions=>operation: Execute Global Actions (Actions without request and name)
-executeActions=>operation: Execute Actions
-prepareRequest=>operation: Prepare Request and Request Body
-dotAction=>operation: ... Javascript, ProtoImport, Variables, ...
-
-replaceVariablesHook=>subroutine: ReplaceVariablesHook
-requestHook=>subroutine: OnRequestHook (httpFile and httpRegion)
-request=>operation: Perform Request (HTTP, GRPC, MQTT,...)
-
-streamCondition=>condition: streaming?
-onStreamingHook=>subroutine: OnStreamingHook (httpFile and httpRegion)
-responseHook=>subroutine: OnResponseHook (httpRegion and httpFile)
-responseLoggingHook=>subroutine: responseLoggingHook
-viewResponse=>inputoutput: Output Response
-
-start->provideVariablesHook->executeGlobalActions->executeActions->prepareRequest->dotAction->replaceVariablesHook->requestHook->request->streamCondition
-
-streamCondition(yes)->onStreamingHook->responseHook
-streamCondition(no)->responseHook
-responseHook->responseLoggingHook->viewResponse->end
+<img src="/flows/send_flow.svg">
 
 
+## Execute Http Region FlowChart
 
-@flowend
-
+<img src="/flows/execute_flow.svg">
