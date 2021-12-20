@@ -156,10 +156,6 @@ Object with default headers used for every request.
 }
 ```
 
-::: tip
-Variable Substitution is used for this headers
-:::
-
 ### cookieJarEnabled
 
 - Type: `boolean`

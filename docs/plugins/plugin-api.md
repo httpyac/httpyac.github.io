@@ -127,7 +127,7 @@ As soon as a hook determines a result, the processing for this row is aborted an
 Hook `request` and `requestBody` always returns a result. It is necessary to register your own parser before this one
 :::
 
-<<< ./examples/plugins/parseHook/httpyac-plugin-example/index.js
+@[code](../../examples/plugins/parseHook/httpyac-plugin-example/index.js)
 
 [full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/parseHook)
 
@@ -156,7 +156,7 @@ hook after identifing new http region
 hook to replace variable in request line, header or request body
 
 
-<<< ./examples/plugins/replaceVariableHook/httpyac-plugin-example/index.js
+@[code](../../examples/plugins/replaceVariableHook/httpyac-plugin-example/index.js)
 
 [full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/replaceVariableHook)
 
@@ -173,7 +173,7 @@ hook to replace variable in request line, header or request body
 hook to provide custom variables
 
 
-<<< ./examples/plugins/provideVariablesHook/httpyac-plugin-example/index.js{2-13}
+@[code js{2-13}](../../examples/plugins/provideVariablesHook/httpyac-plugin-example/index.js)
 
 [full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/provideVariablesHook)
 
@@ -187,7 +187,7 @@ hook to provide custom variables
 
 hook to provide environments
 
-<<< ./examples/plugins/provideVariablesHook/httpyac-plugin-example/index.js{14-16}
+@[code js{14-16}](../../examples/plugins/provideVariablesHook/httpyac-plugin-example/index.js)
 
 [full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/provideVariablesHook)
 
@@ -203,7 +203,7 @@ hook to provide environments
 hook called before every request call
 
 
-<<< ./examples/plugins/requestHook/httpyac-plugin-example/index.js
+@[code js](../../examples/plugins/requestHook/httpyac-plugin-example/index.js)
 
 [full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/requestHook)
 
@@ -219,7 +219,7 @@ hook called before every request call
 hook called after every response
 
 
-<<< ./examples/plugins/responseHook/httpyac-plugin-example/index.js
+@[code js](../../examples/plugins/responseHook/httpyac-plugin-example/index.js)
 
 [full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/responseHook)
 
@@ -235,6 +235,6 @@ hook called after every response
 
 hook called for every logging of a response.
 
-<<< ./examples/plugins/responseLoggingHook/httpyac-plugin-example/index.js
+@[code js](../../examples/plugins/responseLoggingHook/httpyac-plugin-example/index.js)
 
 [full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/responseLoggingHook)

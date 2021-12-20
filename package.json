@@ -25,9 +25,9 @@
   "author": "weber.andreas",
   "license": "MIT",
   "dependencies": {
-    "@vuepress/plugin-pwa": "^1.8.2",
-    "@vuepress/theme-default": "^1.8.2",
-    "vuepress": "^1.8.2",
-    "vuepress-plugin-code-copy": "^1.0.6"
+    "@vuepress/plugin-pwa": "^2.0.0-beta.29",
+    "@vuepress/plugin-search": "^2.0.0-beta.29",
+    "@vuepress/theme-default": "^2.0.0-beta.29",
+    "vuepress": "^2.0.0-beta.29"
   }
 }

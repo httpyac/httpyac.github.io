@@ -1,0 +1,23 @@
+:root {
+  --c-brand: #9A9390;
+  --c-brand-light: #9A9390;
+  --c-text: #1C1917;
+  --c-text-light: #3F3D3C;
+  --c-text-lighter: #444342;
+  --c-text-lightest: #565251;
+  --content-width: 940px;
+  --c-border: #E5E3E0;
+  --sidebar-width: 15rem;
+}
+
+html.dark{
+  --c-brand: #9A9390;
+  --c-brand-light: #9A9390;
+}
+
+
+.custom-container.tip, .custom-container.warning, .custom-container.danger {
+  & > .custom-container-title{
+    display: none;
+  }
+}

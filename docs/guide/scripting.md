@@ -4,13 +4,13 @@
 It is possible to use NodeJS scripts. All scripts before the request line are executed before the request is called. All scripts after the request line are executed as soon as the response is received. All exports of the script are stored as variables.
 
 
-<<< ./examples/script/script.http
+@[code http](../../examples/script/script.http)
 
 ::: tip
 If the execution of the script is `async`, it is necessary to export this Promise. In this case, the program waits for the Promise to be completed.
 :::
 
-<<< ./examples/script/scriptPromise.http
+@[code http](../../examples/script/scriptPromise.http)
 
 ::: warning
 Scripts are executed in a custom context/ execution environment. This context should behave identically to [NodeJS Default execution environment](https://nodejs.org/api/vm.html#what-does-it-mean-to-contextify-an-object), but there may be variations. These can be bypassed using require.
@@ -43,7 +43,7 @@ In addition to the defined variables, the following values are also set on globa
 
 External scripts can be imported using require, but you need to install dependencies yourself.
 
-<<< ./examples/script/scriptRequire.http{3}
+@[code http{3}](../../examples/script/scriptRequire.http)
 
 
 ::: tip
@@ -74,28 +74,28 @@ The console cannot be accessed in VS Code. Therefore, a separate Console object 
 You can write easily test scripts in JavaScript. Tests allow you to ensure that your API is working as expected, to establish that integrations between services are functioning reliably, and to verify that new developments haven't broken any existing functionality. You can also use test code to aid the debugging process when something goes wrong with your API project.
 
 
-<<< ./examples/script/assert.http
+@[code http](../../examples/script/assert.http)
 
-<<< ./examples/script/chai.http
+@[code http](../../examples/script/chai.http)
 
 
 ::: tip
 [Auxiliary methods](https://github.com/AnWeber/httpyac/blob/790a1b0409bd9eed6ef0ff26a2fc017952d58231/src/models/testFunction.ts#L6-L14) are provided for standard tests such as Status and Content-Type
 :::
 
-<<< ./examples/script/test.http
+@[code http](../../examples/script/test.http)
 
 ## Global Scripts
 
 Scripts with no request in the same region are always executed (Global Scripts).
 
-<<< ./examples/script/globalScripts.http
+@[code http](../../examples/script/globalScripts.http)
 
 ## Events
 
 The normal script registration is executed in order of occurence in http File. For the execution of a request, several steps have to be executed besides the actual request: Replace Variables, Prepare Body, Pretty Print Body. With events scripts can be hooked into concrete steps in this process. 
 
-<<< ./examples/script/events.http{1}
+@[code http{1}](../../examples/script/events.http)
 
 The following events are possible.
 
@@ -111,11 +111,11 @@ The following events are possible.
 The events can be registered automatically globally using `+`.
 :::
 
-<<< ./examples/script/globalScriptOnEveryHttpRegionAfter.http{1}
+@[code http{1}](../../examples/script/globalScriptOnEveryHttpRegionAfter.http)
 
 If no event is specified for global registration, the script is executed before every request.
 
-<<< ./examples/script/globalScriptOnEveryHttpRegion.http{1}
+@[code http{1}](../../examples/script/globalScriptOnEveryHttpRegion.http)
 
 
 ## Intellij Script
@@ -126,7 +126,7 @@ Intellij Scripts are supported. An [Http client](https://www.jetbrains.com/help/
 The execution environment differs between NodeJS and Intellij (uses Nashorn). Possibly the behavior is not completely identical, to Intellij Execution. If there are problems, please let me know.
 :::
 
-<<< ./examples/script/intellij.http
+@[code http](../../examples/script/intellij.http)
 
 ::: warning
 Intellij scripts are always executed after request. Scripts before Request Line are ignored
@@ -142,4 +142,4 @@ Intellij scripts are always executed after request. Scripts before Request Line 
 5. execute command `httpyac <file> -l <line>`
 
 
-<<< ./examples/script/debugger.http{7}
+@[code http{7}](../../examples/script/debugger.http)

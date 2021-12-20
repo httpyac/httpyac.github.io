@@ -5,38 +5,38 @@ Here is just a short list of possible use cases. The source code can be found di
 
 ## Arbeitsagentur Jobbörse
 
-<<< ./examples/api/arbeitsagentur.http
+@[code http](../../examples/api/arbeitsagentur.http)
 
 ## ArgoCD
 
-<<< ./examples/api/argocd.http
+@[code http](../../examples/api/argocd.http)
 
 ## Github GraphQL
 
-<<< ./examples/api/github.http
+@[code http](../../examples/api/github.http)
 
 ## gRPCb.in
 
-<<< ./examples/api/grpcbin.http
+@[code http](../../examples/api/grpcbin.http)
 
 ## Httpbin
 
-<<< ./examples/api/httpbin.http
+@[code http](../../examples/api/httpbin.http)
 
 ## Learn Webservices
 
-<<< ./examples/api/lernwebservices.http
+@[code http](../../examples/api/lernwebservices.http)
 
 ## SpaceX
 
 ### Rest API
 
-<<< ./examples/api/spacex.http
+@[code http](../../examples/api/spacex.http)
 
 ### GraphQL API
 
-<<< ./examples/api/spacex_graphql.http
+@[code http](../../examples/api/spacex_graphql.http)
 
 ## Spring Boot Actuator
 
-<<< ./examples/api/springboot_actuator.http
+@[code http](../../examples/api/springboot_actuator.http)

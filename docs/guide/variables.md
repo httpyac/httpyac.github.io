@@ -3,12 +3,12 @@
 Variables are used for avoiding unnecessary data duplication in requests or for providing an easy way of switching between environments. They can be used inside request line, header fields, request body or in variable definitions. Each variable is represented by a case-sensitive identifier surrounded by double curly braces.
 
 
-<<< ./examples/variables/variables.http
+@[code http](../../examples/variables/variables.http)
 
 ## Inline Variables
 Inline Variables can be easily created with the following scheme. Variable Substitution is supported
 
-<<< ./examples/variables/variablesDefinition.http
+@[code http](../../examples/variables/variablesDefinition.http)
 
 ::: tip
 Inline Variables in global scripts are set for each request in the file
@@ -26,7 +26,7 @@ GET /post HTTP/1.1
 Variables are only replaced when NodeJS scripts are called or when a request is made. Until then, it is possible to refer to variables that do not yet exist.
 :::
 
-<<< ./examples/variables/variablesLazy.http
+@[code http](../../examples/variables/variablesLazy.http)
 
 ::: warning
 When a request is sent, all variables in it must be present, otherwise an error is generated.
@@ -36,15 +36,17 @@ When a request is sent, all variables in it must be present, otherwise an error 
 
 The variables are also imported from other files using [`@import`](/guide/metaData.html#import).
 
-<<< ./examples/variables/variablesImport.http{1}
+@[code http{1}](../../examples/variables/variablesImport.http)
 
 You can also  reference ([`@ref`](/guide/metaData.html#ref-and-forceref)) named responses ([`@name`](/guide/metaData.html#name)) from other files.
-
-<<< ./examples/metaData/import.http{1,2}
-
-`name.http`:
-
-<<< ./examples/metaData/name.http{1}
+:::: code-group
+::: code-group-item import.http
+@[code http{1,2}](../../examples/metaData/import.http)
+:::
+::: code-group-item name.http
+@[code http{1}](../../examples/metaData/name.http)
+:::
+::::
 
 
 
@@ -56,12 +58,12 @@ Before the request is sent, all variables in the request (request line, headers,
  If the replacement is not desired, this can be prevented using `\{\{...\}\}`. This is replaced by <code v-pre>{{...}}</code>
 :::
 
-<<< ./examples/variables/escapeVariableSubstituion.http
+@[code http](../../examples/variables/escapeVariableSubstituion.http)
 ### NodeJs Script
 All entries of the form <span v-pre>{{...}}</span> are interpreted as NodeJS Javascript which returns exactly one value. Since all variables can be easily accessed on the global scope, this allows for simple substitution.
 
 
-<<< ./examples/variables/nodeJsScript.http
+@[code http](../../examples/variables/nodeJsScript.http)
 
 ::: tip
 It is possible to create more complex scripts, but this is not recommended and you should use a separate script block instead.
@@ -72,18 +74,18 @@ It is possible to create more complex scripts, but this is not recommended and y
 If the url starts with / and a variable host is defined the URL of this host will be prepended
 
 
-<<< ./examples/variables/host.http
+@[code http](../../examples/variables/host.http)
 
 
 ### Input, Password and QuickPick
 Dynamic Variable Resolution with input field, password field or quick pick is supported.
 
 
-<<< ./examples/variables/input.http
+@[code http](../../examples/variables/input.http)
 
-<<< ./examples/variables/password.http
+@[code http](../../examples/variables/password.http)
 
-<<< ./examples/variables/pick.http
+@[code http](../../examples/variables/pick.http)
 
 ### OAuth2 / OpenID Connect
 The following [Open ID Connect](https://openid.net/specs/openid-connect-basic-1_0.html) flows are supported.
@@ -136,7 +138,7 @@ GET /secured_service HTTP/1.1
 Authorization: openid client_credentials local
 ```
 
-<<< ./examples/api/arbeitsagentur.http
+@[code http](../../examples/api/arbeitsagentur.http)
 
 It is possible to convert the generated token into a token of another realm using [Token Exchange](https://tools.ietf.org/html/rfc8693)
 
@@ -149,7 +151,7 @@ Authorization: openid client_credentials local token_exchange realm_auth
 
 AWS Signature v4 authenticates requests to AWS services.
 
-<<< ./examples/variables/aws.http
+@[code http](../../examples/variables/aws.http)
 
 ### SSL Client Certificate
 
@@ -175,29 +177,29 @@ To use SSL Client Certifcates, the `clientCertificates` setting must be set. Thi
 }
 ```
 
-<<< ./examples/variables/clientCertificate.http
+@[code http](../../examples/variables/clientCertificate.http)
 
 > path should be absolute or relative to workspace root
 
 It is also possible to attach the certificate using (X-)ClientCert header. The header will be removed.
 
-<<< ./examples/variables/clientCertificateHeader.http
+@[code http](../../examples/variables/clientCertificateHeader.http)
 
 ### Basic Authentication
 A support method is provided for using Basic Authentication. Just specify the username and password separated by spaces and the base64 encoding will be applied automatically
 
 
-<<< ./examples/variables/basicAuth.http
+@[code http](../../examples/variables/basicAuth.http)
 
 If the username or password contains spaces, a `:` can be used alternatively.
 
-<<< ./examples/variables/basicAuthColon.http
+@[code http](../../examples/variables/basicAuthColon.http)
 
 ### Digest Authentication
 A support method is provided for using Digest Authentication. Just specify the username and password separated by spaces and the digest access authentication will be applied automatically
 
 
-<<< ./examples/variables/digest.http
+@[code http](../../examples/variables/digest.http)
 
 
 ### Intellij Dynamic Variables
@@ -210,7 +212,7 @@ A support method is provided for using Digest Authentication. Just specify the u
 | $randomInt| generates a random integer between 0 and 1000. |
 
 
-<<< ./examples/variables/intellij.http
+@[code http](../../examples/variables/intellij.http)
 
 ### Rest Client Dynamic Variables
 [Rest Client dynamic variables](https://github.com/Huachao/vscode-restclient#system-variables) are partially supported.
@@ -224,4 +226,4 @@ A support method is provided for using Digest Authentication. Just specify the u
 | $localDatetime rfc1123\|iso8601\|"custom format"\|'custom format' [offset option] | generates a local datetime string in either ISO8601, RFC1123 or a custom display format |
 
 
-<<< ./examples/variables/restClient.http
+@[code http](../../examples/variables/restClient.http)
