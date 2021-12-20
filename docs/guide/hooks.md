@@ -2,7 +2,7 @@
 
 httpYac uses a plugin-based architecture. Most of the features listed in this documentation are implemented as plugins using hooks.
 
-The hookable architecture makes httpYac flexible and extensible. If you are interested in developing a plugin, check out the [Plugin Development Guide](../plugins/).
+The plugin architecture makes httpYac flexible and extensible. If you are interested in developing a plugin, check out the [Plugin Development Guide](../plugins/).
 
 
 ## Project local hooks

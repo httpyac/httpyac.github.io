@@ -93,7 +93,7 @@ Scripts with no request in the same region are always executed (Global Scripts).
 
 ## Events
 
-The normal script registration is executed in order of occurence in http File. For the execution of a request, several steps have to be executed besides the actual request: Replace Variables, Prepare Body, Pretty Print Body. With events scripts can be hooked into concrete steps in this process. 
+The normal script registration is executed in order of occurrence in http File. For the execution of a request, several steps have to be executed besides the actual request: Replace Variables, Prepare Body, Pretty Print Body. With events scripts can be hooked into concrete steps in this process. 
 
 @[code http{1}](../../examples/script/events.http)
 

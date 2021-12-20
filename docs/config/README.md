@@ -124,7 +124,7 @@ This setting was introduced because of better compatibility with Intellij. It is
 - Type: `Object`
 - Default: `undefined`
 
-[Object](https://github.com/AnWeber/httpyac/blob/main/src/models/clientCertifcateOptions.ts) with all client certifcates. Each key is interpreted as host. When a call is made to this host, the certificate is automatically appended to the request.
+[Object](https://github.com/AnWeber/httpyac/blob/main/src/models/clientCertifcateOptions.ts) with all client certificates. Each key is interpreted as host. When a call is made to this host, the certificate is automatically appended to the request.
 
 ```json
 {

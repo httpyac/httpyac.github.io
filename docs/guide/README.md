@@ -25,7 +25,7 @@ The goal is to create a simple, free and extensible development tool that follow
 | Test/ Assert Response | ✓ | ✓ | - ([pull request](https://github.com/Huachao/vscode-restclient/pull/773)) | ✓ |
 | Authorization support | ✓ | ✓ | partially (no custom auth flow) | - |
 | -- OAuth2/ OpenId Connect | ✓ | ✓ | - | - |
-| -- AWS Signnature v4 | ✓ | ✓ | ✓ | - |
+| -- AWS Signature v4 | ✓ | ✓ | ✓ | - |
 | -- Basic Authentication | ✓ | ✓ | ✓ | ✓ |
 | -- Digest Authentication | ✓ | ✓ | ✓ | ✓ |
 | -- SSL Client Certificate | ✓ | ✓ | ✓ | - |

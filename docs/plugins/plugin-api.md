@@ -13,7 +13,7 @@ export interface HttpyacHooksApi{
   readonly log: LogHandler;
   readonly fileProvider: FileProvider,
   readonly sessionStore: SessionStore,
-  readonly userInteractionProvider: UserInteractonProvider;
+  readonly userInteractionProvider: UserInteractionProvider;
   getHookCancel(): symbol;
 }
 ```
@@ -47,7 +47,7 @@ Environment configuration determined for the current execution
 
 ## log
 
-* Type: [`LogHander`](https://github.com/AnWeber/httpyac/blob/main/src/models/logHandler.ts#L13)
+* Type: [`LogHandler`](https://github.com/AnWeber/httpyac/blob/main/src/models/logHandler.ts#L13)
 
 The log module provides a simple debugging console. The output channel is redirected per use case
 
@@ -55,7 +55,7 @@ The log module provides a simple debugging console. The output channel is redire
 
 * Type: [`FileProvider`](https://github.com/AnWeber/httpyac/blob/main/src/models/fileProvider.ts)
 
-Data access layerfor file access
+Data access layer for file access
 
 ::: warning
 The VS Code extension also supports loading [virtual documents](https://code.visualstudio.com/api/extension-guides/virtual-documents). Direct access via `fs` is not always possible.
@@ -141,7 +141,7 @@ Hook `request` and `requestBody` always returns a result. It is necessary to reg
 * Return: `void`
 
 
-hook after identifing new http region
+hook after identifying new http region
 
 ### ReplaceVariableHook
 

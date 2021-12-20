@@ -24,7 +24,7 @@ So, typical CLI plugin folder structure looks like the following:
 ├── package.json
 ```
 
-## Naming and discoverability
+## Naming and Discoverability
 
 For a plugin to be usable in a httpYac project, it must follow the name convention `httpyac-plugin-<name>` or `@scope/httpyac-plugin-<name>`. It allows your plugin to be:
 

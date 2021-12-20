@@ -56,7 +56,7 @@ authHost=https://my.openid.de
 auth_tokenEndpoint=https://my.openid.de/auth/realms/test/protocol/openid-connect/token
 ```
 
-You can specify environments by prepending or appending a environement identifier
+You can specify environments by pre pending or appending a environment identifier
 
 ```sh
 .env                # global variables

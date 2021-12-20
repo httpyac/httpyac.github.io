@@ -71,7 +71,7 @@ It is possible to create more complex scripts, but this is not recommended and y
 
 
 ### Host
-If the url starts with / and a variable host is defined the URL of this host will be prepended
+If the url starts with / and a variable host is defined the URL of this host will be pre pended
 
 
 @[code http](../../examples/variables/host.http)
@@ -147,7 +147,7 @@ GET /secured_service HTTP/1.1
 Authorization: openid client_credentials local token_exchange realm_auth
 ```
 
-### AWS Signnature v4
+### AWS Signature v4
 
 AWS Signature v4 authenticates requests to AWS services.
 
@@ -155,7 +155,7 @@ AWS Signature v4 authenticates requests to AWS services.
 
 ### SSL Client Certificate
 
-To use SSL Client Certifcates, the `clientCertificates` setting must be set. This contains the certificate to be used for each host. For each host either the certifcate/ key or pfx/ passphrase must be maintained.
+To use SSL Client Certificates, the `clientCertificates` setting must be set. This contains the certificate to be used for each host. For each host either the certificate/ key or pfx/ passphrase must be maintained.
 
 * cert: Path of public x509 certificate
 * key: Path of private key

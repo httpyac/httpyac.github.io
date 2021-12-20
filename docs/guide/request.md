@@ -95,7 +95,7 @@ All files are read with UTF-8 encoding. If a different encoding is desired, prov
 @[code http{5}](../../examples/request/requestBodyImportReplaceEncoding.http)
 
 ::: warning
-If the request body is configured in-place, whitespaces around it will be trimmed. To send leading or trailing whitespaces as part of the request body, send it from a separate file.
+If the request body is configured in-place, whitespace around it will be trimmed. To send leading or trailing whitespace as part of the request body, send it from a separate file.
 :::
 
 ::: tip
