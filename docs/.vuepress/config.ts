@@ -34,7 +34,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
   themeConfig: {
     repo: "httpyac/httpyac.github.io",
-    logo: "/icon.svg",
+    logo: "/favicon.png",
     docsDir: "docs",
     editLink: false,
     contributors: false,
