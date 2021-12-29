@@ -26,6 +26,11 @@ auth_tokenEndpoint=https://my.openid.de/auth/realms/test/protocol/openid-connect
 The VS Code extension supports switching to different environments. A different environment can be selected per file. Newly opened files in are opened with the last active environment.
 :::
 
+
+::: tip
+Since rejectUnauthorized and the use of a proxy can be different per environment, they can be set using the special variables `request_rejectUnauthorized` and `request_proxy`.
+:::
+
 ## JSON
 Environments can be provided with setting `environments` in [.httpyac.js](/config/) . All settings with key `$shared` are shared between all environments All settings with key `$default` are used only if no environment is selected
 

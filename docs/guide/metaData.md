@@ -203,6 +203,36 @@ All invalid SSL certificates will be ignored and no error will be thrown.
 
 @[code http{1}](../../examples/metaData/noRejectUnauthorized.http)
 
+::: tip
+Since rejectUnauthorized can be different per environment, it can be set using the special variable `request_rejectUnauthorized`.
+:::
+
+:::: code-group
+::: code-group-item localhost.env
+```.env
+request_rejectUnauthorized=false
+```
+:::
+::::
+
+## Proxy
+
+Set proxy for http requests
+
+@[code http{1}](../../examples/metaData/proxy.http)
+
+::: tip
+Since using a proxy can be different per environment, it can be set using the special variable `request_proxy`.
+:::
+
+:::: code-group
+::: code-group-item prod.env
+```.env
+request_proxy=socks://localhost:1080
+```
+:::
+::::
+
 ## Debug
 
 enable debug log level
