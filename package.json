@@ -27,7 +27,7 @@
   "dependencies": {
     "@vuepress/plugin-pwa": "^2.0.0-beta.29",
     "@vuepress/plugin-search": "^2.0.0-beta.29",
-    "@vuepress/theme-default": "^2.0.0-beta.30",
+    "@vuepress/theme-default": "^2.0.0-beta.32",
     "vuepress": "^2.0.0-beta.31"
   }
 }
