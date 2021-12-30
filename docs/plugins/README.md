@@ -68,14 +68,14 @@ module.exports = () => {}
 
 ## Parsing FlowChart
 
-<img src="/flows/parse_flow.svg">
+![parse flow](./parse_flow.svg)
 
 
 ## Sending FlowChart
 
-<img src="/flows/send_flow.svg">
+![send flow](./send_flow.svg)
 
 
 ## Execute Http Region FlowChart
 
-<img src="/flows/execute_flow.svg">
+![execute flow](./execute_flow.svg)

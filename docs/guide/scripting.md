@@ -51,10 +51,6 @@ External dependencies must be installed independently, exceptions are [vscode](h
 :::
 
 ::: warning
-Wit
-:::
-
-::: warning
 [NodeJS](https://nodejs.org/api/modules.html#modules_require_cache) caches all loaded scripts. Since in VS Code the script is executed in the context of the extension, the content of the script is not reloaded. Therefore, the script must be manually removed from the cache.
 :::
 
@@ -104,8 +100,9 @@ The following events are possible.
 | request | event triggered before every request (but after replaceVariableHook) |
 | streaming | event triggered while client streaming |
 | response | event triggered on response of request |
-| responseLogging | event triggered on output of response, used for altering output |
-| after | event triggered after all actions are executed |
+| responseLogging | event triggered on output of response, used for altering output which is provided with variable response |
+| after | event triggered after all request is sent |
+
 
 ::: tip
 The events can be registered automatically globally using `+`.
@@ -117,6 +114,7 @@ If no event is specified for global registration, the script is executed before 
 
 @[code http{1}](../../examples/script/globalScriptOnEveryHttpRegion.http)
 
+![events](./scripting.svg)
 
 ## Intellij Script
 

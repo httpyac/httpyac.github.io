@@ -25,9 +25,8 @@
   "author": "AnWeber",
   "license": "MIT",
   "dependencies": {
-    "@vuepress/plugin-pwa": "^2.0.0-beta.32",
     "@vuepress/plugin-search": "^2.0.0-beta.32",
-    "@vuepress/theme-default": "^2.0.0-beta.32",
+
     "vuepress": "^2.0.0-beta.32"
   }
 }
