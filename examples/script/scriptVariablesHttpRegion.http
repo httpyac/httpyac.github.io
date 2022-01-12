@@ -1,0 +1,4 @@
+{{
+  console.info(httpRegion);
+}}
+GET https://httpbin.org/json

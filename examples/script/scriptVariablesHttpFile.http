@@ -1,0 +1,4 @@
+{{
+  console.info(httpFile);
+}}
+GET https://httpbin.org/json
