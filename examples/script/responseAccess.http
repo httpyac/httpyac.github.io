@@ -1,0 +1,8 @@
+GET http://xkcd.com/info.0.json
+
+{{
+  console.info(response.parsedBody.img)
+}}
+
+###
+GET {{response.parsedBody.img}}
