@@ -1,0 +1,16 @@
+# @name data
+GET /json
+
+### loop
+# @ref data
+# @loop for item of data.slideshow.slides
+
+GET /anything?item={{item.title}}
+
+
+
+### test
+# @ref loop
+{{
+  console.info(loopList.length);
+}}
