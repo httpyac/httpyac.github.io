@@ -62,6 +62,7 @@ export default defineUserConfig<DefaultThemeOptions>({
               "/guide/comment",
               "/guide/hooks",
               "/guide/response",
+              "/guide/injected_languages",
             ],
           },
           {

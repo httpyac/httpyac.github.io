@@ -1,0 +1,6 @@
+== Asciidoctor
+
+[source,http]
+----
+GET https://httpbin.org/json
+----
