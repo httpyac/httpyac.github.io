@@ -8,18 +8,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
-        with:
-          languages: ${{ matrix.language }}
       - name: Install and Build
         run: |
           npm install
           npm run build
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
           folder: docs/.vuepress/dist
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
