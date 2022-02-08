@@ -1,0 +1,2 @@
+GET https://httpbin.org/anything
+Authorization: oauth2 device_code
