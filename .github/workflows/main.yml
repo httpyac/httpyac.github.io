@@ -12,7 +12,6 @@ jobs:
         uses: github/codeql-action/init@v1
         with:
           languages: ${{ matrix.language }}
-          config-file: ./.github/codeql-config.yml
       - name: Install and Build
         run: |
           npm install
