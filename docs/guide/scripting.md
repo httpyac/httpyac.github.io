@@ -6,15 +6,17 @@ It is possible to use NodeJS scripts. All scripts before the request line are ex
 
 @[code http](../../examples/script/script.http)
 
-::: tip
-If the execution of the script is `async`, it is necessary to export this Promise. In this case, the program waits for the Promise to be completed.
-:::
-
-@[code http](../../examples/script/scriptPromise.http)
-
 ::: warning
 Scripts are executed in a custom context/ execution environment. This context should behave identically to [NodeJS Default execution environment](https://nodejs.org/api/vm.html#what-does-it-mean-to-contextify-an-object), but there may be variations. These can be bypassed using require.
 :::
+
+
+## Async/Await or Promise
+
+If the execution of the script is `async`, it is necessary to export this Promise. In this case, the program waits for the Promise to be completed.
+
+@[code http](../../examples/script/scriptPromise.http)
+
 
 ## Access to Variables
 
