@@ -1,0 +1,6 @@
+# @import ./a.http
+###
+# @name getHttpbinB
+# @ref getHttpbinA
+GET https://httpbin.org/get?source=getHttpbinB HTTP/1.1
+X-Foo: barB-{{getHttpbinA.headers["X-Foo"]}}

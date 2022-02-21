@@ -1,0 +1,3 @@
+# @name getHttpbinA
+GET https://httpbin.org/get?source=getHttpbinA HTTP/1.1
+X-Foo: barA
