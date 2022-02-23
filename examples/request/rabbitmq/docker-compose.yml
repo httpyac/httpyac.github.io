@@ -1,0 +1,19 @@
+version: "3.2"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - '4369:4369'
+      - '5671:5671'
+      - '5672:5672'
+      - '15691:15691'
+      - '15692:15692'
+      - '15671:15671'
+      - '15672:15672'
+      - '25672:25672'
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=rabbit
+      - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbitmq_management load_definitions "/tmp/rabbit.json"
+    volumes:
+      - ./rabbit.json:/tmp/rabbit.json
