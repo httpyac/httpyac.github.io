@@ -1,0 +1,6 @@
+AMQP amqp://guest:guest@localhost
+amqp_queue: test
+
+{
+  "test": "test"
+}

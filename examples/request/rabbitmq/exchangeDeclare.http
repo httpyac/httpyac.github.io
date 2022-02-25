@@ -1,0 +1,3 @@
+AMQP amqp://guest:guest@localhost
+amqp_exchange: httpyac_exchange
+amqp_method: declare

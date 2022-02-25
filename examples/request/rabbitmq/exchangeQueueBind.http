@@ -1,0 +1,5 @@
+AMQP amqp://guest:guest@localhost
+amqp_exchange: httpyac_exchange
+amqp_queue: httpyac_queue
+amqp_routing_key: command.send
+amqp_method: bind

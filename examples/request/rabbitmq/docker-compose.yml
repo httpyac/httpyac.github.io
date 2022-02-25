@@ -12,8 +12,8 @@ services:
       - '15672:15672'
       - '25672:25672'
     environment:
-      - RABBITMQ_DEFAULT_USER=admin
-      - RABBITMQ_DEFAULT_PASS=rabbit
+      #- RABBITMQ_DEFAULT_USER=admin
+      #- RABBITMQ_DEFAULT_PASS=rabbit
       - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbitmq_management load_definitions "/tmp/rabbit.json"
     volumes:
       - ./rabbit.json:/tmp/rabbit.json

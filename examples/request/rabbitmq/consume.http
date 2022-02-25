@@ -1,0 +1,14 @@
+AMQP amqp://guest:guest@localhost
+amqp_queue: httpyac_queue
+
+{{@streaming
+exports.wait = (async function(){
+  await sleep(100000);
+})()
+}}
+
+AMQP amqp://guest:guest@localhost
+amqp_method: ack
+amqp_tag: 2
+
+
