@@ -12,6 +12,15 @@
         "administrator"
       ],
       "limits": {}
+    },
+    {
+      "name": "guest",
+      "password_hash": "yfEdHTY3o6l/gk9BUa/VWkUf+1eqRIP7NYJniFZ1QLSi65ji",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": [
+        "administrator"
+      ],
+      "limits": {}
     }
   ],
   "vhosts": [
@@ -20,6 +29,13 @@
     }
   ],
   "permissions": [
+    {
+      "user": "guest",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
     {
       "user": "admin",
       "vhost": "/",
@@ -39,15 +55,32 @@
   "policies": [],
   "queues": [
     {
-      "name": "test",
+      "name": "httpyac_queue",
       "vhost": "/",
       "durable": true,
       "auto_delete": false,
-      "arguments": {
-        "x-queue-type": "classic"
-      }
+      "arguments": {}
     }
   ],
-  "exchanges": [],
-  "bindings": []
+  "exchanges": [
+    {
+      "name": "httpyac_exchange",
+      "vhost": "/",
+      "type": "direct",
+      "durable": true,
+      "auto_delete": false,
+      "internal": false,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "source": "httpyac_exchange",
+      "vhost": "/",
+      "destination": "httpyac_queue",
+      "destination_type": "queue",
+      "routing_key": "command.send",
+      "arguments": {}
+    }
+  ]
 }
