@@ -1,0 +1,4 @@
+AMQP amqp://guest:guest@localhost
+amqp_channel_id: 1
+amqp_method: ack
+amqp_tag: 2

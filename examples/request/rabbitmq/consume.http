@@ -7,8 +7,5 @@ exports.wait = (async function(){
 })()
 }}
 
-AMQP amqp://guest:guest@localhost
-amqp_method: ack
-amqp_tag: 2
 
 
