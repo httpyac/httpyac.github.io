@@ -1,11 +1,6 @@
+# @keepStreaming
 AMQP amqp://guest:guest@localhost
 amqp_queue: httpyac_queue
-
-{{@streaming
-exports.wait = (async function(){
-  await sleep(100000);
-})()
-}}
 
 
 

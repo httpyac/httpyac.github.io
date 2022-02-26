@@ -1,5 +1,6 @@
 AMQP amqp://guest:guest@localhost
-amqp_queue: test
+amqp_queue: httpyac_queue
+amqp_routing_key: command.send
 
 {
   "test": "test"
