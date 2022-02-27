@@ -1,0 +1,21 @@
+
+// execute only request variableSet
+# on First Run. both variables are defined (see output httpyac - Console)
+# on Second Run only `longLivingVariable` is defined
+
+# @name variableSet
+POST https://httpbin.org/anything
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+{{
+  console.info('longLivingVariable', this.longLivingVariable);
+  console.info('variableOnlyInCurrentRequest', this.variableOnlyInCurrentRequest);
+}}
+
+###
+# @name variableTest
+# @ref variableSet
+{{
+  console.info('longLivingVariable', this.longLivingVariable);
+  console.info('variableOnlyInCurrentRequest', this.variableOnlyInCurrentRequest);
+}}
