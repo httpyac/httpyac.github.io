@@ -114,20 +114,20 @@ It is possible to mix inline text with file imports
 ## GraphQL
 GraphQL queries are supported. Parsing Logic will automatically generate a GraphQL request body from the query and the optional variables.
 
-@[code http](../../examples/request/graphql.http)
+@[code http](../../examples/request/graphql/graphql.http)
 
 GraphQL fragments are also supported and are included in the body by name.
 
-@[code http{1,26}](../../examples/request/graphqlParts.http)
+@[code http{1,26}](../../examples/request/graphql/graphqlParts.http)
 
 To import GraphQL File you need to use special GraphQL Import Directive.
 
-@[code http{5}](../../examples/request/graphqlImport.http)
+@[code http{5}](../../examples/request/graphql/graphqlImport.http)
 
 ::: tip
 You can use Variable Substitution in file import.
 :::
-@[code http{6}](../../examples/request/graphqlImportVariables.http)
+@[code http{6}](../../examples/request/graphql/graphqlImportVariables.http)
 
 ## Request Separators
 
@@ -162,24 +162,24 @@ GET /post HTTP/1.1
 It is also possible to send gRPC requests. The same request line format is used as for Http requests, but `GRPC` must be specified as the request method.
 
 
-@[code http](../../examples/request/grpc.http)
+@[code http](../../examples/request/grpc/grpc.http)
 
 
 ### Protobuf Loader
 
 To use the gRPC call, the proto file associated with the call must first be loaded. This is loaded using [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader). This can be configured using options in the header format
 
-@[code http](../../examples/request/protoImport.http)
+@[code http](../../examples/request/grpc/protoImport.http)
 
 The import of the proto file can also be done globally
 
-@[code http](../../examples/request/protoGlobalImport.http)
+@[code http](../../examples/request/grpc/protoGlobalImport.http)
 
 
 ::: tip
 You can use Variable Substitution in file import and in proto-loader options.
 :::
-@[code http{3}](../../examples/request/protoImportVariables.http)
+@[code http{3}](../../examples/request/grpc/protoImportVariables.http)
 
 ::: warn
 IncludeDirs of @grpc/proto-loader currently supports only absolute paths. 
@@ -193,7 +193,7 @@ IncludeDirs of @grpc/proto-loader currently supports only absolute paths.
 GRPC {{server}}/{{service}}/{{method}}
 ```
 
-@[code http](../../examples/request/grpcUnary.http)
+@[code http](../../examples/request/grpc/grpcUnary.http)
 
 Using [header notation](/guide/request.html#headers) it is also possible to send meta data. 
 
@@ -203,7 +203,7 @@ Header `ChannelCredentials` or `Authorization`are special and defines the [authe
 
 [Server Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#server-streaming-rpc) is similar to a unary RPC, except that the server returns a stream of messages in response to a client’s request.
 
-@[code http](../../examples/request/grpcServerStreaming.http)
+@[code http](../../examples/request/grpc/grpcServerStreaming.http)
 
 All responses are output as an intermediate result and summarized at the end as one overall response. If the intermediate results are not needed, they can be deactivated using `# @noStreamingLog`.
 
@@ -213,7 +213,7 @@ All responses are output as an intermediate result and summarized at the end as 
 
 [Client Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#client-streaming-rpc) is similar to a unary RPC, except that the client sends a stream of messages to the server instead of a single message. To enable this, a custom script can be used that registers for the @streaming hook. This script must export a Promise at the end of which the client stream is terminated.
 
-@[code http](../../examples/request/grpcClientStreaming.http)
+@[code http](../../examples/request/grpc/grpcClientStreaming.http)
 
 ::: tip
 To control the wait time more easily, a method `sleep` is provided that waits the number of milliseconds.
@@ -225,40 +225,40 @@ To control the wait time more easily, a method `sleep` is provided that waits th
 [Bidirectional Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#bidirectional-streaming-rpc) is a combination of client streaming and server streaming.
 
 
-@[code http](../../examples/request/grpcBidirectional.http)
+@[code http](../../examples/request/grpc/grpcBidirectional.http)
 
 ## Server-Sent Events / EventSource
 
 By using method `SSE` an [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) instance can be created. This opens a persistent connection to an HTTP server, which sends events in text/event-stream format. Adding the header `event` the list of events to be output is specified
 
-@[code http{2}](../../examples/request/eventSource.http)
+@[code http{2}](../../examples/request/sse/eventSource.http)
 
 The events of the server can be waited for by using [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated.
 
-@[code http{4-9}](../../examples/request/eventSource.http)
+@[code http{4-9}](../../examples/request/sse/eventSource.http)
 
 ::: tip
 Meta Data `keepStreaming` can be used to respond to events until manually aborted.
 :::
 
-@[code http{1}](../../examples/request/eventSourceKeepStreaming.http)
+@[code http{1}](../../examples/request/sse/eventSourceKeepStreaming.http)
 
 
 ## WebSocket
 
 By using method `WS` a [WebSocket connection](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) to a server can be opened. If a body is included in the request, it is sent immediately after the connection is established. 
 
-@[code http{1}](../../examples/request/websocket.http)
+@[code http{1}](../../examples/request/websocket/websocket.http)
 
 The events of the server can be waited for by using [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated. Within the `streaming` block it is possible to send further message using [`websocketClient`](https://www.npmjs.com/package/ws#sending-and-receiving-text-data).
 
-@[code http{7}](../../examples/request/websocket.http)
+@[code http{7}](../../examples/request/websocket/websocket.http)
 
 ::: tip
 Meta Data `keepStreaming` can be used to respond to events until manually aborted.
 :::
 
-@[code http{1}](../../examples/request/websocketKeepStreaming.http)
+@[code http{1}](../../examples/request/websocket/websocketKeepStreaming.http)
 
 :::tip
 All received messages are output as an intermediate result and summarized at the end as one overall response. If the intermediate results are not needed, they can be deactivated using `# @noStreamingLog`.
