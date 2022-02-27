@@ -1,5 +1,5 @@
 
-// execute only request variableSet
+// execute only request variableTest
 # on First Run. both variables are defined (see output httpyac - Console)
 # on Second Run only `longLivingVariable` is defined
 
