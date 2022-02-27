@@ -1,4 +1,4 @@
 AMQP amqp://guest:guest@localhost
-amqp_method: ack
+amqp_method: cancel
 amqp_channel_id: 1
 amqp_tag: 2

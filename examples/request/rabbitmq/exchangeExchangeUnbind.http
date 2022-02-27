@@ -1,5 +1,5 @@
 AMQP amqp://guest:guest@localhost
-amqp_method: bind
+amqp_method: unbind
 amqp_exchange: httpyac_exchange
-amqp_queue: httpyac_queue
+amqp_exchange_destination: httpyac_exchange2
 amqp_routing_key: command.send

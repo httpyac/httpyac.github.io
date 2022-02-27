@@ -1,0 +1,9 @@
+AMQP amqp://guest:guest@localhost
+amqp_queue: httpyac_queue
+
+{{@streaming
+  async function writeStream(){
+    await sleep(10000);
+  }
+  exports.waitPromise = writeStream();
+}}

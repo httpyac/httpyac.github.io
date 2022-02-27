@@ -1,3 +1,3 @@
 AMQP amqp://guest:guest@localhost
-amqp_queue: httpyac_queue
 amqp_method: declare
+amqp_queue: httpyac_queue

@@ -1,7 +1,7 @@
 AMQP amqp://guest:guest@localhost
+amqp_method: publish
 amqp_exchange: httpyac_exchange
 amqp_routing_key: command.send
-
 
 {
   "test": "{{$uuid}}"

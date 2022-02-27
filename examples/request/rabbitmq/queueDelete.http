@@ -1,6 +1,3 @@
 AMQP amqp://guest:guest@localhost
+amqp_method: delete
 amqp_queue: httpyac_queue
-
-{
-  "test": "test"
-}

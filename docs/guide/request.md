@@ -229,11 +229,11 @@ To control the wait time more easily, a method `sleep` is provided that waits th
 
 ## Server-Sent Events / EventSource
 
-By means of the method `SSE` an [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) instance can be created. This opens a persistent connection to an HTTP server, which sends events in text/event-stream format. By means of the header `event` the list of events to be output is specified
+By using method `SSE` an [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) instance can be created. This opens a persistent connection to an HTTP server, which sends events in text/event-stream format. Adding the header `event` the list of events to be output is specified
 
 @[code http{2}](../../examples/request/eventSource.http)
 
-The events of the server can be waited for by means of [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated.
+The events of the server can be waited for by using [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated.
 
 @[code http{4-9}](../../examples/request/eventSource.http)
 
@@ -246,11 +246,11 @@ Meta Data `keepStreaming` can be used to respond to events until manually aborte
 
 ## WebSocket
 
-By means of the method `WS` a [WebSocket connection](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) to a server can be opened. If a body is included in the request, it is sent immediately after the connection is established. 
+By using method `WS` a [WebSocket connection](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) to a server can be opened. If a body is included in the request, it is sent immediately after the connection is established. 
 
 @[code http{1}](../../examples/request/websocket.http)
 
-The events of the server can be waited for by means of [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated. Within the `streaming` block it is possible to send further message using [`websocketClient`](https://www.npmjs.com/package/ws#sending-and-receiving-text-data).
+The events of the server can be waited for by using [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated. Within the `streaming` block it is possible to send further message using [`websocketClient`](https://www.npmjs.com/package/ws#sending-and-receiving-text-data).
 
 @[code http{7}](../../examples/request/websocket.http)
 
@@ -270,27 +270,27 @@ If special options are needed for initialization, they can be configured in a No
 
 ## MQTT
 
-By means of the method `MQTT` a MQTT Client can be created. [MQTT.js](https://github.com/mqttjs/MQTT.js) opens a TCP or WebSocket Connection to a MQTT Broker. The header `Topic` specifies the topic to be registered (multiple specification allowed)
+By using method `MQTT` a MQTT Client can be created. [MQTT.js](https://github.com/mqttjs/MQTT.js) opens a TCP or WebSocket Connection to a MQTT Broker. The header `Topic` specifies the topic to be registered (multiple specification allowed)
 
-@[code http{2}](../../examples/request/mqtt.http)
+@[code http{2}](../../examples/request/mqtt/mqtt.http)
 
 If a body is specified, it will be published immediately after connecting.
 
-@[code http{4}](../../examples/request/mqttBody.http)
+@[code http{4}](../../examples/request/mqtt/mqttBody.http)
 
 :::tip
 If the topic used for publishing is different from the topic used for replying, the headers `subscribe` and `publish` can be used instead.
 :::
 
-The messages of the server can be waited for by means of [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated. Within the `streaming` block it is possible to publish further message using [`mqttClient`](https://github.com/mqttjs/MQTT.js#publish).
+The messages of the server can be waited for using [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated. Within the `streaming` block it is possible to publish further message using [`mqttClient`](https://github.com/mqttjs/MQTT.js#publish).
 
-@[code http{7}](../../examples/request/mqttPublish.http)
+@[code http{7}](../../examples/request/mqtt/mqttPublish.http)
 
 ::: tip
 Meta Data `keepStreaming` can be used to respond to events until manually aborted.
 :::
 
-@[code http{1}](../../examples/request/mqtt.http)
+@[code http{1}](../../examples/request/mqtt/mqtt.http)
 
 :::tip
 All received messages are output as an intermediate result and summarized at the end as one overall response. If the intermediate results are not needed, they can be deactivated using `# @noStreamingLog`.
@@ -298,7 +298,7 @@ All received messages are output as an intermediate result and summarized at the
 
 [QoS](https://github.com/mqttjs/MQTT.js#qos), [retain, username, password, keepAlive (10seconds default) and clean](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) can be configured using header notation.
 
-@[code http{4-6}](../../examples/request/mqttHeaders.http)
+@[code http{4-6}](../../examples/request/mqtt/mqttHeaders.http)
 
 :::tip
 If more options are needed for the initialization, they could be configured in a NodeJS script using [`request.options`](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRequest.ts#L36).
@@ -306,4 +306,139 @@ If more options are needed for the initialization, they could be configured in a
 
 
 As long as the connection of the MQTT instance to the MessageQueue exists, messages can also be published from other NodeJS blocks.
-@[code http{8}](../../examples/request/mqttScript.http)
+@[code http{8}](../../examples/request/mqtt/mqttScript.http)
+
+
+## AMQP/ RabbitMQ
+
+By using method `AMQP` a AMQP Client can be created. [@cloudamqp/amqp-client](https://github.com/cloudamqp/amqp-client.js) opens a AMQP Connection to RabbitMQ Server. Following Methods can be used
+
+### Publish
+
+Publish a new message to an exchange. Header `amqp_exchange` defines the used exchange. `amqp_routing_key` is optional and sets the used routing key
+
+@[code http{2-3}](../../examples/request/rabbitmq/publish.http)
+
+A direct publish to a queue is available using `amqp_queue`.
+
+@[code http{2}](../../examples/request/rabbitmq/publishQueue.http)
+
+:::tip
+If no amqp_method header is present and a body is provided. publish is used as default
+:::
+
+The following headers can also be defined
+
+| Header | Description |
+| - | - |
+| amqp_contentType | content type of body, eg. application/json |
+| amqp_contentEncoding | content encoding of body, eg. gzip |
+| amqp_delivery_mode | 1 for transient messages, 2 for persistent messages |
+| amqp_priority | between 0 and 255 |
+| amqp_correlation_id | for RPC requests |
+| amqp_replyTo | for RPC requests |
+| amqp_expiration | Message TTL, in milliseconds, as string |
+| amqp_message_id | messageId |
+| amqp_user_id | userId |
+| amqp_type | type |
+
+:::tip
+All other headers that do not start with `amqp_` are appended to the message as headers
+:::
+
+### Consume/ Subscribe
+
+Consume messages from a queue. Messages will be delivered asynchronously.
+The messages of the server can be waited for by using [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated. Within the `streaming` block it is possible to access additional methods of a [AMQPChannel using `amqpChannel`](https://cloudamqp.github.io/amqp-client.js/classes/AMQPChannel.html).
+
+@[code http{3-4}](../../examples/request/rabbitmq/consume.http)
+
+::: tip
+Meta Data `keepStreaming` can be used to consume message until manually aborted.
+:::
+
+:::tip
+If no amqp_method header is present and no body is provided. consume is used as default
+:::
+
+@[code http{2}](../../examples/request/rabbitmq/consumeScript.http)
+
+:::tip
+All received messages are output as an intermediate result and summarized at the end as one overall response. If the intermediate results are not needed, they can be deactivated using `# @noStreamingLog`.
+:::
+
+The following headers can also be defined
+
+| Header | Description |
+| - | - |
+| amqp_tag | tag of the consumer, will be server generated if left empty |
+| amqp_no_ack | f messages are removed from the server upon delivery, or have to be acknowledged |
+| amqp_exclusive | if this can be the only consumer of the queue, will return an Error if there are other consumers to the queue already |
+
+### Ack/ Nack/ Cancel
+
+Consumed messages are not acked/ nacked automatically. If a message needs to get acked/ nacked automatically a manual ack/ nack needs to be called. You need to declare the same channelId (`amqp_channel_id`) and deliveryTag (`amqp_tag`) as the consumer.
+
+@[code http{2}](../../examples/request/rabbitmq/ack.http)
+
+@[code http{2}](../../examples/request/rabbitmq/nack.http)
+
+@[code http{2}](../../examples/request/rabbitmq/cancel.http)
+
+The following headers can also be defined
+
+| Header | Description |
+| - | - |
+| amqp_requeue | if the message should be requeued or removed |
+| amqp_multiple | batch confirm all messages up to this delivery tag |
+
+### Purge
+
+Purge all messages of a queue
+
+@[code http{2}](../../examples/request/rabbitmq/purge.http)
+
+### Declare exchange
+
+Declare a queue or exchange
+
+@[code http{2}](../../examples/request/rabbitmq/exchangeDeclare.http)
+
+
+@[code http{2}](../../examples/request/rabbitmq/queueDeclare.http)
+
+| Header | Description |
+| - | - |
+| amqp_passive | if the exchange name doesn't exists the channel will be closed with an error, fulfilled if the exchange name does exists |
+| amqp_durable | if the exchange should survive server restarts |
+| amqp_auto_delete | if the exchange should be deleted when the last binding from it is deleted |
+| amqp_exclusive | if the queue should be deleted when the channel is closed |
+
+### Bind/ Unbind queue to exchange
+
+Bind and unbind queue of a exchange
+
+@[code http{2}](../../examples/request/rabbitmq/exchangeQueueBind.http)
+
+@[code http{2}](../../examples/request/rabbitmq/exchangeQueueUnbind.http)
+
+### Bind/ Unbind exchange to exchange
+
+Create or delete an Exchange to exchange binding
+
+@[code http{2}](../../examples/request/rabbitmq/exchangeExchangeBind.http)
+
+@[code http{2}](../../examples/request/rabbitmq/exchangeQueueUnbind.http)
+
+### Delete
+
+Delete an exchange or queue
+
+@[code http{2}](../../examples/request/rabbitmq/exchangeDelete.http)
+
+@[code http{2}](../../examples/request/rabbitmq/queueDelete.http)
+
+| Header | Description |
+| - | - |
+| amqp_if_unused | only delete if the exchange doesn't have any bindings |
+| amqp_if_empty | only delete if the queue is empty |

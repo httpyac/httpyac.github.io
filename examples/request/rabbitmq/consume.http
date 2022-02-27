@@ -1,6 +1,4 @@
 # @keepStreaming
 AMQP amqp://guest:guest@localhost
+amqp_method: consume
 amqp_queue: httpyac_queue
-
-
-
