@@ -73,7 +73,7 @@ It is possible to disable cookie support per request.
 The [request body](https://datatracker.ietf.org/doc/html/rfc7230#section-3.3) can be represented as a simple message or a mixed type message (multipart-form-data).
 
 
-@[code http](../../examples/request/requestBody.http)
+@[code http](../../examples/request/requestBody/requestBody.http)
 
 ::: warning
 The first content that is not recognized as a header or query string is interpreted as a request body. After that, no more header or query string can be specified.
@@ -83,16 +83,16 @@ The first content that is not recognized as a header or query string is interpre
 
 A body can also be imported by using `< ...`.
 
-@[code http{4}](../../examples/request/requestBodyImport.http)
+@[code http{4}](../../examples/request/requestBody/requestBodyImport.http)
 
 If you want to replace variables in the file please import it with `<@`
 
-@[code http{5}](../../examples/request/requestBodyImportReplace.http)
+@[code http{5}](../../examples/request/requestBody/requestBodyImportReplace.http)
 
 All files are read with UTF-8 encoding. If a different encoding is desired, provide it. All [encodings](https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings) supported by NodeJS are available.
 
 
-@[code http{5}](../../examples/request/requestBodyImportReplaceEncoding.http)
+@[code http{5}](../../examples/request/requestBody/requestBodyImportReplaceEncoding.http)
 
 ::: warning
 If the request body is configured in-place, whitespace around it will be trimmed. To send leading or trailing whitespace as part of the request body, send it from a separate file.
@@ -102,14 +102,14 @@ If the request body is configured in-place, whitespace around it will be trimmed
 You can use Variable Substitution in file import.
 :::
 
-@[code http{7}](../../examples/request/requestBodyImportVariable.http)
+@[code http{7}](../../examples/request/requestBody/requestBodyImportVariable.http)
 
 ## multipart/form-data
 
 It is possible to mix inline text with file imports
 
 
-@[code http](../../examples/request/multipartFormData.http)
+@[code http](../../examples/request/requestBody/multipartFormData.http)
 
 ## GraphQL
 GraphQL queries are supported. Parsing Logic will automatically generate a GraphQL request body from the query and the optional variables.
