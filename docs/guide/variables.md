@@ -90,7 +90,7 @@ Dynamic Variable Resolution with input field, password field or quick pick is su
 ### OAuth2 / OpenID Connect
 The following [Open ID Connect](https://openid.net/specs/openid-connect-basic-1_0.html) flows are supported.
 
-* Authentication (or Basic) Flow (grant_type = authorization_code)
+* Authentication (or Basic) Flow with or without PKCE (grant_type = authorization_code)
 * Implicit (or Hybrid) Flow (grant_type = implicit)
 * Resource Owner Password Grant (grant_type = password)
 * Client Credentials Grant (grant_type = client_credentials)
@@ -120,6 +120,7 @@ To configure the flow, the following variables must be specified
 | <span v-pre>{{prefix}}</span>_password | password | - | - | x | - | - |
 | <span v-pre>{{prefix}}</span>_keepAlive |  AccessToken is automatically renewed in the background, if request_token is provided (default: false)| x | - | x | x | - |
 | <span v-pre>{{prefix}}</span>_useAuthorizationHeader  | use Authorization Header for request (default: true) | x | x | x | x | - |
+| <span v-pre>{{prefix}}</span>_usePkce | enable PKCE support | x (default: false) | - | - | - | - |
 | <span v-pre>{{prefix}}</span>_deviceCodeEndpoint |  Device Code Endpoint URI | - | - | - | - | x |
 
 ::: warning
@@ -146,6 +147,30 @@ It is possible to convert the generated token into a token of another realm usin
 GET /secured_service HTTP/1.1
 Authorization: openid client_credentials local token_exchange realm_auth
 ```
+##### Examples
+- .env
+The following examples use the following values as variables.
+
+@[code http](../../examples/variables/oauth2/.env)
+
+- Authorization Code Flow
+
+@[code http](../../examples/variables/oauth2/authorization_code.http)
+
+- Authorization Code Flow with PKCE
+@[code http](../../examples/variables/oauth2/authorization_code_pkce.http)
+
+- Implicit Flow
+@[code http](../../examples/variables/oauth2/implicit.http)
+
+- Client Credentials Flow
+@[code http](../../examples/variables/oauth2/clientcredentials.http)
+
+- Device Code Flow
+@[code http](../../examples/variables/oauth2/device_code.http)
+
+- Password Flow
+@[code http](../../examples/variables/oauth2/password.http)
 
 ### AWS Signature v4
 
