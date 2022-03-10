@@ -114,6 +114,7 @@ To configure the flow, the following variables must be specified
 | <span v-pre>{{prefix}}</span>_authorizationEndpoint |  Authorization Endpoint URI | x | x | - | - | - |
 | <span v-pre>{{prefix}}</span>_redirectUri |  Redirection URI to which the response is sent | x (default: localhost:3000) | x (default: localhost:3000) | - | - | - |
 | <span v-pre>{{prefix}}</span>_scope | Scope | x (default: openid) | x (default: openid) | x | x | x |
+| <span v-pre>{{prefix}}</span>_resource|  Resource Indicators (RFC8707) | x | x | x | x | x |
 | <span v-pre>{{prefix}}</span>_responseType | response type of auth server | - | x (default: code) | - | - | - |
 | <span v-pre>{{prefix}}</span>_audience | audience | x | x | - | - | - |
 | <span v-pre>{{prefix}}</span>_username | username| - | - | x | - | - |
@@ -122,6 +123,7 @@ To configure the flow, the following variables must be specified
 | <span v-pre>{{prefix}}</span>_useAuthorizationHeader  | use Authorization Header for request (default: true) | x | x | x | x | - |
 | <span v-pre>{{prefix}}</span>_usePkce | enable PKCE support | x (default: false) | - | - | - | - |
 | <span v-pre>{{prefix}}</span>_deviceCodeEndpoint |  Device Code Endpoint URI | - | - | - | - | x |
+
 
 ::: warning
 To get the code from the Open ID server, a http server is started for the Authorization Flow and Implicit Flow on port of the redirection Uri (default Port 3000). The server is stopped after receiving the code (delay 2 minutes). You need to configure your OpenId Provider to allow redirectUri as valid redirection uri
