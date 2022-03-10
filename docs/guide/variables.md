@@ -120,6 +120,7 @@ To configure the flow, the following variables must be specified
 | <span v-pre>{{prefix}}</span>_password | password | - | - | x | - | - |
 | <span v-pre>{{prefix}}</span>_keepAlive |  AccessToken is automatically renewed in the background, if request_token is provided (default: false)| x | - | x | x | - |
 | <span v-pre>{{prefix}}</span>_useAuthorizationHeader  | use Authorization Header for request (default: true) | x | x | x | x | - |
+| <span v-pre>{{prefix}}</span>_usePkce  | Send PKCE parameters with authorization and token requests (default: false) | x | - | - | - | - |
 | <span v-pre>{{prefix}}</span>_deviceCodeEndpoint |  Device Code Endpoint URI | - | - | - | - | x |
 
 ::: warning
