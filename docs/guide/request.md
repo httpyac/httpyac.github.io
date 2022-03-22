@@ -165,6 +165,13 @@ It is also possible to send gRPC requests. The same request line format is used 
 @[code http](../../examples/request/grpc/grpc.http)
 
 
+::: tip
+Own ChannelCredentials can be set simply using header `channelCredentials`.
+:::
+
+@[code http](../../examples/request/grpc/grpcSSL.http)
+
+
 ### Protobuf Loader
 
 To use the gRPC call, the proto file associated with the call must first be loaded. This is loaded using [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader). This can be configured using options in the header format
