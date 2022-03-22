@@ -23,7 +23,7 @@
 			}
     </script>
     <link rel="icon" href="/favicon.png"><meta name="theme-color" content="#706B69"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png"><meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png"><meta name="msapplication-TileColor" content="#000000"><title>Request | httpYac</title><meta name="description" content="Quickly and easily send REST, SOAP, GraphQL and gRPC requests">
-    <link rel="modulepreload" href="/assets/app.34a1233c.js"><link rel="modulepreload" href="/assets/request.html.96b8e399.js"><link rel="modulepreload" href="/assets/request.html.71a94f10.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="modulepreload" href="/assets/app.12e34418.js"><link rel="modulepreload" href="/assets/request.html.49140746.js"><link rel="modulepreload" href="/assets/request.html.cae2de75.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper.21dcd24c.js">
     <link rel="stylesheet" href="/assets/style.a025d253.css">
   </head>
   <body>
@@ -199,7 +199,17 @@ GRPC grpcb.in:9000/hello.HelloService/sayHello
 {
   &quot;greeting&quot;: &quot;world&quot;
 }
-</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="protobuf-loader" tabindex="-1"><a class="header-anchor" href="#protobuf-loader" aria-hidden="true">#</a> Protobuf Loader</h3><p>To use the gRPC call, the proto file associated with the call must first be loaded. This is loaded using <a href="https://www.npmjs.com/package/@grpc/proto-loader" target="_blank" rel="noopener noreferrer">@grpc/proto-loader<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>. This can be configured using options in the header format</p><div class="language-http ext-http line-numbers-mode"><pre class="language-http"><code>proto &lt; ./hello.proto
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><div class="custom-container tip"><p class="custom-container-title">TIP</p><p>Own ChannelCredentials can be set simply using header <code>channelCredentials</code>.</p></div><div class="language-http ext-http line-numbers-mode"><pre class="language-http"><code>proto &lt; ./hello.proto
+
+{{@request
+const grpc = require(&#39;@grpc/grpc-js&#39;);
+request.headers.channelcredentials = grpc.ChannelCredentials.createSsl();
+}}
+GRPC grpcb.in:9001/hello.HelloService/sayHello
+{
+  &quot;greeting&quot;: &quot;world&quot;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h3 id="protobuf-loader" tabindex="-1"><a class="header-anchor" href="#protobuf-loader" aria-hidden="true">#</a> Protobuf Loader</h3><p>To use the gRPC call, the proto file associated with the call must first be loaded. This is loaded using <a href="https://www.npmjs.com/package/@grpc/proto-loader" target="_blank" rel="noopener noreferrer">@grpc/proto-loader<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>. This can be configured using options in the header format</p><div class="language-http ext-http line-numbers-mode"><pre class="language-http"><code>proto &lt; ./hello.proto
 <span class="token header"><span class="token header-name keyword">keepCase</span><span class="token punctuation">:</span> <span class="token header-value">true</span></span>
 <span class="token header"><span class="token header-name keyword">longs</span><span class="token punctuation">:</span> <span class="token header-value">String</span></span>
 <span class="token header"><span class="token header-name keyword">enums</span><span class="token punctuation">:</span> <span class="token header-value">String</span></span>
@@ -458,6 +468,6 @@ AMQP amqp://guest:guest@localhost
 <span class="token header"><span class="token header-name keyword">amqp_method</span><span class="token punctuation">:</span> <span class="token header-value">delete</span></span>
 <span class="token header"><span class="token header-name keyword">amqp_queue</span><span class="token punctuation">:</span> <span class="token header-value">httpyac_queue</span></span>
 </code></pre><div class="highlight-lines"><br><div class="highlight-line"> </div><br></div><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><table><thead><tr><th>Header</th><th>Description</th></tr></thead><tbody><tr><td>amqp_if_unused</td><td>only delete if the exchange doesn&#39;t have any bindings</td></tr><tr><td>amqp_if_empty</td><td>only delete if the queue is empty</td></tr></tbody></table><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><!----></footer><nav class="page-nav"><p class="inner"><!----><span class="next"><a href="/guide/metaData.html" class="" aria-label="Meta Data"><!--[--><!--]--> Meta Data <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/assets/app.34a1233c.js" defer></script>
+    <script type="module" src="/assets/app.12e34418.js" defer></script>
   </body>
 </html>
