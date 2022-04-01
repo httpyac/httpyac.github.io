@@ -1,0 +1,12 @@
+import{d as e}from"./app.5d451a50.js";import{_ as a}from"./plugin-vue_export-helper.21dcd24c.js";const n={},s=e(`<h1 id="injected-languages" tabindex="-1"><a class="header-anchor" href="#injected-languages" aria-hidden="true">#</a> Injected Languages</h1><p>The parser logic allows to parse other file formats as well and to determine the respective Http blocks. This makes it possible, for example, to extend Http code blocks from Markdown with httpyac functionality. The idea is that directly from the documentation, the respective endpoints can be tested.</p><h2 id="markdown" tabindex="-1"><a class="header-anchor" href="#markdown" aria-hidden="true">#</a> Markdown</h2><p>In Markdown, code blocks can be given a language. If this is set to <code>http</code>, httpyac activates and offers to send the request.</p><div class="language-markdown ext-md line-numbers-mode"><pre class="language-markdown"><code><span class="token title important"><span class="token punctuation">##</span> Markdown</span>
+
+<span class="token code"><span class="token punctuation">\`\`\`</span><span class="token code-language">http</span>
+<span class="token code-block language-http">GET https://httpbin.org/json</span>
+<span class="token punctuation">\`\`\`</span></span>
+</code></pre><div class="highlight-lines"><br><br><div class="highlight-line">\xA0</div><br><br></div><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="asciidoctor" tabindex="-1"><a class="header-anchor" href="#asciidoctor" aria-hidden="true">#</a> Asciidoctor</h2><p>In Asciidoctor, code blocks can be given a language. If this is set to <code>http</code>, httpyac activates and offers to send the request.</p><div class="language-asciidoctor ext-asciidoctor line-numbers-mode"><pre class="language-asciidoctor"><code>== Asciidoctor
+
+[source,http]
+----
+GET https://httpbin.org/json
+----
+</code></pre><div class="highlight-lines"><br><br><div class="highlight-line">\xA0</div><br><br><br></div><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div>`,8);function t(i,r){return s}var d=a(n,[["render",t]]);export{d as default};
