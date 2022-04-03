@@ -5,31 +5,28 @@ Variables are used for avoiding unnecessary data duplication in requests or for 
 
 @[code http](../../examples/variables/variables.http)
 
+
+
 ## Inline Variables
-Inline Variables can be easily created with the following scheme. Variable Substitution is supported
+Inline Variables can be easily created with the following scheme. Variable Substitution is supported.
 
 @[code http](../../examples/variables/variablesDefinition.http)
 
-::: tip
 Inline Variables in global scripts are set for each request in the file
-:::
 
-```http
-@host=https://httpbin.org
-###
-GET /post HTTP/1.1
+@[code http](../../examples/variables/variablesGlobal.http)
 
-GET /post HTTP/1.1
-```
 
-::: tip
-Variables are only replaced when NodeJS scripts are called or when a request is made. Until then, it is possible to refer to variables that do not yet exist.
-:::
+For variables, a distinction is made between fixed and lazy variables. The fixed variables are evaluated directly at definition (request `result` would query `?foo=foobar`). 
+
+@[code http](../../examples/variables/variablesFixed.http)
+
+Lazy variables are only evaluated before a request or NodeJS execution  (request `result` would query `?foo=foobar2`). . 
 
 @[code http](../../examples/variables/variablesLazy.http)
 
-::: warning
-When a request is sent, all variables in it must be present, otherwise an error is generated.
+::: tip
+If a required variable is not yet defined, it will also be set lazy
 :::
 
 ## Import Variables
