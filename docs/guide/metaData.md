@@ -62,7 +62,7 @@ To reference Requests from other files, these must first be imported. Imported f
 @[code http{1}](../../examples/metaData/import.http)
 
 ## Disabled
-requests can be disabled. It is possible to disable requests dynamically with <span v-pre>{{httpRegion.metaParams.disabled=true}}</span> in script
+requests can be disabled. It is possible to disable requests dynamically with <span v-pre>{{httpRegion.metaData.disabled=true}}</span> in script
 
 @[code http{1}](../../examples/metaData/disabled.http)
 
