@@ -55,7 +55,7 @@ Before the request is sent, all variables in the request (request line, headers,
  If the replacement is not desired, this can be prevented using `\{\{...\}\}`. This is replaced by <code v-pre>{{...}}</code>
 :::
 
-@[code http](../../examples/variables/escapeVariableSubstituion.http)
+@[code http](../../examples/variables/escapeVariableSubstitution.http)
 ### NodeJs Script
 All entries of the form <span v-pre>{{...}}</span> are interpreted as NodeJS Javascript which returns exactly one value. Since all variables can be easily accessed on the global scope, this allows for simple substitution.
 
