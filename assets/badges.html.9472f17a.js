@@ -1,0 +1,1 @@
+const e={key:"v-aba03d86",path:"/guide/badges.html",title:"Badges",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:164965095e4},filePathRelative:"guide/badges.md"};export{e as data};
