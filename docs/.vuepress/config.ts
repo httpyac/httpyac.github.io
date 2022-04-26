@@ -1,5 +1,6 @@
 import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
+const { defaultTheme, viteBundler } = require('vuepress')
 
 export default defineUserConfig<DefaultThemeOptions>({
   base: "/",
@@ -29,9 +30,8 @@ export default defineUserConfig<DefaultThemeOptions>({
     ["meta", { name: "msapplication-TileColor", content: "#000000" }],
   ],
 
-  bundler: "@vuepress/vite",
-
-  themeConfig: {
+  bundler: viteBundler(),
+  theme: defaultTheme({
     repo: "httpyac/httpyac.github.io",
     logo: "/favicon.png",
     docsDir: "docs",
@@ -130,7 +130,7 @@ export default defineUserConfig<DefaultThemeOptions>({
         }
       ]
     }
-  },
+  }),
   plugins: [
     ['@vuepress/plugin-search']
   ]
