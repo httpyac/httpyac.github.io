@@ -197,6 +197,13 @@ SSL client certificate is not send for this request
 
 @[code http{1}](../../examples/metaData/noClientCert.http)
 
+## No Redirect
+
+Prevent following Redirects
+
+@[code http{1}](../../examples/metaData/noRedirect.http)
+
+
 ## No Reject Unauthorized
 
 All invalid SSL certificates will be ignored and no error will be thrown.
