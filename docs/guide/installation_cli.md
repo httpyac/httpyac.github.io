@@ -52,10 +52,6 @@ usage: httpyac <file or glob pattern> [options]
 
 ```
 
-::: warning
---editor option only works on linux and mac ([see](https://github.com/nodejs/node/issues/21771))
-:::
-
 ## Manual Selection
 
 When called without `--all` it is possible to specify a single request.
