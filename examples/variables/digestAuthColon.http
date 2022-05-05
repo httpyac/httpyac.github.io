@@ -1,0 +1,7 @@
+
+@host = https://httpbin.org
+@user = john doe
+@password = 12345678
+
+GET /digest-auth/auth/{{user.replace(' ', '+')}}/{{password}} HTTP/1.1
+Authorization: Digest {{user}}:{{password}}

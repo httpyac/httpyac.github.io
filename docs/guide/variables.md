@@ -225,6 +225,10 @@ A support method is provided for using Digest Authentication. Just specify the u
 
 @[code http](../../examples/variables/digest.http)
 
+If the username or password contains spaces, a `:` can be used alternatively.
+
+@[code http](../../examples/variables/digestAuthColon.http)
+
 
 ### Intellij Dynamic Variables
 [Intellij dynamic variables](https://www.jetbrains.com/help/idea/exploring-http-syntax.html#dynamic-variables) are supported.
