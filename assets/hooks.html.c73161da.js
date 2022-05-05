@@ -1,1 +1,0 @@
-const e={key:"v-b6723dd6",path:"/guide/hooks.html",title:"Hooks",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"Project local hooks",slug:"project-local-hooks",children:[]}],git:{updatedTime:1651520045e3},filePathRelative:"guide/hooks.md"};export{e as data};
