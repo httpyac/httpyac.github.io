@@ -1,6 +1,7 @@
 import { defineUserConfig } from "@vuepress/cli";
 import type { DefaultThemeOptions } from "@vuepress/theme-default";
-const { defaultTheme, viteBundler } = require('vuepress')
+const { defaultTheme, viteBundler } = require('vuepress');
+const { searchPlugin } = require('@vuepress/plugin-search');
 
 export default defineUserConfig<DefaultThemeOptions>({
   base: "/",
@@ -132,6 +133,8 @@ export default defineUserConfig<DefaultThemeOptions>({
     }
   }),
   plugins: [
-    ['@vuepress/plugin-search']
+    searchPlugin({
+      // options
+    }),
   ]
 });
