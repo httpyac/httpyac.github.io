@@ -42,6 +42,7 @@ In addition to the defined variables, the following values are also set on globa
 | sleep | [Method](https://github.com/AnWeber/httpyac/blob/main/src/utils/promiseUtils.ts#L7) to wait for a fixed period of time | - | [grpcClientStreaming.http](https://github.com/httpyac/httpyac.github.io/blob/main/examples/request/grpc/grpcClientStreaming.http) |
 | test | method to simplify [tests](https://github.com/AnWeber/httpyac/blob/main/src/models/testFunction.ts#L6-L14) ([assert](https://github.com/httpyac/httpyac.github.io/blob/main/examples/project/tests/assert.http) or [chai](https://github.com/httpyac/httpyac.github.io/blob/main/examples/project/tests/chai.http)) | - | [test.http](https://github.com/httpyac/httpyac.github.io/blob/main/examples/script/test.http) |
 | websocketClient | currently active [Websocket Client](https://www.npmjs.com/package/ws#sending-and-receiving-text-data) | if websocket client is active | [websocket.http](https://github.com/httpyac/httpyac.github.io/blob/main/examples/request/websocket/websocket.http) |
+| __dirname | path to current working directory | - | - |
 
 ## Require
 
