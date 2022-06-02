@@ -20,13 +20,13 @@ If the execution of the script is `async`, it is necessary to export this Promis
 
 ## Access to Variables
 
-All Variables already defined can be accessed via the global scope.
+All Variables already defined can be accessed via the [global object](https://nodejs.org/api/globals.html).
 
 ::: warning
 Since all variables are placed on the global scope of the script, they may overwrite other variables. Please use unique variable names
 :::
 
-In addition to the defined variables, the following values are also set on global scope
+In addition to the defined variables and [NodeJS Global](https://nodejs.org/api/globals.html), the following values are also set on global object.
 
 | name | description | condition | example |
 | - | - | - | - |
@@ -42,7 +42,8 @@ In addition to the defined variables, the following values are also set on globa
 | sleep | [Method](https://github.com/AnWeber/httpyac/blob/main/src/utils/promiseUtils.ts#L7) to wait for a fixed period of time | - | [grpcClientStreaming.http](https://github.com/httpyac/httpyac.github.io/blob/main/examples/request/grpc/grpcClientStreaming.http) |
 | test | method to simplify [tests](https://github.com/AnWeber/httpyac/blob/main/src/models/testFunction.ts#L6-L14) ([assert](https://github.com/httpyac/httpyac.github.io/blob/main/examples/project/tests/assert.http) or [chai](https://github.com/httpyac/httpyac.github.io/blob/main/examples/project/tests/chai.http)) | - | [test.http](https://github.com/httpyac/httpyac.github.io/blob/main/examples/script/test.http) |
 | websocketClient | currently active [Websocket Client](https://www.npmjs.com/package/ws#sending-and-receiving-text-data) | if websocket client is active | [websocket.http](https://github.com/httpyac/httpyac.github.io/blob/main/examples/request/websocket/websocket.http) |
-| __dirname | path to current working directory | - | - |
+| __dirname | [path to current working directory](https://nodejs.org/api/modules.html#__dirname) | - | - |
+| __filename | [The file name of the current module.](https://nodejs.org/api/modules.html#__filename) | - | - |
 
 ## Require
 
