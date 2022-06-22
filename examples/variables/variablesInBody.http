@@ -1,0 +1,8 @@
+@foo=bar
+POST https://httpbin.org/anything?test={{new Date().toIsoString()}} HTTP/1.1
+Foo: {{new Date().toIsoString()}}
+
+{
+  "TODO": {{new Date().toIsoString()}},
+  "test": 5
+}
