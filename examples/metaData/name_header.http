@@ -1,0 +1,7 @@
+# @name json
+GET https://httpbin.org/json HTTP/1.1
+
+###
+# @ref json
+POST https://httpbin.org/anything HTTP/1.1
+{{jsonResponse.headers.server}}
