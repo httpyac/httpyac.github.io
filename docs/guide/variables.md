@@ -126,6 +126,10 @@ To configure the flow, the following variables must be specified
 To get the code from the Open ID server, a http server is started for the Authorization Flow and Implicit Flow on port of the redirection Uri (default Port 3000). The server is stopped after receiving the code (delay 2 minutes). You need to configure your OpenId Provider to allow redirectUri as valid redirection uri
 :::
 
+::: tip
+The http server started for the Authorization Flow and Implicit Flow listens on the port of `{{prefix}}_redirectUri`. You can configure a different port for the server to listen to with variable `oauth2_serverPort`. If the port localhost:8000 is mapped to host `https://port-8000.external-domain` in a reverse proxy, you can set variable `{{prefix}}_redirectUri` as `https://port-8000.external-domain/callback` and set variable `oauth2_serverPort` to 8000.
+:::
+
 ```http
 
 @keycloakHost = http://127.0.0.1:8080
