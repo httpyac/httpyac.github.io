@@ -158,10 +158,19 @@ Object with default headers used for every request.
 
 ### cookieJarEnabled
 
-- Type: `boolean`
+- Type: `boolean` or `Object`
 - Default: `true`
 
-Enable cookieJar support for every request
+Enable cookieJar support for every request. Following options are available
+
+```ts
+{
+  allowSpecialUseDomain?: boolean | undefined;
+  looseMode?: boolean | undefined;
+  rejectPublicSuffixes?: boolean | undefined;
+  prefixSecurity?: string | undefined;
+}
+```
 
 
 ### configureHooks
