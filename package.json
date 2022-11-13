@@ -5,7 +5,7 @@
   "description": "github pages of httpyac",
   "main": "index.js",
   "scripts": {
-    "serve": "vuepress dev docs",
+    "start": "vuepress dev docs",
     "build": "vuepress build docs"
   },
   "keywords": [
@@ -25,9 +25,9 @@
   "author": "AnWeber",
   "license": "MIT",
   "devDependencies": {
-    "@vuepress/bundler-vite": "^2.0.0-beta.41",
-    "@vuepress/plugin-search": "^2.0.0-beta.41",
-    "@vuepress/theme-default": "^2.0.0-beta.41",
-    "vuepress": "^2.0.0-beta.41"
+    "@vuepress/bundler-vite": "^2.0.0-beta.53",
+    "@vuepress/plugin-search": "^2.0.0-beta.53",
+    "@vuepress/theme-default": "^2.0.0-beta.53",
+    "vuepress": "^2.0.0-beta.53"
   }
 }

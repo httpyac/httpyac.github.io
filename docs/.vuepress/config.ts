@@ -1,9 +1,8 @@
 import { defineUserConfig } from "@vuepress/cli";
-import type { DefaultThemeOptions } from "@vuepress/theme-default";
-const { defaultTheme, viteBundler } = require('vuepress');
-const { searchPlugin } = require('@vuepress/plugin-search');
+import { defaultTheme, viteBundler } from 'vuepress';
+import { searchPlugin } from '@vuepress/plugin-search';
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig({
   base: "/",
   lang: "en-US",
   title: "httpYac",
@@ -50,6 +49,7 @@ export default defineUserConfig<DefaultThemeOptions>({
               "/guide/installation_cli",
               "/guide/installation_vscode",
               "/guide/installation_httpbook",
+              "/guide/installation_docker",
             ],
           },
           {
