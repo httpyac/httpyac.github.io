@@ -256,6 +256,8 @@ If the username or password contains spaces, a `:` can be used alternatively.
 | $timestamp [offset option] | generates the current UNIX timestamp |
 | $datetime rfc1123\|iso8601\|"custom format"\|'custom format' [offset option] | generates a datetime string in either ISO8601, RFC1123 or a custom display format |
 | $localDatetime rfc1123\|iso8601\|"custom format"\|'custom format' [offset option] | generates a local datetime string in either ISO8601, RFC1123 or a custom display format |
+| $processEnv [key] | lookup key in process.env |
+| $dotenv [key] | lookup key in dotenv variables |
 
 
 @[code http](../../examples/variables/restClient.http)

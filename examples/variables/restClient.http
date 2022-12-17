@@ -44,4 +44,5 @@ GET /anything?q={{$datetime 'DD.MM.YYYY HH:mm'}} HTTP/1.1
 
 GET /anything?q={{$datetime 'DD.MM.YYYY HH:mm' 3 d}} HTTP/1.1
 
-GET /anything?q={{$processEnv USER}} HTTP/1.1
+GET /anything?q={{$processEnv USER2}} HTTP/1.1
+GET /anything?q={{process.env.USER2}} HTTP/1.1
