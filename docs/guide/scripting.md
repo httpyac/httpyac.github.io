@@ -54,8 +54,24 @@ External scripts can be imported using require, but you need to install dependen
 
 
 ::: tip
-External dependencies must be installed independently, exceptions are [vscode](https://www.npmjs.com/package/@types/vscode), [got](https://www.npmjs.com/package/got), [grpc-js](https://www.npmjs.com/package/@grpc/grpc-js) and [httpYac](https://www.npmjs.com/package/httpyac) Dependency, which are provided from the extension.
+External dependencies must be installed independently, exceptions are , ,  and  Dependency, which are provided from the extension.
 :::
+
+External dependencies must be installed independently, but some dependencies are provided from httpyac:
+- [@cloudamqp/amqp-client](https://www.npmjs.com/package/@cloudamqp/amqp-client)
+- [@xmldom/xmldom](https://www.npmjs.com/package/@xmldom/xmldom)
+- [dayjs](https://www.npmjs.com/package/dayjs) ([example](../../examples/script/dayjs.http))
+- [eventsource](https://www.npmjs.com/package/eventsource)
+- [got](https://www.npmjs.com/package/got)
+- [grpc-js](https://www.npmjs.com/package/@grpc/grpc-js) ([example](../../examples/request/grpc/grpc.http))
+- [httpYac](https://www.npmjs.com/package/httpyac)
+- [mqtt](https://www.npmjs.com/package/mqtt)
+- [NodeJS API](https://nodejs.org/docs/latest/api/) ([example](../../examples/script/assert.http))
+- [uuid](https://www.npmjs.com/package/uuid) ([example](../../examples/script/uuid.http))
+- [vscode](https://www.npmjs.com/package/@types/vscode)
+- [ws](https://www.npmjs.com/package/ws)
+- [xpath](https://www.npmjs.com/package/xpath) ([example](../../examples/script/xpath.http))
+
 
 ::: warning
 [NodeJS](https://nodejs.org/api/modules.html#modules_require_cache) caches all loaded scripts. Since in VS Code the script is executed in the context of the extension, the content of the script is not reloaded. Therefore, the script must be manually removed from the cache.

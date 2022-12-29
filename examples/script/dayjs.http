@@ -1,0 +1,8 @@
+
+GET /anything?foo=2022-12-20
+
+{{
+  const dayjs = require("dayjs");
+  const date = dayjs(response.parsedBody.args.foo);
+  console.info(date);
+}}

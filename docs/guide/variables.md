@@ -261,3 +261,15 @@ If the username or password contains spaces, a `:` can be used alternatively.
 
 
 @[code http](../../examples/variables/restClient.http)
+
+
+### XPath Query
+Variables can be extracted from XML using XPath query. 
+
+```
+$xpath(:<variableName>) <xpath>
+```
+
+> If no variableName is provided and the last response is of Mimetype XML, the last response.body is used
+
+@[code http](../../examples/variables/xpath.http)

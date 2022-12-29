@@ -1,0 +1,6 @@
+{{
+  const uuid = require("uuid");
+  exports.id = uuid.v4();
+
+}}
+GET /anything?q={{id}}

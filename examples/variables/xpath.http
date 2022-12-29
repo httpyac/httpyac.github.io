@@ -1,0 +1,6 @@
+### foo
+GET /xml
+
+###
+# @ref foo
+GET /anything?q={{$xpath:foo //@author}}
