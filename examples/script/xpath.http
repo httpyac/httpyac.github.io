@@ -1,0 +1,13 @@
+
+GET /xml
+
+{{
+  const {select} = require("xpath");
+
+try{
+  const nodes = select("//@author", response.parsedBody);
+  console.log(`${nodes[0].localName}: ${nodes[0].value}`)
+}catch(err){
+  console.error(err);
+}
+}}
