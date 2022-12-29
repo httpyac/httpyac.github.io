@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-b6723dd6","path":"/guide/hooks.html","title":"Hooks","lang":"en-US","frontmatter":{},"excerpt":"","headers":[{"level":2,"title":"Project local hooks","slug":"project-local-hooks","link":"#project-local-hooks","children":[]}],"git":{"updatedTime":1672310180000},"filePathRelative":"guide/hooks.md"}');export{e as data};
