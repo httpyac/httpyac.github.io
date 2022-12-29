@@ -1,0 +1,9 @@
+
+GET /anything?foo=bar HTTP/1.1
+
+{{
+  $global.foo=response.parsedBody.args.foo;
+}}
+
+###
+GET /anything?bar={{$global.foo}} HTTP/1.1
