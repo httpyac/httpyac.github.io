@@ -7,6 +7,25 @@ Variables are used for avoiding unnecessary data duplication in requests or for 
 
 
 
+## Variable Scope
+
+The scope is the current context of execution in which variables are "visible" or can be referenced. If a variable or expression is not in the current scope, it will not be available for use. 
+
+- Environment Variables: All Variables provided with `provideVariables` Hook (e.g. [dotenv](/guide/environments.html#dotenv))
+
+- File Global Variables: Variables defined in Region without name or request
+
+- Request Variables: Variables defined in current region
+
+:::tip
+You could expand the visiable scope using [`@import`](https://httpyac.github.io/guide/variables.html#import-variables), [`@ref` and `@forceRef`](guide/metaData.html#ref-and-forceref).
+:::
+
+You can also explicitly define variables as global by adding them to the global object in the script.
+
+@[code http](../../examples/variables/globalVariables.http)
+
+
 ## Inline Variables
 Inline Variables can be easily created with the following scheme. Variable Substitution is supported.
 
@@ -29,13 +48,14 @@ Lazy variables are only evaluated before a request or NodeJS execution  (request
 If a required variable is not yet defined, it will also be set lazy
 :::
 
+
 ## Import Variables
 
-The variables are also imported from other files using [`@import`](/guide/metaData.html#import).
+The variables are also imported from other files using [`@import`](/guide/metaData.html#import). Only Variables in File Global Scope are imported.
 
 @[code http{1}](../../examples/variables/variablesImport.http)
 
-You can also  reference ([`@ref`](/guide/metaData.html#ref-and-forceref)) named responses ([`@name`](/guide/metaData.html#name)) from other files.
+To import request Variables, you can also  reference ([`@ref`](/guide/metaData.html#ref-and-forceref)) named responses ([`@name`](/guide/metaData.html#name)) from other files.
 :::: code-group
 ::: code-group-item import.http
 @[code http{1,2}](../../examples/metaData/import.http)
@@ -44,7 +64,6 @@ You can also  reference ([`@ref`](/guide/metaData.html#ref-and-forceref)) named 
 @[code http{1}](../../examples/metaData/name.http)
 :::
 ::::
-
 
 
 ## Variable Substitution in Request
