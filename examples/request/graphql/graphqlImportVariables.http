@@ -1,5 +1,5 @@
 @assetsDir=./
-POST https://api.spacex.land/graphql HTTP/1.1
+POST https://api.spacex.land/graphql
 Content-Type: application/json
 
 

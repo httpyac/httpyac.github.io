@@ -2,5 +2,5 @@
 ###
 # @name getHttpbinB
 # @ref getHttpbinA
-GET https://httpbin.org/get?source=getHttpbinB HTTP/1.1
+GET https://httpbin.org/get?source=getHttpbinB
 X-Foo: barB-{{getHttpbinA.headers["X-Foo"]}}

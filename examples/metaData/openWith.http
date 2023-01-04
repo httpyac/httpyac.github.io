@@ -1,5 +1,5 @@
 # @openWith imagePreview.previewEditor
-GET https://raw.githubusercontent.com/AnWeber/vscode-httpyac/master/icon.png HTTP/1.1
+GET https://raw.githubusercontent.com/AnWeber/vscode-httpyac/master/icon.png
 
 
-GET https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf HTTP/1.1
+GET https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf

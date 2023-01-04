@@ -1,5 +1,5 @@
 @user = doe
 @password = 12345678
 ###
-GET /basic-auth/{{user}}/{{password}} HTTP/1.1
+GET /basic-auth/{{user}}/{{password}}
 Authorization: Basic {{user}} {{password}}

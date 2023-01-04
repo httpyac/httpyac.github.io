@@ -7,7 +7,7 @@
   exports.authDate = date.toUTCString();
   exports.authentcation = `Basic ${signatureBase64}`;
 }}
-GET https://httpbin.org/anything HTTP/1.1
+GET https://httpbin.org/anything
 Date: {{authDate}}
 Authentication: {{authentcation}}
 

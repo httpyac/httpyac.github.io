@@ -1,14 +1,14 @@
 @host=http://localhost:8080
 ###
-GET /actuator/info HTTP/1.1
-GET /actuator/env HTTP/1.1
-GET /actuator/health HTTP/1.1
-GET /actuator/health/liveness HTTP/1.1
-GET /actuator/conditions HTTP/1.1
-GET /actuator/scheduledtasks HTTP/1.1
-GET /actuator/threaddump HTTP/1.1
-GET /actuator/beans HTTP/1.1
-GET /actuator/metrics HTTP/1.1
-GET /actuator/configprops HTTP/1.1
-GET /actuator/httptrace HTTP/1.1
-GET /actuator/mappings HTTP/1.1
+GET /actuator/info
+GET /actuator/env
+GET /actuator/health
+GET /actuator/health/liveness
+GET /actuator/conditions
+GET /actuator/scheduledtasks
+GET /actuator/threaddump
+GET /actuator/beans
+GET /actuator/metrics
+GET /actuator/configprops
+GET /actuator/httptrace
+GET /actuator/mappings

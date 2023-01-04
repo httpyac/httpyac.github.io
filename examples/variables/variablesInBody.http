@@ -1,5 +1,5 @@
 @foo=bar
-POST https://httpbin.org/anything?test={{new Date().toIsoString()}} HTTP/1.1
+POST https://httpbin.org/anything?test={{new Date().toIsoString()}}
 Foo: {{new Date().toIsoString()}}
 
 {

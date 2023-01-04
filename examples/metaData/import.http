@@ -1,4 +1,4 @@
 # @import ./name.http
 # @ref json
-POST https://httpbin.org/anything HTTP/1.1
+POST https://httpbin.org/anything
 {{json.slideshow.author}}

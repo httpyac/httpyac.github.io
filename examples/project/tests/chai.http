@@ -9,7 +9,7 @@ GET /json
 }}
 ###
 # @disabled
-GET https://cat-fact.herokuapp.com/facts/random HTTP/1.1
+GET https://cat-fact.herokuapp.com/facts/random
 
 
 {{
@@ -30,7 +30,7 @@ GET https://cat-fact.herokuapp.com/facts/random HTTP/1.1
 ###
 # @disabled
 
-GET https://cat-fact.herokuapp.com/facts/random HTTP/1.1
+GET https://cat-fact.herokuapp.com/facts/random
 
 
 {{
@@ -56,7 +56,7 @@ GET https://cat-fact.herokuapp.com/facts/random HTTP/1.1
 ###
 # @disabled
 
-GET https://cat-fact.herokuapp.com/facts/random HTTP/1.1
+GET https://cat-fact.herokuapp.com/facts/random
 
 
 {{
@@ -74,4 +74,4 @@ GET https://cat-fact.herokuapp.com/facts/random HTTP/1.1
 ###
 # @disabled
 
-GET https://cat-fact.herokuapp.com/facts/random HTTP/1.1
+GET https://cat-fact.herokuapp.com/facts/random

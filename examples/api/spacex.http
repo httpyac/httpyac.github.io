@@ -3,7 +3,7 @@
 
 ###
 
-GET /launches/latest HTTP/1.1
+GET /launches/latest
 
 
-GET /capsules HTTP/1.1
+GET /capsules

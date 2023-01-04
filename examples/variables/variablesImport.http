@@ -1,2 +1,2 @@
 # @import ./variablesInit.http
-GET https://httpbin.org/anything?q={{fooExtended}} HTTP/1.1
+GET https://httpbin.org/anything?q={{fooExtended}}

@@ -2,5 +2,5 @@
   console.info(`on every request: ${response.statusCode}`);
 }}
 ###
-GET https://httpbin.org/json HTTP/1.1
-GET https://httpbin.org/json HTTP/1.1
+GET https://httpbin.org/json
+GET https://httpbin.org/json

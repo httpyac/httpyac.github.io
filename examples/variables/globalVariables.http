@@ -1,9 +1,9 @@
 
-GET /anything?foo=bar HTTP/1.1
+GET /anything?foo=bar
 
 {{
   $global.foo=response.parsedBody.args.foo;
 }}
 
 ###
-GET /anything?bar={{$global.foo}} HTTP/1.1
+GET /anything?bar={{$global.foo}}

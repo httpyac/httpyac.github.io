@@ -1,4 +1,4 @@
-POST https://httpbin.org/anything HTTP/1.1
+POST https://httpbin.org/anything
 Content-Type: application/json
 
 < ./requestBodyImport.json

@@ -1,4 +1,4 @@
 # @no-reject-unauthorized
 
-GET https://client.badssl.com/ HTTP/1.1
+GET https://client.badssl.com/
 X-ClientCert: pfx: ../assets/badssl.com-client.p12 passphrase: badssl.com

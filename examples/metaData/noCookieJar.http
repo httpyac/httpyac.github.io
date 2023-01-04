@@ -1,2 +1,2 @@
 # @no-cookie-jar
-GET https://www.google.de HTTP/1.1
+GET https://www.google.de

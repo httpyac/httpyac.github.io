@@ -1,3 +1,3 @@
 # @no-redirect
 
-GET https://httpbin.org/absolute-redirect/2 HTTP/1.1
+GET https://httpbin.org/absolute-redirect/2

@@ -3,5 +3,5 @@
 @user = doe
 @password = 12345678
 
-GET /digest-auth/auth/{{user}}/{{password}} HTTP/1.1
+GET /digest-auth/auth/{{user}}/{{password}}
 Authorization: Digest {{user}} {{password}}

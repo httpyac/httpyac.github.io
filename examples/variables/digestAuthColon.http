@@ -3,5 +3,5 @@
 @user = john doe
 @password = 12345678
 
-GET /digest-auth/auth/{{user.replace(' ', '+')}}/{{password}} HTTP/1.1
+GET /digest-auth/auth/{{user.replace(' ', '+')}}/{{password}}
 Authorization: Digest {{user}}:{{password}}

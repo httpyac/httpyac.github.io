@@ -6,7 +6,7 @@ fragment IOParts on Repository {
   diskUsage
 }
 
-POST https://api.github.com/graphql HTTP/1.1
+POST https://api.github.com/graphql
 Content-Type: application/json
 Authorization: Bearer {{git_api_key}}
 
@@ -35,7 +35,7 @@ query test($name: String!, $owner: String!) {
 }
 
 
-POST https://api.github.com/graphql HTTP/1.1
+POST https://api.github.com/graphql
 Content-Type: application/json
 Authorization: Bearer {{git_api_key}}
 

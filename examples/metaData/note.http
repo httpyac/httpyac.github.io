@@ -1,2 +1,2 @@
 # @note Are you sure?
-DELETE https://httpbin.org/anything HTTP/1.1
+DELETE https://httpbin.org/anything

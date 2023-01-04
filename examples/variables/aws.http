@@ -5,11 +5,11 @@
 @service = cognito-idp
 
 ###
-GET https://cognito-idp.eu-central-1.amazonaws.com HTTP/1.1
+GET https://cognito-idp.eu-central-1.amazonaws.com
 Authorization: AWS {{accessId}} {{accessKey}} token:{{token}} region:{{region}} service:{{service}}
-GET https://cognito-idp.eu-central-1.amazonaws.com HTTP/1.1
+GET https://cognito-idp.eu-central-1.amazonaws.com
 Authorization: AWS {{accessId}} {{accessKey}} token:{{token}}
-GET https://cognito-idp.eu-central-1.amazonaws.com HTTP/1.1
+GET https://cognito-idp.eu-central-1.amazonaws.com
 Authorization: AWS {{accessId}} {{accessKey}}
 
 
