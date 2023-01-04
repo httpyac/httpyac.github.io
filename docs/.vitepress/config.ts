@@ -1,5 +1,4 @@
 import { defineConfig } from "vitepress";
-import { SearchPlugin } from "vitepress-plugin-search";
 import { join } from "path";
 import type { HtmlRendererOptions } from "shiki";
 import {
@@ -41,12 +40,6 @@ export default async function init() {
 
   return defineConfig({
     vite: {
-      plugins: [
-        SearchPlugin({
-          buttonLabel: "Search",
-          tokenize: "full",
-        }),
-      ],
       esbuild: {
         minifyIdentifiers: false,
         minifyWhitespace: false,
