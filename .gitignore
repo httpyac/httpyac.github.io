@@ -5,5 +5,5 @@ node_modules
 *.vsix
 *.env
 .eslintcache
-.cache
+cache
 .temp

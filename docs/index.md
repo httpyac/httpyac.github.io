@@ -1,10 +1,16 @@
 ---
-home: true
-heroImage: /favicon.png
-actions:
-  - text: Get Started
-    link: /guide/
-    type: primary
+layout: home
+hero:
+  name: httpYac
+  tagline: Quickly and easily send REST, SOAP, GraphQL and gRPC requests
+  image:
+    src: /favicon.png
+    alt: httpyac
+  actions:
+    - theme: brand
+      text: Get Started
+      link: /guide/
+
 features:
   - title: Feature Rich
     details: Create and execute any REST, SOAP, GraphQL and gRPC queries from within VS Code or CLI
@@ -20,32 +26,3 @@ features:
     details: Automate manual tests and integrate them into your CI/CD pipeline
 footer: MIT Licensed | Copyright © 2020-present Andreas Weber
 ---
-
-
-## Getting Started
-
-Install CLI:
-
-``` bash
-npm install -g httpyac
-# OR
-yarn global add httpyac
-```
-
-
-Install VS Code Extension
-
-[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/anweber.vscode-httpyac.svg)](https://marketplace.visualstudio.com/items?itemName=anweber.vscode-httpyac)
-
-``` bash
-code --install-extension anweber.vscode-httpyac
-```
-
-
-Install VS Code Notebook Extension
-
-[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/anweber.httpbook.svg)](https://marketplace.visualstudio.com/items?itemName=anweber.httpbook)
-
-``` bash
-code --install-extension anweber.httpbook
-```

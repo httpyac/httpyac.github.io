@@ -12,6 +12,43 @@ httpYac provides a system to provide a simple way to create, execute, and store 
 
 The goal is to create a simple, free and extensible development tool that follows known standards if possible. For example, for the description language of the requests, the specification mostly repeats [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3https://tools.ietf.org/html/rfc7230#section-3) with several extensions intended for easier requests composing and editing.
 
+
+
+## Installation
+
+- CLI:
+
+``` bash
+npm install -g httpyac
+# OR
+yarn global add httpyac
+```
+
+
+- VSCode Extension
+
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/anweber.vscode-httpyac?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=anweber.vscode-httpyac)
+
+``` bash
+code --install-extension anweber.vscode-httpyac
+```
+
+
+- VSCode Notebook Extension
+
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/anweber.httpbook?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=anweber.httpbook)
+
+``` bash
+code --install-extension anweber.httpbook
+```
+
+- Docker
+
+``` bash
+alias httpyac="docker run -it -v ${PWD}:/data ghcr.io/anweber/httpyac:latest"
+httpyac --help
+```
+
 ## Feature comparisons
 
 | Feature | httpYac | [Postman](https://www.postman.com/) | [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) | [Intellij Idea](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html) |

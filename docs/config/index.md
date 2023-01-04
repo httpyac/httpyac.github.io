@@ -113,7 +113,7 @@ Proxy url for which an HttpProxyAgent is created
 - Type: `Array<String>`
 - Default: `undefined`
 
-List of file extensions for which [request body variable replacement](/guide/request/request-body) is always activated automatically
+List of file extensions for which [request body variable replacement](../guide/request.md#request-body) is always activated automatically
 
 ::: warning
 This setting was introduced because of better compatibility with Intellij. It is recommended to specify it explicitly per file, otherwise files will be loaded into memory unnecessarily.
@@ -177,7 +177,7 @@ Enable cookieJar support for every request. Following options are available
 
 - Type: `Function`
 
-By means of the function [`configureHooks`](https://github.com/AnWeber/httpyac/blob/main/src/models/environmentConfig.ts#L35) the [plugin api](/plugins/plugin-api/) can be accessed easily. So without creating a plugin, the same interface can be used to make further adjustments to httpYac.
+By means of the function [`configureHooks`](https://github.com/AnWeber/httpyac/blob/main/src/models/environmentConfig.ts#L35) the [plugin api](../plugins/plugin-api.md) can be accessed easily. So without creating a plugin, the same interface can be used to make further adjustments to httpYac.
 
 ```js
 module.exports = {

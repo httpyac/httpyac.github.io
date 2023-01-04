@@ -4,7 +4,7 @@
 It is possible to use NodeJS scripts. All scripts before the request line are executed before the request is called. All scripts after the request line are executed as soon as the response is received. All exports of the script are stored as variables.
 
 
-@[code http](../../examples/script/script.http)
+<<< @../../examples/script/script.http
 
 ::: warning
 Scripts are executed in a custom context/ execution environment. This context should behave identically to [NodeJS Default execution environment](https://nodejs.org/api/vm.html#what-does-it-mean-to-contextify-an-object), but there may be variations. These can be bypassed using require.
@@ -15,7 +15,7 @@ Scripts are executed in a custom context/ execution environment. This context sh
 
 If the execution of the script is `async`, it is necessary to export this Promise. In this case, the program waits for the Promise to be completed.
 
-@[code http](../../examples/script/scriptPromise.http)
+<<< @../../examples/script/scriptPromise.http
 
 
 ## Access to Variables
@@ -50,7 +50,7 @@ In addition to the defined variables and [NodeJS Global](https://nodejs.org/api/
 
 External scripts can be imported using require, but you need to install dependencies yourself.
 
-@[code http{3}](../../examples/script/scriptRequire.http)
+<<< @../../examples/script/scriptRequire.http{3}
 
 
 ::: tip
@@ -93,28 +93,28 @@ The console cannot be accessed in VS Code. Therefore, a separate Console object 
 You can write easily test scripts in JavaScript. Tests allow you to ensure that your API is working as expected, to establish that integrations between services are functioning reliably, and to verify that new developments haven't broken any existing functionality. You can also use test code to aid the debugging process when something goes wrong with your API project.
 
 
-@[code http](../../examples/script/assert.http)
+<<< @../../examples/script/assert.http
 
-@[code http](../../examples/script/chai.http)
+<<< @../../examples/script/chai.http
 
 
 ::: tip
 [Auxiliary methods](https://github.com/AnWeber/httpyac/blob/790a1b0409bd9eed6ef0ff26a2fc017952d58231/src/models/testFunction.ts#L6-L14) are provided for standard tests such as Status and Content-Type
 :::
 
-@[code http](../../examples/script/test.http)
+<<< @../../examples/script/test.http
 
 ## Global Scripts
 
 Scripts with no request in the same region are always executed (Global Scripts).
 
-@[code http](../../examples/script/globalScripts.http)
+<<< @../../examples/script/globalScripts.http
 
 ## Events
 
 The normal script registration is executed in order of occurrence in http File. For the execution of a request, several steps have to be executed besides the actual request: Replace Variables, Prepare Body, Pretty Print Body. With events scripts can be hooked into concrete steps in this process. 
 
-@[code http{1}](../../examples/script/events.http)
+<<< @../../examples/script/events.http{1}
 
 The following events are possible.
 
@@ -131,11 +131,11 @@ The following events are possible.
 The events can be registered automatically globally using `+`.
 :::
 
-@[code http{1}](../../examples/script/globalScriptOnEveryHttpRegionAfter.http)
+<<< @../../examples/script/globalScriptOnEveryHttpRegionAfter.http{1}
 
 If no event is specified for global registration, the script is executed before every request.
 
-@[code http{1}](../../examples/script/globalScriptOnEveryHttpRegion.http)
+<<< @../../examples/script/globalScriptOnEveryHttpRegion.http{1}
 
 ![events](./scripting.svg)
 
@@ -147,7 +147,7 @@ Intellij Scripts are supported. An [Http client](https://www.jetbrains.com/help/
 The execution environment differs between NodeJS and Intellij (uses Nashorn). Possibly the behavior is not completely identical, to Intellij Execution. If there are problems, please let me know.
 :::
 
-@[code http](../../examples/script/intellij.http)
+<<< @../../examples/script/intellij.http{1}
 
 ::: warning
 Intellij scripts are always executed after request. Scripts before Request Line are ignored
@@ -163,4 +163,4 @@ Intellij scripts are always executed after request. Scripts before Request Line 
 5. execute command `httpyac <file> -l <line>`
 
 
-@[code http{7}](../../examples/script/debugger.http)
+<<< @../../examples/script/debugger.http{7}

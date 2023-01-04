@@ -9,7 +9,7 @@ It is possible to select several environments at the same time.
 All environment variables are expanded automatically.
 
 
-```
+```ini
 # .env
 auth_tokenEndpoint={{authHost}}/auth/realms/test/protocol/openid-connect/token
 
