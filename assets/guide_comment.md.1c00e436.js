@@ -34,7 +34,7 @@ const __pageData = JSON.parse('{"title":"Comments","description":"","frontmatter
 <span class="line"><span style="color:var(--shiki-token-comment);">Generates responses with given status code</span></span>
 <span class="line"><span style="color:var(--shiki-token-comment);">*/</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:var(--shiki-token-keyword);">DELETE</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/delete </span><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword);">DELETE</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/delete</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-constant);">200</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">- OK</span></span>
 <span class="line"><span style="color:var(--shiki-token-string-expression);">date</span><span style="color:var(--shiki-token-keyword);">:</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">Mon, 21 Jun 2021 19:38:00 GMT</span></span>
@@ -64,7 +64,7 @@ const __pageData = JSON.parse('{"title":"Comments","description":"","frontmatter
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-comment);">###</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:var(--shiki-token-keyword);">GET</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/get </span><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword);">GET</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/get</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-constant);">200</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">- OK</span></span>
 <span class="line"><span style="color:var(--shiki-token-string-expression);">date</span><span style="color:var(--shiki-token-keyword);">:</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">Mon, 21 Jun 2021 19:38:05 GMT</span></span>
@@ -90,7 +90,7 @@ const __pageData = JSON.parse('{"title":"Comments","description":"","frontmatter
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-comment);">###</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:var(--shiki-token-keyword);">PATCH</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/patch </span><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword);">PATCH</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/patch</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-constant);">200</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">- OK</span></span>
 <span class="line"><span style="color:var(--shiki-token-string-expression);">date</span><span style="color:var(--shiki-token-keyword);">:</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">Mon, 21 Jun 2021 19:38:07 GMT</span></span>
@@ -121,7 +121,7 @@ const __pageData = JSON.parse('{"title":"Comments","description":"","frontmatter
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-comment);">###</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:var(--shiki-token-keyword);">POST</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/post </span><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword);">POST</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/post</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-constant);">200</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">- OK</span></span>
 <span class="line"><span style="color:var(--shiki-token-string-expression);">date</span><span style="color:var(--shiki-token-keyword);">:</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">Mon, 21 Jun 2021 19:38:10 GMT</span></span>
@@ -152,7 +152,7 @@ const __pageData = JSON.parse('{"title":"Comments","description":"","frontmatter
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-comment);">###</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:var(--shiki-token-keyword);">PUT</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/put </span><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword);">PUT</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/put</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-constant);">200</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">- OK</span></span>
 <span class="line"><span style="color:var(--shiki-token-string-expression);">date</span><span style="color:var(--shiki-token-keyword);">:</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">Mon, 21 Jun 2021 19:38:12 GMT</span></span>
@@ -183,7 +183,7 @@ const __pageData = JSON.parse('{"title":"Comments","description":"","frontmatter
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-comment);">###</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:var(--shiki-token-keyword);">DELETE</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/status/200 </span><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword);">DELETE</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/status/200</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-constant);">200</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">- OK</span></span>
 <span class="line"><span style="color:var(--shiki-token-string-expression);">date</span><span style="color:var(--shiki-token-keyword);">:</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">Mon, 21 Jun 2021 19:38:15 GMT</span></span>
@@ -196,7 +196,7 @@ const __pageData = JSON.parse('{"title":"Comments","description":"","frontmatter
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-comment);">###</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:var(--shiki-token-keyword);">GET</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/status/200 </span><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword);">GET</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/status/200</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-constant);">200</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">- OK</span></span>
 <span class="line"><span style="color:var(--shiki-token-string-expression);">date</span><span style="color:var(--shiki-token-keyword);">:</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">Mon, 21 Jun 2021 19:38:18 GMT</span></span>
@@ -209,7 +209,7 @@ const __pageData = JSON.parse('{"title":"Comments","description":"","frontmatter
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-comment);">###</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:var(--shiki-token-keyword);">PATCH</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/status/200 </span><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword);">PATCH</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/status/200</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-constant);">200</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">- OK</span></span>
 <span class="line"><span style="color:var(--shiki-token-string-expression);">date</span><span style="color:var(--shiki-token-keyword);">:</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">Mon, 21 Jun 2021 19:38:24 GMT</span></span>
@@ -222,7 +222,7 @@ const __pageData = JSON.parse('{"title":"Comments","description":"","frontmatter
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-comment);">###</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:var(--shiki-token-keyword);">POST</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/status/200 </span><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword);">POST</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/status/200</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-constant);">200</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">- OK</span></span>
 <span class="line"><span style="color:var(--shiki-token-string-expression);">date</span><span style="color:var(--shiki-token-keyword);">:</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">Mon, 21 Jun 2021 19:38:22 GMT</span></span>
@@ -235,7 +235,7 @@ const __pageData = JSON.parse('{"title":"Comments","description":"","frontmatter
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-comment);">###</span></span>
 <span class="line"></span>
-<span class="line"><span style="color:var(--shiki-token-keyword);">PUT</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/status/200 </span><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span></span>
+<span class="line"><span style="color:var(--shiki-token-keyword);">PUT</span><span style="color:var(--shiki-color-text);"> https://httpbin.org/status/200</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:var(--shiki-token-keyword);">HTTP</span><span style="color:var(--shiki-color-text);">/</span><span style="color:var(--shiki-token-constant);">1.1</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-constant);">200</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">- OK</span></span>
 <span class="line"><span style="color:var(--shiki-token-string-expression);">date</span><span style="color:var(--shiki-token-keyword);">:</span><span style="color:var(--shiki-color-text);"> </span><span style="color:var(--shiki-token-string);">Mon, 21 Jun 2021 19:38:30 GMT</span></span>
