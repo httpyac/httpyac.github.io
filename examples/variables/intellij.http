@@ -1,4 +1,11 @@
 GET https://httpbin.org/anything
-  ?time={{$timestamp}}
-  &uuid={{$uuid}}
-  &random={{$randomInt}}
+  ?$timestamp={{$timestamp}}
+  &$uuid={{$uuid}}
+  &$random.uuid={{$random.uuid}}
+  &$randomInt={{$randomInt}}
+  &$isoTimestamp={{$isoTimestamp}}
+  &$random.integer={{$random.integer(2, 8)}}
+  &$random.float={{$random.float(2, 8)}}
+  &$random.alphabetic={{$random.alphabetic(50)}}
+  &$random.email={{$random.email}}
+  &$random.hexadecimal={{$random.hexadecimal(3)}}
