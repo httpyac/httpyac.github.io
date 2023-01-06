@@ -1,0 +1,34 @@
+< {%
+
+    request.variables.set("md5_hex", crypto.md5().updateWithText("test", "utf-8").digest().toHex());
+    request.variables.set("md5_base64", crypto.md5().updateWithText("test", "utf-8").digest().toBase64());
+    request.variables.set("md5_base64Url", crypto.md5().updateWithText("test", "utf-8").digest().toBase64(true));
+    request.variables.set("sha1_hex", crypto.sha1().updateWithText("test", "utf-8").digest().toHex());
+    request.variables.set("sha1_base64", crypto.sha1().updateWithText("test", "utf-8").digest().toBase64());
+    request.variables.set("sha1_base64Url", crypto.sha1().updateWithText("test", "utf-8").digest().toBase64(true));
+
+    request.variables.set("sha256_hex", crypto.sha256().updateWithText("test", "utf-8").digest().toHex());
+    request.variables.set("sha256_base64", crypto.sha256().updateWithText("test", "utf-8").digest().toBase64());
+    request.variables.set("sha256_base64Url", crypto.sha256().updateWithText("test", "utf-8").digest().toBase64(true));
+
+    request.variables.set("sha512_hex", crypto.sha512().updateWithText("test", "utf-8").digest().toHex());
+    request.variables.set("sha512_base64", crypto.sha512().updateWithText("test", "utf-8").digest().toBase64());
+    request.variables.set("sha512_base64Url", crypto.sha512().updateWithText("test", "utf-8").digest().toBase64(true));
+%}
+POST https://httpbin.org/post
+Content-Type: application/json
+
+{
+  "md5_hex": "{{md5_hex}}",
+  "md5_base64": "{{md5_base64}}",
+  "md5_base64Url": "{{md5_base64Url}}",
+  "sha1_hex": "{{sha1_hex}}",
+  "sha1_base64": "{{sha1_base64}}",
+  "sha1_base64Url": "{{sha1_base64Url}}",
+  "sha256_hex": "{{sha256_hex}}",
+  "sha256_base64": "{{sha256_base64}}",
+  "sha256_base64Url": "{{sha256_base64Url}}",
+  "sha512_hex": "{{sha512_hex}}",
+  "sha512_base64": "{{sha512_base64}}",
+  "sha512_base64Url": "{{sha512_base64Url}}"
+}
