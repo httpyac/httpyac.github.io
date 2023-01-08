@@ -160,7 +160,7 @@ export default async function init() {
             { text: "httpyac CLI", link: "https://github.com/anweber/httpyac" },
             { text: "vscode-httpyac", link: "https://github.com/anweber/vscode-httpyac" },
             { text: "httpbook", link: "https://github.com/anweber/httpbook" },
-            { text: "httpyac.github.io", link: "https://github.com/httpyac/httpac.github.io" },
+            { text: "httpyac.github.io", link: "https://github.com/httpyac/httpyac.github.io" },
           ],
         },
       ],
