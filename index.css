@@ -29,6 +29,11 @@
   --shiki-token-function: #FFF;
 }
 
+
+a[href^="https://github.com/"]::after{
+  content: url(/github.svg);
+}
+
 .outline-marker.outline-marker{
   width: 3px;
   background-color: var(--vp-c-brand-lighter);
