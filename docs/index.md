@@ -24,5 +24,4 @@ features:
     details: enrich requests with custom scripts like custom authentication or test scripts
   - title: Automated Test
     details: Automate manual tests and integrate them into your CI/CD pipeline
-footer: MIT Licensed | Copyright © 2020-present Andreas Weber
 ---

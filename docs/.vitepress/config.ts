@@ -24,7 +24,6 @@ const processors: Processor[] = [
   }),
 ];
 
-
 export default async function init() {
   const highlighter = await getHighlighter({
     themes: ["css-variables"],
@@ -155,6 +154,15 @@ export default async function init() {
             { text: "API Reference", link: "/plugins/plugin-api.md" },
           ],
         },
+        {
+          text: "Source",
+          items: [
+            { text: "httpyac CLI", link: "https://github.com/anweber/httpac" },
+            { text: "vscode-httpyac", link: "https://github.com/anweber/vscode-httpac" },
+            { text: "httpbook", link: "https://github.com/anweber/httpbook" },
+            { text: "httpyac.github.io", link: "https://github.com/httpyac/httpac.github.io" },
+          ],
+        },
       ],
       sidebar: [
         {
@@ -210,6 +218,9 @@ export default async function init() {
           ],
         },
       ],
+      footer: {
+        copyright: `MIT Licensed | Copyright © 2020-present <a href="https://github.com/anweber">Andreas Weber</a>`
+      }
     },
   });
 }
