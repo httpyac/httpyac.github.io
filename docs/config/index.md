@@ -1,7 +1,3 @@
----
-sidebar: auto
----
-
 # Configuration Reference
 
 Basic settings for all requests, logging and general application behavior can be configured via application argument (CLI arguments or VS Code settings). It is also possible to store these centrally in the project root  in an `httpyac.config.js` file, which is observed by both CLI and VS Code Extension.

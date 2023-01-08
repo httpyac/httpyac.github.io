@@ -1,7 +1,3 @@
----
-sidebarDepth: 3
----
-
 # Plugin Development Guide
 
 ## Getting started

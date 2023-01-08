@@ -1,7 +1,3 @@
----
-sidebarDepth: 0
----
-
 # Overview
 
 httpYac provides a system to provide a simple way to create, execute, and store information about HTTP requests:
