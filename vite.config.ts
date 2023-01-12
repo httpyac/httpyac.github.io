@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 
 //default options
 var options = {
+  tokenize: "full",
     previewLength: 62,
       buttonLabel: "Search",
         placeholder: "Search",
