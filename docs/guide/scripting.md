@@ -149,11 +149,6 @@ The execution environment differs between NodeJS and Intellij (uses Nashorn). Po
 
 <<< @../../examples/script/intellij.http{1}
 
-::: warning
-Intellij scripts are always executed after request. Scripts before Request Line are ignored
-:::
-
-
 ## How to debug scripts
 
 1. Install httpYac cli with `npm install httpyac -g`
