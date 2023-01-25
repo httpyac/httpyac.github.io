@@ -1,9 +1,8 @@
-POST https://api.spacex.land/graphql
+POST https://countries.trevorblades.com/graphql
 Content-Type: application/json
 
-
-gql launchesQuery < ./graphql.gql
+gql Continents < ./graphql.gql
 
 {
-    "limit": 10
+    "code": "EU"
 }

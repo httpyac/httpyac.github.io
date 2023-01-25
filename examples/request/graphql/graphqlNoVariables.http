@@ -1,8 +1,9 @@
-POST https://api.spacex.land/graphql
+POST https://countries.trevorblades.com/graphql
 Content-Type: application/json
 
-query company_query {
-  company {
-    coo
-  }
+query ExampleQuery {
+    continents {
+      code
+      name
+    }
 }

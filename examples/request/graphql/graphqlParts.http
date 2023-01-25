@@ -1,33 +1,18 @@
-fragment RocketParts on LaunchRocket {
-  rocket_name
-  first_stage {
-    cores {
-      flight
-      core {
-        reuse_count
-        status
-      }
-    }
-  }
+
+fragment ContinentParts on Continent {
+  code
+  name
 }
 
-POST https://api.spacex.land/graphql
+POST https://countries.trevorblades.com/graphql
 Content-Type: application/json
 
-
-query launchesQuery($limit: Int!){
-  launchesPast(limit: $limit) {
-    mission_name
-    launch_date_local
-    launch_site {
-      site_name_long
+query Continents {
+    continents {
+      ...ContinentParts
     }
-    rocket {
-      ...RocketParts
-    }
-  }
 }
 
 {
-    "limit": 10
+    "code": "EU"
 }

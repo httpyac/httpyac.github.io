@@ -1,10 +1,10 @@
 @assetsDir=./
-POST https://api.spacex.land/graphql
+
+POST https://countries.trevorblades.com/graphql
 Content-Type: application/json
 
-
-gql launchesQuery < {{assetsDir}}graphql.gql
+gql Continents < {{assetsDir}}graphql.gql
 
 {
-    "limit": 10
+    "code": "EU"
 }
