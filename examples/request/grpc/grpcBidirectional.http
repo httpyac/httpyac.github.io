@@ -3,18 +3,12 @@ GRPC grpcb.in:9000/hello.HelloService/BidiHello
 {
   "greeting": "world"
 }
-
-{{@streaming
-
-  async function writeStream(){
-    await sleep(1000);
-    grpcStream.write({
-      greeting: ', how are you?',
-    });
-    await sleep(1000);
-    grpcStream.write({
-      greeting: ', I can stream.',
-    });
-  }
-  exports.waitPromise = writeStream();
-}}
+===
+{
+  "greeting": "How are you?"
+}
+=== wait-for-server
+=== wait-for-server
+{
+  "greeting": "I can stream."
+}

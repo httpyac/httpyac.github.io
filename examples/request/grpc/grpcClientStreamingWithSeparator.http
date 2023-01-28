@@ -1,0 +1,13 @@
+proto < ./hello.proto
+GRPC grpcb.in:9000/hello.HelloService/lotsOfGreetings
+{
+  "greeting": "world."
+}
+===
+{
+  "greeting": "How are you?"
+}
+===
+{
+  "greeting": "I can stream."
+}

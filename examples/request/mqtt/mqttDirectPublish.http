@@ -1,0 +1,5 @@
+# @metaDataLogging
+MQTT tcp://broker.hivemq.com
+publish: httpyac
+
+Send me

@@ -1,0 +1,20 @@
+proto < ./hello.proto
+GRPC grpcb.in:9000/hello.HelloService/BidiHello
+{
+  "greeting": "world"
+}
+
+{{@streaming
+
+  async function writeStream(){
+    await sleep(1000);
+    $requestClient.send({
+      greeting: ', how are you?',
+    });
+    await sleep(1000);
+    $requestClient.send({
+      greeting: ', I can stream.',
+    });
+  }
+  exports.waitPromise = writeStream();
+}}

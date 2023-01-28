@@ -8,11 +8,11 @@ GRPC grpcb.in:9000/hello.HelloService/lotsOfGreetings
 
   async function writeStream(){
     await sleep(1000);
-    grpcStream.write({
+    await $requestClient.send({
       greeting: 'How are you?',
     });
     await sleep(1000);
-    grpcStream.write({
+    await $requestClient.send({
       greeting: 'I can stream.',
     });
   }

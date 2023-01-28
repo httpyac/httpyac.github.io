@@ -1,0 +1,18 @@
+
+MQTT tcp://broker.hivemq.com
+Topic: testtopic/1
+Topic: testtopic/2
+
+> {%
+var updatesCount = 0;
+response.body.onEachLine(
+    (symbolUpdate, unsubscribe) => {
+        updatesCount++;
+        client.log(symbolUpdate.pricePresentation);
+        if (updatesCount > 10) {
+            unsubscribe();
+            return;
+        }
+    }
+)
+%}

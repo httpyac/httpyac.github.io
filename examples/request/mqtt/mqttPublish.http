@@ -1,10 +1,10 @@
 MQTT tcp://broker.hivemq.com
-Topic: testtopic/1
+publish: httpyac
 
 {{@streaming
   async function writeStream(){
     await sleep(1000);
-    mqttClient.publish('testtopic/1', 'Hello World');
+    $requestClient.send("mqttPublish");
     await sleep(1000);
   }
   exports.waitPromise = writeStream();

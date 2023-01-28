@@ -1,10 +1,16 @@
-WS wss://demo.piesocket.com/v3/channel_1?api_key=oCdCMcMPQpbvNjUIzqtvF1d2X2okWpDQj4AwARJuAgtjhzKxVEjQU6IdCjwm&notify_self
-{"foo": "bar"}
+WS wss://socketsbay.com/wss/v2/1/demo/
+
+{
+  "test": "httpyac"
+}
 
 {{@streaming
   async function writeStream(){
     await sleep(10000);
-    websocketClient.send('Hello World');
+    $requestClient.send({
+      "event": "ping",
+      "reqid": 45
+    });
     await sleep(1000);
   }
   exports.waitPromise = writeStream();
