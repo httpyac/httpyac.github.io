@@ -11,6 +11,10 @@ Scripts are executed in a custom context/ execution environment. This context sh
 :::
 
 
+::: warning
+The line break after <code v-pre>'{{'</code> is important to distinguish between script execution and variable substitution/ templating. 
+:::
+
 ## Async/Await or Promise
 
 If the execution of the script is `async`, it is necessary to export this Promise. In this case, the program waits for the Promise to be completed.
