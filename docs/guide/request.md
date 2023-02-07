@@ -79,6 +79,11 @@ The [request body](https://datatracker.ietf.org/doc/html/rfc7230#section-3.3) ca
 The first content that is not recognized as a header or query string is interpreted as a request body. After that, no more header or query string can be specified.
 :::
 
+Multiple Response Body could be separated using `===`. These request body are sent one after another. To wait for a message to be received before sending, you could use `wait-for-server` 
+
+
+<<< @../../examples/request/requestBody/requestBodyMulti.http
+
 ## Imported Request Body
 
 A body can also be imported by using `< ...`.

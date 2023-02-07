@@ -1,0 +1,9 @@
+MQTT tcp://broker.hivemq.com
+topic: httpyac
+
+Send one
+===
+Send two
+=== wait-for-server
+=== wait-for-server
+Send three
