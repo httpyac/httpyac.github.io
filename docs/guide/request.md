@@ -267,7 +267,7 @@ The events of the server can be waited for by using [streaming event](/guide/scr
 <<< @../../examples/request/websocket/websocket.http{7}
 
 ::: tip
-Meta Data `keepStreaming` can be used to respond to events until manually aborted.
+Meta Data `keepStreaming` can be used to respond to events until manually aborted. Every request with same url as the open Connection uses the same client.
 :::
 
 <<< @../../examples/request/websocket/websocketKeepStreaming.http{1}
