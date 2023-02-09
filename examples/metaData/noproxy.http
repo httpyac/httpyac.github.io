@@ -1,0 +1,3 @@
+# @no-proxy
+
+GET https://httpbin.org/json

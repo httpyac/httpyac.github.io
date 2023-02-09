@@ -222,7 +222,7 @@ request_rejectUnauthorized=false
 
 ## Proxy
 
-Set proxy for http requests
+Set proxy for requests
 
 <<< @../../examples/metaData/proxy.http{1}
 
@@ -236,6 +236,13 @@ Since using a proxy can be different per environment, it can be set using the sp
 request_proxy=socks://localhost:1080
 ```
 ::::
+
+## No Proxy
+
+Ignore system proxy setting for requests
+
+<<< @../../examples/metaData/noproxy.http{1}
+
 
 ## Debug
 

@@ -104,6 +104,13 @@ This configuration is passed directly to `got` without further adjustment. No fi
 
 Proxy url for which an HttpProxyAgent is created
 
+### proxyExcludeList
+
+- Type: `array` of `string`
+- Default: `undefined`
+
+List of url to ignore proxy setting
+
 ### requestBodyInjectVariablesExtensions
 
 - Type: `Array<String>`
