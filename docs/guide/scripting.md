@@ -93,21 +93,6 @@ The console cannot be accessed in VS Code. Therefore, a separate Console object 
 }}
 ```
 
-## Test
-You can write easily test scripts in JavaScript. Tests allow you to ensure that your API is working as expected, to establish that integrations between services are functioning reliably, and to verify that new developments haven't broken any existing functionality. You can also use test code to aid the debugging process when something goes wrong with your API project.
-
-
-<<< @../../examples/script/assert.http
-
-<<< @../../examples/script/chai.http
-
-
-::: tip
-[Auxiliary methods](https://github.com/AnWeber/httpyac/blob/790a1b0409bd9eed6ef0ff26a2fc017952d58231/src/models/testFunction.ts#L6-L14) are provided for standard tests such as Status and Content-Type
-:::
-
-<<< @../../examples/script/test.http
-
 ## Global Scripts
 
 Scripts with no request in the same region are always executed (Global Scripts).

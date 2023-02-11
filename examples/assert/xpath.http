@@ -1,0 +1,3 @@
+GET https://httpbin.org/xml
+
+?? xpath /slideshow/slide/title == Wake up to WonderWidgets!

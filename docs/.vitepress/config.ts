@@ -122,6 +122,7 @@ export default async function init() {
                 { text: "Variables", link: "/guide/variables" },
                 { text: "Environments", link: "/guide/environments" },
                 { text: "Scripting", link: "/guide/scripting" },
+                { text: "Assert", link: "/guide/assert" },
                 { text: "Comment", link: "/guide/comment" },
                 { text: "Hooks", link: "/guide/hooks" },
                 { text: "Response", link: "/guide/response" },

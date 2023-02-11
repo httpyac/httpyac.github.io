@@ -1,5 +1,0 @@
-
-GET https://httpbin.org/json
-{{
-  test.status(200);
-}}

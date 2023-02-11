@@ -1,0 +1,10 @@
+GET https://httpbin.org/json
+{{
+  test.status(200);
+  test.totalTime(300);
+  test.header("content-type", "application/json");
+  test.headerContains("content-type", "json");
+  test.responseBody('{"foo": "bar"}');
+  test.hasResponseBody();
+  // test.hasNoResponseBody();
+}}
