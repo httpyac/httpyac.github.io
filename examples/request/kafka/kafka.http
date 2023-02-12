@@ -1,0 +1,3 @@
+# @keepStreaming
+KAFKA pkc-lq8v7.eu-central-1.aws.confluent.cloud:9092
+topic: kafka-test
