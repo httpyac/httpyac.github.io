@@ -1,3 +1,21 @@
+# @ref json
+# @import ./ref.http
+GET /json
+
+{{
+  const { equal } = require('assert');
+  test('status code 200', () => {
+    equal(response.statusCode, 200);
+  });
+  test('status code 200', () => {
+    equal(response.statusCode, 200);
+  });
+}}
+
+
+###
+# @ref json
+# @import ./ref.http
 
 GET /json
 
@@ -6,10 +24,14 @@ GET /json
   test('status code 200', () => {
     equal(response.statusCode, 200);
   });
+  test('status code 200', () => {
+    equal(response.statusCode, 200);
+  });
 }}
 
-
-
+###
+# @ref json
+# @import ./ref.http
 
 GET /json
 
@@ -18,8 +40,16 @@ GET /json
   test('status code 200', () => {
     equal(response.statusCode, 200);
   });
+  test('status code 200', () => {
+    equal(response.statusCode, 200);
+  });
 }}
 
+
+
+###
+# @ref json
+# @import ./ref.http
 
 GET /json
 
@@ -28,23 +58,6 @@ GET /json
   test('status code 200', () => {
     equal(response.statusCode, 200);
   });
-}}
-
-
-GET /json
-
-{{
-  const { equal } = require('assert');
-  test('status code 200', () => {
-    equal(response.statusCode, 201);
-  });
-}}
-
-
-GET /json
-
-{{
-  const { equal } = require('assert');
   test('status code 200', () => {
     equal(response.statusCode, 200);
   });
