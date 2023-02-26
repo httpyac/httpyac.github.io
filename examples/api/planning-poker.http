@@ -1,0 +1,25 @@
+@roomId=186321
+###
+
+# @keepStreaming
+wss://planning-poker.cloud.rohde-schwarz.com/sba-websocket/146/hkd3basy/websocket
+
+###
+wss://planning-poker.cloud.rohde-schwarz.com/sba-websocket/146/hkd3basy/websocket
+["CONNECT\naccept-version:1.1,1.0\nheart-beat:10000,10000\n\n\u0000"]
+===
+["SUBSCRIBE\nid:sub-0\ndestination:/user/topic/username\n\n\u0000"]
+===
+["SUBSCRIBE\nid:sub-1\ndestination:/user/topic/notification\n\n\u0000"]
+===
+["SUBSCRIBE\nid:sub-2\ndestination:/topic/room/{{roomId}}\n\n\u0000"]
+===
+["SUBSCRIBE\nid:sub-3\ndestination:/topic/setting/cardset/{{roomId}}\n\n\u0000"]
+===
+["SEND\ndestination:/ws/room/register\n\n{\"roomID\":\"{{roomId}}\"}\u0000"]
+###
+wss://planning-poker.cloud.rohde-schwarz.com/sba-websocket/146/hkd3basy/websocket
+["SEND\ndestination:/ws/user/username\n\n{\"username\":\"httpyac\"}\u0000"]
+###
+wss://planning-poker.cloud.rohde-schwarz.com/sba-websocket/146/hkd3basy/websocket
+["SEND\ndestination:/ws/room/{{roomId}}/estimate\n\n{\"estimation\":\"5.2\"}\u0000"]
