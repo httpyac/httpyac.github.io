@@ -30,8 +30,11 @@
 }
 
 
-a[href^="https://github.com/"]::after{
+.link[href^="https://github.com/"]::before{
   content: url(/github.svg);
+  padding-right: 5px;
+  top: 2px;
+  position: relative;
 }
 
 .outline-marker.outline-marker{
