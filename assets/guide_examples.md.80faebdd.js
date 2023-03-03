@@ -129,11 +129,11 @@ const __pageData = JSON.parse('{"title":"Examples","description":"","frontmatter
 <span class="line"></span>
 <span class="line"><span style="color:#A6ACCD;">  async function writeStream(){</span></span>
 <span class="line"><span style="color:#A6ACCD;">    await sleep(1000);</span></span>
-<span class="line"><span style="color:#A6ACCD;">    grpcStream.write({</span></span>
+<span class="line"><span style="color:#A6ACCD;">    $requestClient.send({</span></span>
 <span class="line"><span style="color:#A6ACCD;">      greeting</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> &#39;How are you?&#39;</span><span style="color:#89DDFF;">,</span></span>
 <span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">);</span></span>
 <span class="line"><span style="color:#A6ACCD;">    await sleep(</span><span style="color:#F78C6C;">1000</span><span style="color:#A6ACCD;">);</span></span>
-<span class="line"><span style="color:#A6ACCD;">    grpcStream.write(</span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">    $requestClient.send(</span><span style="color:#89DDFF;">{</span></span>
 <span class="line"><span style="color:#A6ACCD;">      greeting</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> &#39;I can stream.&#39;</span><span style="color:#89DDFF;">,</span></span>
 <span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">);</span></span>
 <span class="line"><span style="color:#A6ACCD;">  }</span></span>
@@ -149,11 +149,11 @@ const __pageData = JSON.parse('{"title":"Examples","description":"","frontmatter
 <span class="line"></span>
 <span class="line"><span style="color:#A6ACCD;">  async function writeStream(){</span></span>
 <span class="line"><span style="color:#A6ACCD;">    await sleep(1000);</span></span>
-<span class="line"><span style="color:#A6ACCD;">    grpcStream.write({</span></span>
+<span class="line"><span style="color:#A6ACCD;">    $requestClient.send({</span></span>
 <span class="line"><span style="color:#A6ACCD;">      greeting</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> &#39;</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> how are you?&#39;,</span></span>
 <span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">);</span></span>
 <span class="line"><span style="color:#A6ACCD;">    await sleep(</span><span style="color:#F78C6C;">1000</span><span style="color:#A6ACCD;">);</span></span>
-<span class="line"><span style="color:#A6ACCD;">    grpcStream.write(</span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">    $requestClient.send(</span><span style="color:#89DDFF;">{</span></span>
 <span class="line"><span style="color:#A6ACCD;">      greeting</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> &#39;</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> I can stream.&#39;,</span></span>
 <span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">);</span></span>
 <span class="line"><span style="color:#A6ACCD;">  }</span></span>
