@@ -24,11 +24,11 @@ GRPC /hello.HelloService/lotsOfGreetings
 
   async function writeStream(){
     await sleep(1000);
-    grpcStream.write({
+    $requestClient.send({
       greeting: 'How are you?',
     });
     await sleep(1000);
-    grpcStream.write({
+    $requestClient.send({
       greeting: 'I can stream.',
     });
   }
@@ -44,11 +44,11 @@ GRPC /hello.HelloService/BidiHello
 
   async function writeStream(){
     await sleep(1000);
-    grpcStream.write({
+    $requestClient.send({
       greeting: ', how are you?',
     });
     await sleep(1000);
-    grpcStream.write({
+    $requestClient.send({
       greeting: ', I can stream.',
     });
   }
