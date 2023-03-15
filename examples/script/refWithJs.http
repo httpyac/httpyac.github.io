@@ -1,0 +1,10 @@
+# @name json
+GET https://httpbin.org/anything?id={{$guid}}
+
+
+###
+{{
+  exports.wait = $httpyac.execute("json")
+}}
+POST https://httpbin.org/anything
+{{json.args.id}}

@@ -1,0 +1,9 @@
+
+{{
+  exports.wait = (async function test() {
+    await $httpyac.import("./refWithJs.http");
+    await $httpyac.execute("json");
+  })();
+}}
+POST https://httpbin.org/anything
+{{json.args.id}}
