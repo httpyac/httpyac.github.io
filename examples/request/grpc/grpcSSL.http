@@ -2,7 +2,7 @@ proto < ./hello.proto
 
 {{@request
 const grpc = require('@grpc/grpc-js');
-request.headers.channelcredentials = grpc.ChannelCredentials.createSsl();
+request.channelCredentials = grpc.ChannelCredentials.createSsl();
 }}
 GRPC grpcb.in:9001/hello.HelloService/sayHello
 {
