@@ -137,7 +137,7 @@ const __pageData = JSON.parse('{"title":"Request","description":"","frontmatter"
 <span class="line"></span>
 <span class="line"><span style="color:#A6ACCD;">{{@request</span></span>
 <span class="line"><span style="color:#A6ACCD;">const grpc = require(&#39;@grpc/grpc-js&#39;);</span></span>
-<span class="line"><span style="color:#A6ACCD;">request.headers.channelcredentials = grpc.ChannelCredentials.createSsl();</span></span>
+<span class="line"><span style="color:#A6ACCD;">request.channelCredentials = grpc.ChannelCredentials.createSsl();</span></span>
 <span class="line"><span style="color:#A6ACCD;">}}</span></span>
 <span class="line"><span style="color:#A6ACCD;">GRPC grpcb.in:9001/hello.HelloService/sayHello</span></span>
 <span class="line"><span style="color:#89DDFF;">{</span></span>
