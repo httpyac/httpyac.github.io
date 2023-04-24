@@ -1,0 +1,25 @@
+
+GET /json
+
+
+?? status == 200
+
+
+
+GET /json?test=2
+
+
+?? status == 200
+
+
+GET /json?test=3
+
+
+?? status == 201
+
+
+
+
+GET /json?test=4
+
+?? status == 200
