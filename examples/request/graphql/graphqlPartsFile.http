@@ -1,0 +1,12 @@
+
+
+gql ContinentParts < continentParts.gql
+
+POST https://countries.trevorblades.com/graphql
+Content-Type: application/json
+
+gql Continents < continents.gql
+
+{
+    "code": "EU"
+}
