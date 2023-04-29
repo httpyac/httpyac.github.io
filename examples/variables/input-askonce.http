@@ -1,0 +1,3 @@
+
+@query = {{$input-askonce input app? $value: foo}}
+GET https://httpbin.org/json?q={{query}}

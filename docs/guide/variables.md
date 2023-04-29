@@ -103,6 +103,14 @@ Dynamic Variable Resolution with input field, password field or quick pick is su
 
 <<< @../../examples/variables/pick.http
 
+::: tip
+If only a one-time input is desired, the renewed query can be avoided using `-askonce`.
+:::
+
+<<< @../../examples/variables/input-askonce.http
+
+<<< @../../examples/variables/pick-askonce.http
+
 ### OAuth2 / OpenID Connect
 The following [Open ID Connect](https://openid.net/specs/openid-connect-basic-1_0.html) flows are supported.
 
