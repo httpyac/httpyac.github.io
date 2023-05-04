@@ -59,10 +59,7 @@ export default defineConfig({
             items: [
               { text: "CLI", link: "/guide/installation_cli" },
               { text: "VSCode", link: "/guide/installation_vscode" },
-              {
-                text: "VSCode Notebook",
-                link: "/guide/installation_httpbook",
-              },
+              { text: "VSCode Notebook", link: "/guide/installation_httpbook" },
               { text: "Docker", link: "/guide/installation_docker" },
             ],
           },
@@ -144,6 +141,7 @@ export default defineConfig({
               { text: "Variables", link: "/guide/variables" },
               { text: "Environments", link: "/guide/environments" },
               { text: "Scripting", link: "/guide/scripting" },
+              { text: "Assert", link: "/guide/assert" },
               { text: "Comment", link: "/guide/comment" },
               { text: "Hooks", link: "/guide/hooks" },
               { text: "Response", link: "/guide/response" },
