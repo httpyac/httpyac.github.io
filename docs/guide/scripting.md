@@ -34,15 +34,15 @@ In addition to the defined variables and [NodeJS Global](https://nodejs.org/api/
 
 | name | description | condition | example |
 | - | - | - | - |
-| $global | Object which allows storing global Variables | | [globalVariables.http](../../examples/variables/globalVariables.http) |
-| $requestClient | [requestClient](https://github.com/AnWeber/httpyac/blob/main/src/models/requestClient.ts) to send additional body in streaming event.  | | [requestClient.http](../../examples/request/requestclient.http) |
-| httpFile | current [httpFile](https://github.com/AnWeber/httpyac/blob/main/src/models/httpFile.ts) | - | [scriptVariablesHttpFile.http](../../examples/script/scriptVariablesHttpFile.http) |
-| httpRegion | current [httpRegion](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRegion.ts) | - | [scriptVariablesHttpRegion.http](../../examples/script/scriptVariablesHttpRegion.http) | 
-| oauth2Session | [OAuth2 Response](https://github.com/AnWeber/httpyac/blob/main/src/models/openIdInformation.ts#L29-L37) |only if [OAuth2/ OpenId Connect](/guide/variables.html#oauth2-openid-connect) is used | [scriptVariablesOAuthSession.http](../../examples/script/scriptVariablesOAuthSession.http) |
-| request | request of the next [http request](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRequest.ts) | - | [custom.http](../../examples/variables/custom.http) |
-| response | [http response](https://github.com/AnWeber/httpyac/blob/main/src/models/httpResponse.ts) of the last executed request | only use it in post request scripts or for responses imported with `@forceRef` | [websocket.http](../../examples/script/assert.http) |
-| sleep | [Method](https://github.com/AnWeber/httpyac/blob/main/src/utils/promiseUtils.ts#L7) to wait for a fixed period of time | - | [grpcClientStreaming.http](../../examples/request/grpc/grpcClientStreaming.http) |
-| test | method to simplify [tests](https://github.com/AnWeber/httpyac/blob/main/src/models/testFunction.ts#L6-L14) ([assert](../../examples/project/tests/assert.http) or [chai](../../examples/project/tests/chai.http)) | - | [test.http](../../examples/script/test.http) |
+| $global | Object which allows storing global Variables | | [globalVariables.http](https://github.com/httpyac/httpyac.github.io/tree/main/examples/variables/globalVariables.http) |
+| $requestClient | [requestClient](https://github.com/AnWeber/httpyac/blob/main/src/models/requestClient.ts) to send additional body in streaming event.  | | [requestClient.http](https://github.com/httpyac/httpyac.github.io/tree/main/examples/request/requestclient.http) |
+| httpFile | current [httpFile](https://github.com/AnWeber/httpyac/blob/main/src/models/httpFile.ts) | - | [scriptVariablesHttpFile.http](https://github.com/httpyac/httpyac.github.io/tree/main/examples/script/scriptVariablesHttpFile.http) |
+| httpRegion | current [httpRegion](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRegion.ts) | - | [scriptVariablesHttpRegion.http](https://github.com/httpyac/httpyac.github.io/tree/main/examples/script/scriptVariablesHttpRegion.http) | 
+| oauth2Session | [OAuth2 Response](https://github.com/AnWeber/httpyac/blob/main/src/models/openIdInformation.ts#L29-L37) |only if [OAuth2/ OpenId Connect](/guide/variables.html#oauth2-openid-connect) is used | [scriptVariablesOAuthSession.http](https://github.com/httpyac/httpyac.github.io/tree/main/examples/script/scriptVariablesOAuthSession.http) |
+| request | request of the next [http request](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRequest.ts) | - | [custom.http](https://github.com/httpyac/httpyac.github.io/tree/main/examples/variables/custom.http) |
+| response | [http response](https://github.com/AnWeber/httpyac/blob/main/src/models/httpResponse.ts) of the last executed request | only use it in post request scripts or for responses imported with `@forceRef` | [websocket.http](https://github.com/httpyac/httpyac.github.io/tree/main/examples/script/assert.http) |
+| sleep | [Method](https://github.com/AnWeber/httpyac/blob/main/src/utils/promiseUtils.ts#L7) to wait for a fixed period of time | - | [grpcClientStreaming.http](https://github.com/httpyac/httpyac.github.io/tree/main/examples/request/grpc/grpcClientStreaming.http) |
+| test | method to simplify [tests](https://github.com/AnWeber/httpyac/blob/main/src/models/testFunction.ts#L6-L14) ([assert](https://github.com/httpyac/httpyac.github.io/tree/main/examples/project/tests/assert.http) or [chai](https://github.com/httpyac/httpyac.github.io/tree/main/examples/project/tests/chai.http)) | - | [test.http](https://github.com/httpyac/httpyac.github.io/tree/main/examples/script/test.http) |
 | __dirname | [path to current working directory](https://nodejs.org/api/modules.html#__dirname) | - | - |
 | __filename | [The file name of the current module.](https://nodejs.org/api/modules.html#__filename) | - | - |
 
@@ -60,17 +60,17 @@ External dependencies must be installed independently, exceptions are , ,  and  
 External dependencies must be installed independently, but some dependencies are provided from httpyac:
 - [@cloudamqp/amqp-client](https://www.npmjs.com/package/@cloudamqp/amqp-client)
 - [@xmldom/xmldom](https://www.npmjs.com/package/@xmldom/xmldom)
-- [dayjs](https://www.npmjs.com/package/dayjs) ([example](../../examples/script/dayjs.http))
+- [dayjs](https://www.npmjs.com/package/dayjs) ([example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/script/dayjs.http))
 - [eventsource](https://www.npmjs.com/package/eventsource)
 - [got](https://www.npmjs.com/package/got)
-- [grpc-js](https://www.npmjs.com/package/@grpc/grpc-js) ([example](../../examples/request/grpc/grpc.http))
+- [grpc-js](https://www.npmjs.com/package/@grpc/grpc-js) ([example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/request/grpc/grpc.http))
 - [httpYac](https://www.npmjs.com/package/httpyac)
 - [mqtt](https://www.npmjs.com/package/mqtt)
-- [NodeJS API](https://nodejs.org/docs/latest/api/) ([example](../../examples/script/assert.http))
-- [uuid](https://www.npmjs.com/package/uuid) ([example](../../examples/script/uuid.http))
+- [NodeJS API](https://nodejs.org/docs/latest/api/) ([example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/script/assert.http))
+- [uuid](https://www.npmjs.com/package/uuid) ([example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/script/uuid.http))
 - [vscode](https://www.npmjs.com/package/@types/vscode)
 - [ws](https://www.npmjs.com/package/ws)
-- [xpath](https://www.npmjs.com/package/xpath) ([example](../../examples/script/xpath.http))
+- [xpath](https://www.npmjs.com/package/xpath) ([example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/script/xpath.http))
 
 
 ::: warning
