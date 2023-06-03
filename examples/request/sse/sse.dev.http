@@ -1,0 +1,3 @@
+# @keepStreaming
+SSE https://sse.dev/test
+Event: message
