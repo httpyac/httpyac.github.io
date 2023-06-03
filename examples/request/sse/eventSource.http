@@ -1,5 +1,5 @@
-SSE https://express-eventsource.herokuapp.com/events
-Event: data
+SSE https://postman-echo.com/server-events/5
+Event: message
 
 {{@streaming
   async function writeStream(){
