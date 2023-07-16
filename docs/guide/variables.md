@@ -300,3 +300,8 @@ $xpath(:<variableName>) <xpath>
 > If no variableName is provided and the last response is of Mimetype XML, the last response.body is used
 
 <<< @../../examples/variables/xpath.http
+
+
+> You could provide XPath Namespaces using `@xpath_ns`
+
+<<< @../../examples/assert/xpath_namespace.http

@@ -1,0 +1,16 @@
+@xpath_ns hello=http://learnwebservices.com/services/hello
+
+POST https://apps.learnwebservices.com/services/hello
+Content-Type: application/xml
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header/>
+   <soapenv:Body>
+       <HelloRequest xmlns="http://learnwebservices.com/services/hello">
+          <Name>John Doe</Name>
+       </HelloRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+?? xpath //hello:Message == Hello John Doe!
