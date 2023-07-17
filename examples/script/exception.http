@@ -1,0 +1,10 @@
+# @title test
+GET https://httpbin.org/anything
+
+###
+# @title test2
+GET https://httpbin.org/anything
+
+{{
+  throw new Error("Valid Exception")
+}}
