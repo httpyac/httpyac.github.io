@@ -1,0 +1,5 @@
+
+POST https://postman-echo.com/post
+Authorization: oauth2 code pkce
+
+{{ oauth2Session.accessToken }}
