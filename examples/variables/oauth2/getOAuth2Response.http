@@ -1,0 +1,11 @@
+{{
+  exports.token = (async function(){
+    const openidInformation = await $getOAuth2Response("pkce", "oauht2", $context);
+    return openidInformation.accessToken;
+  })()
+}}
+
+POST https://postman-echo.com/post
+Authorization: oauth2 code pkce
+
+{{ token }}

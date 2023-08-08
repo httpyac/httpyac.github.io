@@ -1,0 +1,8 @@
+GET https://postman-echo.com/get
+
+{{
+  const { equal } = require('assert');
+  test('status code 200', () => {
+    equal(response.statusCode, 200);
+  });
+}}
