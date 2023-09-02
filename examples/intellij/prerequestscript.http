@@ -1,0 +1,4 @@
+< {%
+    request.variables.set("firstname", "John")
+%}
+GET http://example.org/{{firstname}}
