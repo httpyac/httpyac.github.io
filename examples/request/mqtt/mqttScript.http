@@ -1,9 +1,10 @@
 # @keepStreaming
+# @name source
 MQTT tcp://broker.hivemq.com
 Topic: testtopic/1
 
 ###
 # @name test
 {{
-  mqttClient.publish('testtopic/1', 'hello johnny')
+  $requestClient.send('hello test')
 }}
