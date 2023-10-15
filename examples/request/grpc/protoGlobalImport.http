@@ -1,13 +1,13 @@
 proto < ./hello.proto
 
 ###
-GRPC grpcb.in:9000/hello.HelloService/sayHello
+GRPC grpc.postman-echo.com/HelloService/sayHello
 {
   "greeting": "world"
 }
 
 
-GRPC grpcb.in:9000/hello.HelloService/sayHello
+GRPC grpc.postman-echo.com/HelloService/sayHello
 {
   "greeting": "john"
 }

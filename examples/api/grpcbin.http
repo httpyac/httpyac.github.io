@@ -1,21 +1,21 @@
-proto < ./hello.proto
+proto < ./proto
 proto < ./grpcbin.proto
-@host=grpcb.in:9000
+@host=grpc.postman-echo.com/
 
 ###
 
-GRPC /hello.HelloService/sayHello
+GRPC /HelloService/sayHello
 {
   "greeting": "world"
 }
 
-GRPC /hello.HelloService/LotsOfReplies
+GRPC /HelloService/LotsOfReplies
 {
   "greeting": "world"
 }
 
 
-GRPC /hello.HelloService/lotsOfGreetings
+GRPC /HelloService/lotsOfGreetings
 {
   "greeting": "world."
 }
@@ -35,7 +35,7 @@ GRPC /hello.HelloService/lotsOfGreetings
   exports.waitPromise = writeStream();
 }}
 
-GRPC /hello.HelloService/BidiHello
+GRPC /HelloService/BidiHello
 {
   "greeting": "world"
 }
@@ -56,19 +56,3 @@ GRPC /hello.HelloService/BidiHello
 }}
 
 
-
-###
-
-GRPC /grpcbin.GRPCBin/SpecificError
-{
-  "code": 4,
-  "reason": "Meaning of life"
-}
-GRPC /grpcbin.GRPCBin/RandomError
-{
-  "fString": "bar"
-}
-GRPC /grpcbin.GRPCBin/HeadersUnary
-
-
-GRPC /grpcbin.GRPCBin/NoResponseUnary

@@ -4,7 +4,7 @@ proto < ./hello.proto
 const grpc = require('@grpc/grpc-js');
 request.channelCredentials = grpc.ChannelCredentials.createSsl();
 }}
-GRPC grpcb.in:9001/hello.HelloService/sayHello
+GRPC grpc.postman-echo.com/HelloService/sayHello
 {
   "greeting": "world"
 }

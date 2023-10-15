@@ -1,5 +1,5 @@
 proto < ./hello.proto
-@host=grpcb.in:9000/hello.HelloService
+@host=grpc.postman-echo.com/HelloService
 
 ###
 

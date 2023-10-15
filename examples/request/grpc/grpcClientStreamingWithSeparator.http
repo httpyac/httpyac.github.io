@@ -1,5 +1,5 @@
 proto < ./hello.proto
-GRPC grpcb.in:9000/hello.HelloService/lotsOfGreetings
+GRPC grpc.postman-echo.com/HelloService/lotsOfGreetings
 {
   "greeting": "world."
 }

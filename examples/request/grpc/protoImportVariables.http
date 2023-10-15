@@ -8,7 +8,7 @@ defaults: true
 oneofs: true
 includeDirs: [`${assetsDir}/request`]
 
-GRPC grpcb.in:9000/hello.HelloService/sayHello
+GRPC grpc.postman-echo.com/HelloService/sayHello
 {
   "greeting": "world"
 }

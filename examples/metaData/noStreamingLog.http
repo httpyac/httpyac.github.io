@@ -2,7 +2,7 @@ proto < ./hello.proto
 
 # @noStreamingLog
 
-GRPC grpcb.in:9000/hello.HelloService/LotsOfReplies
+GRPC grpc.postman-echo.com/HelloService/LotsOfReplies
 {
   "greeting": "world"
 }
