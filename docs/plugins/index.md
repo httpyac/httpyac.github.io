@@ -27,7 +27,7 @@ For a plugin to be usable in a httpYac project, it must follow the name conventi
 - Discoverable by httpYac;
 - Discoverable by other developers via searching;
 
-:::warning Warning
+::: warning
 Make sure to name the plugin correctly, otherwise it will be impossible to find it with httpYac plugins search!
 :::
 

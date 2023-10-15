@@ -34,8 +34,6 @@ export default defineConfig({
       },
     ],
     ["meta", { name: "msapplication-TileColor", content: "#000000" }],
-
-    ["link", { rel: "stylesheet", href: "/index.css" }],
   ],
   markdown: {
     lineNumbers: true,

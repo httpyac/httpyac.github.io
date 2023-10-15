@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "github pages of httpyac",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "vitepress dev docs",
     "build": "vitepress build docs",
@@ -27,7 +28,7 @@
   "license": "MIT",
   "devDependencies": {
     "flexsearch": "^0.7.31",
-    "vitepress": "1.0.0-alpha.48",
-    "vitepress-plugin-search": "1.0.4-alpha.19"
+    "vitepress": "1.0.0-rc.22",
+    "vitepress-plugin-search": "1.0.4-alpha.20"
   }
 }

@@ -181,7 +181,7 @@ Authorization: openid client_credentials local token_exchange realm_auth
 - .env
 The following examples use the following values as variables.
 
-<<< @../../examples/variables/oauth2/.env)
+<<< @../../examples/variables/oauth2/.env
 
 - Authorization Code Flow
 

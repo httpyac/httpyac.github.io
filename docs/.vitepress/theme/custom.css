@@ -1,0 +1,71 @@
+:root {
+  --vp-c-brand: #666160;
+  --vp-c-brand-1: #777271;
+  --vp-c-brand-2: #777271;
+  --vp-c-brand-3: #666160;
+  --vp-c-brand-soft: #DDD7D3;
+
+
+  --vp-c-brand-light: #777271;
+  --vp-c-brand-lighter: #9A9390;
+  --vp-c-brand-dark: #5E5A59;
+  --vp-c-brand-darker: #5B5756;
+
+  --shiki-color-text: #FFF;
+  --shiki-color-background: #000;
+  --shiki-token-constant: #009688;
+  --shiki-token-string: #4caf50;
+  --shiki-token-comment: #6A737D;
+  --shiki-token-keyword: #2196f3;
+  --shiki-token-parameter: #6A737D;
+  --shiki-token-function: #ff9800;
+  --shiki-token-string-expression: #9575cd;
+  --shiki-token-punctuation: #FFF;
+  --shiki-token-link: #6A737D;
+}
+
+[style="color:var(--shiki-token-comment);"] + [style="color:var(--shiki-token-keyword);"]{
+  --shiki-token-keyword: #9575cd;
+
+}
+[style="color:var(--shiki-token-keyword);"] + [style="color:var(--shiki-token-comment);"], [style="color:var(--shiki-token-constant);"] + [style="color:var(--shiki-token-comment);"]{
+  --shiki-token-comment: #FFF;
+}
+[style="color:var(--shiki-token-comment);"] + [style="color:var(--shiki-token-function);"], [style="color:var(--shiki-token-constant);"] + [style="color:var(--shiki-token-function);"]{
+  --shiki-token-function: #FFF;
+}
+
+
+.link[href^="https://github.com/"]::before{
+  content: url(/github.svg);
+  padding-right: 5px;
+  top: 2px;
+  position: relative;
+}
+
+.outline-marker.outline-marker{
+  width: 3px;
+  background-color: var(--vp-c-brand-lighter);
+}
+
+.DocSearch-Button-Keys{
+  display: none;
+}
+
+.flex-logo{
+  display: none;
+}
+
+.search-item{
+  padding: 0.2rem 0.5rem;
+  border-radius: 0;
+}
+
+.VPSidebar.VPSidebar{
+  padding-bottom: 32px;
+}
+
+.vp-doc [class*='language-'] > span.lang, .vp-doc [class*='language-'] > button.copy {
+  bottom: 6px;
+  top: unset;
+}
