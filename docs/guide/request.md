@@ -197,6 +197,17 @@ You can use Variable Substitution in file import and in proto-loader options.
 IncludeDirs of @grpc/proto-loader currently supports only absolute paths. 
 :::
 
+### GRPC Reflection
+
+[Grpc Reflection](https://github.com/grpc/grpc/blob/master/doc/server-reflection.md) support can be enabled using metaData `# @grpc-reflection`
+
+<<< @../../examples/request/grpc/grpc_reflection.http{1}
+
+::: tip
+If you want to use it in global region, you need to provide server url in metaData (`# @grpc-reflection <server>`)
+:::
+
+
 ### Unary RPC
 
 [Unary RPC]( https://grpc.io/docs/what-is-grpc/core-concepts/#unary-rpc) behaves identically to Http requests. The url need to be in the following format

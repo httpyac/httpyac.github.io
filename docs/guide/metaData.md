@@ -110,6 +110,12 @@ An index is automatically appended to the Name of the request, which can be used
 
 <<< @../../examples/metaData/loopAccessRequests.http{6}
 
+## GRPC Reflection
+
+Enable [Grpc Reflection lookup](https://github.com/grpc/grpc/blob/master/doc/server-reflection.md) for current grpc server
+
+<<< @../../examples/request/grpc/grpc_reflection.http{1}
+
 ## Save
 
 If `@save` is specified, the response will not be displayed but saved directly.
