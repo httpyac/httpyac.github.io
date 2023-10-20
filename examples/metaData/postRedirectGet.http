@@ -1,0 +1,7 @@
+
+# @post-redirect-get
+POST https://httpbin.org/redirect-to?url=https://httpbin.org/get
+
+{
+  "test": "foo"
+}
