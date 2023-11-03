@@ -134,7 +134,7 @@ You can use Variable Substitution in file import.
 :::
 <<< @../../examples/request/graphql/graphqlImportVariables.http{6}
 
-## Request Separators
+## Request Separators / Global Regions
 
 Multiple requests defined in a single file must be separated from each other with a request separator symbol. A separator may contain comments.
 
@@ -161,6 +161,7 @@ GET /post HTTP/1.1
 
 GET /post HTTP/1.1
 ```
+
 
 ## gRPC
 
