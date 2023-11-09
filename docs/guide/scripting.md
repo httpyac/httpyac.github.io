@@ -89,6 +89,8 @@ The console cannot be accessed in VS Code. Therefore, a separate Console object 
 }}
 ```
 
+Open the OutputChannel by pressing `CTRL+K` followed by `CTRL+H`, then select `httpyac - Console` from the select on the right.
+
 ## Global Scripts
 
 Scripts with no request in the same region are always executed (Global Scripts).
