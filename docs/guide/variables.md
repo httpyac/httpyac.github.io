@@ -188,18 +188,23 @@ The following examples use the following values as variables.
 <<< @../../examples/variables/oauth2/authorization_code.http
 
 - Authorization Code Flow with PKCE
+
 <<< @../../examples/variables/oauth2/authorization_code_pkce.http
 
 - Implicit Flow
+
 <<< @../../examples/variables/oauth2/implicit.http
 
 - Client Credentials Flow
+
 <<< @../../examples/variables/oauth2/clientcredentials.http
 
 - Device Code Flow
+
 <<< @../../examples/variables/oauth2/device_code.http
 
 - Password Flow
+
 <<< @../../examples/variables/oauth2/password.http
 
 ### AWS Signature v4
