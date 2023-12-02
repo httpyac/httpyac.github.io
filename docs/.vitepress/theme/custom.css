@@ -24,6 +24,11 @@
   --shiki-token-link: #6A737D;
 }
 
+.dark {
+
+  --vp-c-brand-soft: #777271;
+}
+
 [style="color:var(--shiki-token-comment);"] + [style="color:var(--shiki-token-keyword);"]{
   --shiki-token-keyword: #9575cd;
 
