@@ -1,0 +1,7 @@
+{{
+  exports.oauth2_interceptRequest = function(request, context) {
+    console.info(request);
+  }
+}}
+GET https://httpbin.org/anything
+Authorization: oauth2 password
