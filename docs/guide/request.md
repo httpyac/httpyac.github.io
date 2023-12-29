@@ -19,7 +19,7 @@ If the Http version is specified, this can be used to control the use of HTTP2
 
 <<< @../../examples/request/requestlineHttpVersion.http
 
-Allowed Requests Methods are:
+Allowed Requests Methods are (only uppercase values are allowed):
 | |||||
 |-|-|-|-|-|
 | GET | POST | PUT | DELETE | PATCH | HEAD |
