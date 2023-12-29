@@ -44,6 +44,7 @@ Example:
 ```
 `
 
+> A custom global plugin can also be set using env Variable `HTTPYAC_PLUGIN`
 
 ## Service Plugin
 
