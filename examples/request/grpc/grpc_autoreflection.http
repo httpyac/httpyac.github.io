@@ -1,0 +1,5 @@
+
+GRPC grpc.postman-echo.com/HelloService/sayHello
+{
+  "greeting": "world"
+}
