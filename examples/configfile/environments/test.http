@@ -1,1 +1,1 @@
-GET /anything?q={{system}}
+GET /anything?q={{system}}&dev={{dev}}

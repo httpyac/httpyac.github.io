@@ -7,5 +7,4 @@ node_modules
 .eslintcache
 cache
 .temp
-.httpyac/GRPC_0.2ffab4cb.json
-.httpyac/GRPC_0.b0780e07.json
+.httpyac
