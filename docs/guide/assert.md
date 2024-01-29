@@ -27,7 +27,7 @@ Conidtions are used to assert the field of the response
 | exists / isTrue | Field exists/ is truthy | `?? header range exists` |
 | isFalse | Field is falsy | `?? header range isFalse` |
 | isNumber | Field is number | `?? status isNumber` |
-| isBooelan | Field is boolean | `?? body active isBooelan` |
+| isBoolean | Field is boolean | `?? body active isBoolean` |
 | isString | Field is string | `?? header content-type isString` |
 | isArray | Field is Array | `?? body links isArray` |
 | matches | Field matches expected regex | `?? status matches ^\\d+` |
