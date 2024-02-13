@@ -147,7 +147,7 @@ To configure the flow, the following variables must be specified
 | <span v-pre>{{prefix}}</span>_useAuthorizationHeader  | use Authorization Header for request (default: true) | x | x | x | x | - |
 | <span v-pre>{{prefix}}</span>_usePkce | enable PKCE support | x (default: false) | - | - | - | - |
 | <span v-pre>{{prefix}}</span>_deviceCodeEndpoint |  Device Code Endpoint URI | - | - | - | - | x |
-| <span v-pre>{{prefix}}</span>_intercepRequest |  function used to modify request | x | x | x | x | x |
+| <span v-pre>{{prefix}}</span>_interceptRequest |  function used to modify request | x | x | x | x | x |
 
 
 ::: warning
