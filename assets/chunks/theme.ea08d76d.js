@@ -2166,7 +2166,7 @@ const _hoisted_1$e = { class: "VPNavBarSearch" }, _hoisted_2$9 = { class: "DocSe
     };
     onMounted(async () => {
       var _a, _b;
-      const data = await __vitePreload(() => import("./virtual_search-data.994b366b.js"), []);
+      const data = await __vitePreload(() => import("./virtual_search-data.c77d1732.js"), []);
       INDEX_DATA.value = data.default.INDEX_DATA, PREVIEW_LOOKUP.value = data.default.PREVIEW_LOOKUP, Options.value = data.default.Options, origin.value = window.location.origin + withBase(locale.value === "root" ? "/" : locale.value), buttonLabel.value = ((_a = Options.value) == null ? void 0 : _a.buttonLabel) || buttonLabel.value, placeholder.value = ((_b = Options.value) == null ? void 0 : _b.placeholder) || placeholder.value;
       var document2 = new Index(Options.value);
       document2.import("reg", INDEX_DATA.value.reg), document2.import("cfg", INDEX_DATA.value.cfg), document2.import("map", INDEX_DATA.value.map), document2.import("ctx", INDEX_DATA.value.ctx), searchIndex.value = document2, metaKey.value.innerHTML = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform) ? "⌘" : "Ctrl";
