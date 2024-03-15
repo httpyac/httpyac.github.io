@@ -25,8 +25,10 @@
 }
 
 .dark {
-
   --vp-c-brand-soft: #777271;
+
+  --vp-c-tip-1: #DDD7D3;
+  --vp-c-tip-2: #000;
 }
 
 [style="color:var(--shiki-token-comment);"] + [style="color:var(--shiki-token-keyword);"]{
