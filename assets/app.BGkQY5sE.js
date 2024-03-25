@@ -5,7 +5,7 @@ function __vite__mapDeps(indexes) {
   return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
 }
 import { j as inBrowser, ag as useUpdateHead, ah as RouterSymbol, ai as initData, aj as dataSymbol, ak as Content, al as ClientOnly, am as siteDataRef, an as createSSRApp, ao as createRouter, ap as pathToFile, Y as __vitePreload, d as defineComponent, u as useData, l as onMounted, z as watchEffect, aq as usePrefetch, ar as useCopyCode, as as useCodeGroups, at as h } from "./chunks/framework.DHk-hcUK.js";
-import { t as theme } from "./chunks/theme.CUyPuuID.js";
+import { t as theme } from "./chunks/theme.BO868xEf.js";
 function resolveThemeExtends(theme2) {
   if (theme2.extends) {
     const base = resolveThemeExtends(theme2.extends);
