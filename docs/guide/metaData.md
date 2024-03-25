@@ -66,6 +66,10 @@ requests can be disabled. It is possible to disable requests dynamically with <s
 
 <<< @../../examples/metaData/disabled.http{1}
 
+It is possible to use a condition/ javascript expression which is interpreted to disable requests
+
+<<< @../../examples/metaData/disabledCondition.http{1}
+
 
 ## JWT
 jwt meta data supports auto decode of jwt token. just provide property in response to decode and it is added to the promise with ${property}_parsed
