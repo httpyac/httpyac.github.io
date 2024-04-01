@@ -91,6 +91,6 @@ httpYac supports [globby](https://www.npmjs.com/package/globby) queries. This al
 
 
 ## Usage in CI with JSON Output
-It is possible to prevent all outputs and get a JSON object as result instead. The object corresponds to the following [interface](https://github.com/AnWeber/httpyac/blob/main/src/cli/cliJsonOutput.ts#L5-L34).
+It is possible to prevent all outputs and get a JSON object as result instead. The object corresponds to the following [interface](https://github.com/AnWeber/httpyac/blob/main/src/cli/send/jsonOutput.ts#L5-L34).
 
 ![output json](/cli_json.gif)
