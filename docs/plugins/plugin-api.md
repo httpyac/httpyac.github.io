@@ -173,7 +173,7 @@ hook to replace variable in request line, header or request body
 hook to provide custom variables
 
 
-<<< @../../examples/plugins/provideVariablesHook/httpyac-plugin-example/index.js{2-13}
+<<< @../../examples/plugins/provideVariablesHook/httpyac-plugin-example/index.js{2-13 HTTP}
 
 [full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/provideVariablesHook)
 
@@ -187,7 +187,7 @@ hook to provide custom variables
 
 hook to provide environments
 
-<<< @../../examples/plugins/provideVariablesHook/httpyac-plugin-example/index.js{14-16}
+<<< @../../examples/plugins/provideVariablesHook/httpyac-plugin-example/index.js{14-16 HTTP}
 
 [full example](https://github.com/httpyac/httpyac.github.io/tree/main/examples/plugins/provideVariablesHook)
 

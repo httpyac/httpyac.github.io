@@ -50,29 +50,4 @@
   position: relative;
 }
 
-.outline-marker.outline-marker{
-  width: 3px;
-  background-color: var(--vp-c-brand-lighter);
-}
 
-.DocSearch-Button-Keys{
-  display: none;
-}
-
-.flex-logo{
-  display: none;
-}
-
-.search-item{
-  padding: 0.2rem 0.5rem;
-  border-radius: 0;
-}
-
-.VPSidebar.VPSidebar{
-  padding-bottom: 32px;
-}
-
-.vp-doc [class*='language-'] > span.lang, .vp-doc [class*='language-'] > button.copy {
-  bottom: 6px;
-  top: unset;
-}

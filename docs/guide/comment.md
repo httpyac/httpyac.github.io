@@ -2,7 +2,7 @@
 
 Comments are supported in HTTP Requests.
 
-```http
+```HTTP
 # comment type 1
 // comment type 2
 
@@ -25,4 +25,4 @@ The first comment is automatically used as description for this request.
 
 ![httpbook](/httpbook.gif)
 
-<<< @../../examples/api/httpbin.http
+<<< @../../examples/api/httpbin.http{HTTP}

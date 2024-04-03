@@ -12,7 +12,7 @@
   },
   "keywords": [
     "httpyac",
-    "vuepress",
+    "vitepress",
     "docs"
   ],
   "homepage": "https://github.com/httpyac/docs",
@@ -27,8 +27,7 @@
   "author": "AnWeber",
   "license": "MIT",
   "devDependencies": {
-    "flexsearch": "^0.7.43",
-    "vitepress": "1.0.0-rc.45",
-    "vitepress-plugin-search": "1.0.4-alpha.22"
+    "@types/node": "^20.12.3",
+    "vitepress": "1.0.2"
   }
 }

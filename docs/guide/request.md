@@ -8,7 +8,7 @@ An HTTP request starts with a request line followed by optional header fields, m
 A [request line](https://datatracker.ietf.org/doc/html/rfc7230#section-3.1.1) consists of a request method, target and the HTTP protocol version. If the request method is omitted, ‘GET’ will be used as a default. The HTTP protocol version can be also omitted.
 
 
-<<< @../../examples/request/requestline.http
+<<< @../../examples/request/requestline.http{HTTP}
 
 ::: tip
 The HTTP version is optional. But in this guide I have always added it because of syntax highlighting
@@ -17,7 +17,7 @@ The HTTP version is optional. But in this guide I have always added it because o
 If the Http version is specified, this can be used to control the use of HTTP2
 
 
-<<< @../../examples/request/requestlineHttpVersion.http
+<<< @../../examples/request/requestlineHttpVersion.http{HTTP}
 
 Allowed Requests Methods are (only uppercase values are allowed):
 | |||||
@@ -29,37 +29,37 @@ Allowed Requests Methods are (only uppercase values are allowed):
 
 A request path can be added in the next line
 
-<<< @../../examples/request/requestlineMultiline.http
+<<< @../../examples/request/requestlineMultiline.http{HTTP}
 
 
 ## Query Strings
 
 A [request query](https://datatracker.ietf.org/doc/html/rfc3986#section-3.4) may contain any unicode characters except line separators and the ‘#’ symbol.
 
-<<< @../../examples/request/queryString.http
+<<< @../../examples/request/queryString.http{HTTP}
 
 It is also possible to split the query strings to different subsequent lines.
 
-<<< @../../examples/request/queryStringMultiline.http
+<<< @../../examples/request/queryStringMultiline.http{HTTP}
 
 ## Headers
 
 Each [header field](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2) consists of a case-insensitive field name followed by a colon (‘:’), optional leading whitespace, the field value, and optional trailing whitespace.
 
 
-<<< @../../examples/request/headers.http
+<<< @../../examples/request/headers.http{HTTP}
 
 If you use the same headers several times, it is possible to store them in a variable and reuse them.
 
 
-<<< @../../examples/request/headersSpread.http{10}
+<<< @../../examples/request/headersSpread.http{10 HTTP}
 
 ## Cookie
 
 [CookieJar](https://www.npmjs.com/package/tough-cookie) support is enabled by default. All received [Cookies](https://datatracker.ietf.org/doc/html/rfc6265#section-5.4), previously sent by the server with the Set-Cookie header are automatically sent back. It is possible to send own cookies to the server using cookie header.
 
 
-<<< @../../examples/request/cookie.http
+<<< @../../examples/request/cookie.http{HTTP}
 
 ::: warning
 Cookies are only stored In-Memory and are cleared in VS Code with command `httpyac.reset`
@@ -67,13 +67,13 @@ Cookies are only stored In-Memory and are cleared in VS Code with command `httpy
 
 It is possible to disable cookie support per request.
 
-<<< @../../examples/metaData/noCookieJar.http{1}
+<<< @../../examples/metaData/noCookieJar.http{1 HTTP}
 
 ## Request Body
 The [request body](https://datatracker.ietf.org/doc/html/rfc7230#section-3.3) can be represented as a simple message or a mixed type message (multipart-form-data).
 
 
-<<< @../../examples/request/requestBody/requestBody.http
+<<< @../../examples/request/requestBody/requestBody.http{HTTP}
 
 ::: warning
 The first content that is not recognized as a header or query string is interpreted as a request body. After that, no more header or query string can be specified.
@@ -82,22 +82,22 @@ The first content that is not recognized as a header or query string is interpre
 Multiple Response Body could be separated using `===`. These request body are sent one after another. To wait for a message to be received before sending, you could use `wait-for-server` 
 
 
-<<< @../../examples/request/requestBody/requestBodyMulti.http
+<<< @../../examples/request/requestBody/requestBodyMulti.http{HTTP}
 
 ## Imported Request Body
 
 A body can also be imported by using `< ...`.
 
-<<< @../../examples/request/requestBody/requestBodyImport.http{4}
+<<< @../../examples/request/requestBody/requestBodyImport.http{4 HTTP}
 
 If you want to replace variables in the file please import it with `<@`
 
-<<< @../../examples/request/requestBody/requestBodyImportReplace.http{5}
+<<< @../../examples/request/requestBody/requestBodyImportReplace.http{5 HTTP}
 
 All files are read with UTF-8 encoding. If a different encoding is desired, provide it. All [encodings](https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings) supported by NodeJS are available.
 
 
-<<< @../../examples/request/requestBody/requestBodyImportReplaceEncoding.http{5}
+<<< @../../examples/request/requestBody/requestBodyImportReplaceEncoding.http{5 HTTP}
 
 ::: warning
 If the request body is configured in-place, whitespace around it will be trimmed. To send leading or trailing whitespace as part of the request body, send it from a separate file.
@@ -107,38 +107,38 @@ If the request body is configured in-place, whitespace around it will be trimmed
 You can use Variable Substitution in file import.
 :::
 
-<<< @../../examples/request/requestBody/requestBodyImportVariable.http{7}
+<<< @../../examples/request/requestBody/requestBodyImportVariable.http{7 HTTP}
 
 ## multipart/form-data
 
 It is possible to mix inline text with file imports
 
 
-<<< @../../examples/request/requestBody/multipartFormData.http
+<<< @../../examples/request/requestBody/multipartFormData.http{HTTP}
 
 ## GraphQL
 GraphQL queries are supported. Parsing Logic will automatically generate a GraphQL request body from the query and the optional variables.
 
-<<< @../../examples/request/graphql/graphql.http
+<<< @../../examples/request/graphql/graphql.http{HTTP}
 
 GraphQL fragments are also supported and are included in the body by name.
 
-<<< @../../examples/request/graphql/graphqlParts.http{1,26}
+<<< @../../examples/request/graphql/graphqlParts.http{1,26 HTTP}
 
 To import GraphQL File you need to use special GraphQL Import Directive.
 
-<<< @../../examples/request/graphql/graphqlImport.http{5}
+<<< @../../examples/request/graphql/graphqlImport.http{5 HTTP}
 
 ::: tip
 You can use Variable Substitution in file import.
 :::
-<<< @../../examples/request/graphql/graphqlImportVariables.http{6}
+<<< @../../examples/request/graphql/graphqlImportVariables.http{6 HTTP}
 
 ## Request Separators / Global Regions
 
 Multiple requests defined in a single file must be separated from each other with a request separator symbol. A separator may contain comments.
 
-```http
+```HTTP
 https://httpbin.org/post
 ### separator
 https://httpbin.org/post
@@ -146,7 +146,7 @@ https://httpbin.org/post
 
 Alternatively, the request can also be specified in [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.1.1) Request line format, which also triggers a separation.
 
-```http
+```HTTP
 GET https://httpbin.org/post HTTP/1.1
 
 GET https://httpbin.org/post HTTP/1.1
@@ -154,7 +154,7 @@ GET https://httpbin.org/post HTTP/1.1
 
 Using `###` Regions without a request can be defined. These global regions are executed and interpreted for all requests within the file. This way [meta data](/guide/metaData.html), [variables](/guide/variables.html) and [scripts](/guide/scripting.html) can be set for each request.
 
-```http
+```HTTP
 @host=https://httpbin.org
 ###
 GET /post HTTP/1.1
@@ -168,31 +168,31 @@ GET /post HTTP/1.1
 It is also possible to send gRPC requests. The same request line format is used as for Http requests, but `GRPC` must be specified as the request method.
 
 
-<<< @../../examples/request/grpc/grpc.http
+<<< @../../examples/request/grpc/grpc.http{HTTP}
 
 
 ::: tip
 Own ChannelCredentials can be set simply using header `channelCredentials`.
 :::
 
-<<< @../../examples/request/grpc/grpcSSL.http
+<<< @../../examples/request/grpc/grpcSSL.http{HTTP}
 
 
 ### Protobuf Loader
 
 To use the gRPC call, the proto file associated with the call must first be loaded. This is loaded using [@grpc/proto-loader](https://www.npmjs.com/package/@grpc/proto-loader). This can be configured using options in the header format
 
-<<< @../../examples/request/grpc/protoImport.http
+<<< @../../examples/request/grpc/protoImport.http{HTTP}
 
 The import of the proto file can also be done globally
 
-<<< @../../examples/request/grpc/protoGlobalImport.http
+<<< @../../examples/request/grpc/protoGlobalImport.http{HTTP}
 
 
 ::: tip
 You can use Variable Substitution in file import and in proto-loader options.
 :::
-<<< @../../examples/request/grpc/protoImportVariables.http{3}
+<<< @../../examples/request/grpc/protoImportVariables.http{3 HTTP}
 
 ::: warn
 IncludeDirs of @grpc/proto-loader currently supports only absolute paths. 
@@ -202,7 +202,7 @@ IncludeDirs of @grpc/proto-loader currently supports only absolute paths.
 
 [Grpc Reflection](https://github.com/grpc/grpc/blob/master/doc/server-reflection.md) support can be enabled using metaData `# @grpc-reflection`
 
-<<< @../../examples/request/grpc/grpc_reflection.http{1}
+<<< @../../examples/request/grpc/grpc_reflection.http{1 HTTP}
 
 ::: tip
 If you want to use it in global region, you need to provide server url in metaData (`# @grpc-reflection <server>`)
@@ -217,7 +217,7 @@ If you want to use it in global region, you need to provide server url in metaDa
 GRPC {{server}}/{{service}}/{{method}}
 ```
 
-<<< @../../examples/request/grpc/grpcUnary.http
+<<< @../../examples/request/grpc/grpcUnary.http{HTTP}
 
 Using [header notation](/guide/request.html#headers) it is also possible to send meta data. 
 
@@ -227,17 +227,17 @@ Header `ChannelCredentials` or `Authorization`are special and defines the [authe
 
 [Server Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#server-streaming-rpc) is similar to a unary RPC, except that the server returns a stream of messages in response to a client’s request.
 
-<<< @../../examples/request/grpc/grpcServerStreaming.http
+<<< @../../examples/request/grpc/grpcServerStreaming.http{HTTP}
 
 All responses are output as an intermediate result and summarized at the end as one overall response. If the intermediate results are not needed, they can be deactivated using `# @noStreamingLog`.
 
-<<< @../../examples/metaData/noStreamingLog.http
+<<< @../../examples/metaData/noStreamingLog.http{HTTP}
 
 ### Client Streaming RPC
 
 [Client Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#client-streaming-rpc) is similar to a unary RPC, except that the client sends a stream of messages to the server instead of a single message. To enable this, a custom script can be used that registers for the @streaming hook. This script must export a Promise at the end of which the client stream is terminated.
 
-<<< @../../examples/request/grpc/grpcClientStreaming.http
+<<< @../../examples/request/grpc/grpcClientStreaming.http{HTTP}
 
 ::: tip
 To control the wait time more easily, a method `sleep` is provided that waits the number of milliseconds.
@@ -249,40 +249,40 @@ To control the wait time more easily, a method `sleep` is provided that waits th
 [Bidirectional Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#bidirectional-streaming-rpc) is a combination of client streaming and server streaming.
 
 
-<<< @../../examples/request/grpc/grpcBidirectional.http
+<<< @../../examples/request/grpc/grpcBidirectional.http{HTTP}
 
 ## Server-Sent Events / EventSource
 
 By using method `SSE` an [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) instance can be created. This opens a persistent connection to an HTTP server, which sends events in text/event-stream format. Adding the header `event` the list of events to be output is specified
 
-<<< @../../examples/request/sse/eventSource.http{2}
+<<< @../../examples/request/sse/eventSource.http{2 HTTP}
 
 The events of the server can be waited for by using [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated.
 
-<<< @../../examples/request/sse/eventSource.http{4-9}
+<<< @../../examples/request/sse/eventSource.http{4-9 HTTP}
 
 ::: tip
 Meta Data `keepStreaming` can be used to respond to events until manually aborted.
 :::
 
-<<< @../../examples/request/sse/eventSourceKeepStreaming.http{1}
+<<< @../../examples/request/sse/eventSourceKeepStreaming.http{1 HTTP}
 
 
 ## WebSocket
 
 By using method `WS` a [WebSocket connection](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket) to a server can be opened. If a body is included in the request, it is sent immediately after the connection is established. 
 
-<<< @../../examples/request/websocket/websocket.http{1}
+<<< @../../examples/request/websocket/websocket.http{1 HTTP}
 
 The events of the server can be waited for by using [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated. Within the `streaming` block it is possible to send further message using [`websocketClient`](https://www.npmjs.com/package/ws#sending-and-receiving-text-data).
 
-<<< @../../examples/request/websocket/websocket.http{7}
+<<< @../../examples/request/websocket/websocket.http{7 HTTP}
 
 ::: tip
 Meta Data `keepStreaming` can be used to respond to events until manually aborted. Every request with same url as the open Connection uses the same client.
 :::
 
-<<< @../../examples/request/websocket/websocketKeepStreaming.http{1}
+<<< @../../examples/request/websocket/websocketKeepStreaming.http{1 HTTP}
 
 ::: tip
 All received messages are output as an intermediate result and summarized at the end as one overall response. If the intermediate results are not needed, they can be deactivated using `# @noStreamingLog`.
@@ -296,11 +296,11 @@ If special options are needed for initialization, they can be configured in a No
 
 By using method `MQTT` a MQTT Client can be created. [MQTT.js](https://github.com/mqttjs/MQTT.js) opens a TCP or WebSocket Connection to a MQTT Broker. The header `Topic` specifies the topic to be registered (multiple specification allowed)
 
-<<< @../../examples/request/mqtt/mqtt.http{2}
+<<< @../../examples/request/mqtt/mqtt.http{2 HTTP}
 
 If a body is specified, it will be published immediately after connecting.
 
-<<< @../../examples/request/mqtt/mqttBody.http{4}
+<<< @../../examples/request/mqtt/mqttBody.http{4 HTTP}
 
 ::: tip
 If the topic used for publishing is different from the topic used for replying, the headers `subscribe` and `publish` can be used instead.
@@ -308,13 +308,13 @@ If the topic used for publishing is different from the topic used for replying, 
 
 The messages of the server can be waited for using [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated. Within the `streaming` block it is possible to publish further message using [`mqttClient`](https://github.com/mqttjs/MQTT.js#publish).
 
-<<< @../../examples/request/mqtt/mqttPublish.http{7}
+<<< @../../examples/request/mqtt/mqttPublish.http{7 HTTP}
 
 ::: tip
 Meta Data `keepStreaming` can be used to respond to events until manually aborted.
 :::
 
-<<< @../../examples/request/mqtt/mqtt.http{1}
+<<< @../../examples/request/mqtt/mqtt.http{1 HTTP}
 
 ::: tip
 All received messages are output as an intermediate result and summarized at the end as one overall response. If the intermediate results are not needed, they can be deactivated using `# @noStreamingLog`.
@@ -322,7 +322,7 @@ All received messages are output as an intermediate result and summarized at the
 
 [QoS](https://github.com/mqttjs/MQTT.js#qos), [retain, username, password, keepAlive (10seconds default) and clean](https://github.com/mqttjs/MQTT.js#mqttclientstreambuilder-options) can be configured using header notation.
 
-<<< @../../examples/request/mqtt/mqttHeaders.http{4-6}
+<<< @../../examples/request/mqtt/mqttHeaders.http{4-6 HTTP}
 
 ::: tip
 If more options are needed for the initialization, they could be configured in a NodeJS script using [`request.options`](https://github.com/AnWeber/httpyac/blob/main/src/models/httpRequest.ts#L36).
@@ -331,7 +331,7 @@ If more options are needed for the initialization, they could be configured in a
 
 As long as the connection of the MQTT instance to the MessageQueue exists, messages can also be published from other NodeJS blocks.
 
-<<< @../../examples/request/mqtt/mqttScript.http{8}
+<<< @../../examples/request/mqtt/mqttScript.http{8 HTTP}
 
 
 ## AMQP/ RabbitMQ
@@ -342,11 +342,11 @@ By using method `AMQP` a AMQP Client can be created. [@cloudamqp/amqp-client](ht
 
 Publish a new message to an exchange. Header `amqp_exchange` defines the used exchange. `amqp_routing_key` is optional and sets the used routing key
 
-<<< @../../examples/request/rabbitmq/publish.http{2-3}
+<<< @../../examples/request/rabbitmq/publish.http{2-3 HTTP}
 
 A direct publish to a queue is available using `amqp_queue`.
 
-<<< @../../examples/request/rabbitmq/publishQueue.http{2}
+<<< @../../examples/request/rabbitmq/publishQueue.http{2 HTTP}
 
 ::: tip
 If no amqp_method header is present and a body is provided. publish is used as default
@@ -376,7 +376,7 @@ All other headers that do not start with `amqp_` are appended to the message as 
 Consume messages from a queue. Messages will be delivered asynchronously.
 The messages of the server can be waited for by using [streaming event](/guide/scripting.html#events). As soon as this hook has been successfully processed, the connection is terminated. Within the `streaming` block it is possible to access additional methods of a [AMQPChannel using `amqpChannel`](https://cloudamqp.github.io/amqp-client.js/classes/AMQPChannel.html).
 
-<<< @../../examples/request/rabbitmq/consume.http{3-4}
+<<< @../../examples/request/rabbitmq/consume.http{3-4 HTTP}
 
 ::: tip
 Meta Data `keepStreaming` can be used to consume message until manually aborted.
@@ -386,7 +386,7 @@ Meta Data `keepStreaming` can be used to consume message until manually aborted.
 If no amqp_method header is present and no body is provided. consume is used as default
 :::
 
-<<< @../../examples/request/rabbitmq/consumeScript.http{2}
+<<< @../../examples/request/rabbitmq/consumeScript.http{2 HTTP}
 
 ::: tip
 All received messages are output as an intermediate result and summarized at the end as one overall response. If the intermediate results are not needed, they can be deactivated using `# @noStreamingLog`.
@@ -404,11 +404,11 @@ The following headers can also be defined
 
 Consumed messages are not acked/ nacked automatically. If a message needs to get acked/ nacked automatically a manual ack/ nack needs to be called. You need to declare the same channelId (`amqp_channel_id`) and deliveryTag (`amqp_tag`) as the consumer.
 
-<<< @../../examples/request/rabbitmq/ack.http{2}
+<<< @../../examples/request/rabbitmq/ack.http{2 HTTP}
 
-<<< @../../examples/request/rabbitmq/nack.http{2}
+<<< @../../examples/request/rabbitmq/nack.http{2 HTTP}
 
-<<< @../../examples/request/rabbitmq/cancel.http{2}
+<<< @../../examples/request/rabbitmq/cancel.http{2 HTTP}
 
 The following headers can also be defined
 
@@ -421,16 +421,16 @@ The following headers can also be defined
 
 Purge all messages of a queue
 
-<<< @../../examples/request/rabbitmq/purge.http{2}
+<<< @../../examples/request/rabbitmq/purge.http{2 HTTP}
 
 ### Declare exchange
 
 Declare a queue or exchange
 
-<<< @../../examples/request/rabbitmq/exchangeDeclare.http{2}
+<<< @../../examples/request/rabbitmq/exchangeDeclare.http{2 HTTP}
 
 
-<<< @../../examples/request/rabbitmq/queueDeclare.http{2}
+<<< @../../examples/request/rabbitmq/queueDeclare.http{2 HTTP}
 
 | Header | Description |
 | - | - |
@@ -443,25 +443,25 @@ Declare a queue or exchange
 
 Bind and unbind queue of a exchange
 
-<<< @../../examples/request/rabbitmq/exchangeQueueBind.http{2}
+<<< @../../examples/request/rabbitmq/exchangeQueueBind.http{2 HTTP}
 
-<<< @../../examples/request/rabbitmq/exchangeQueueUnbind.http{2}
+<<< @../../examples/request/rabbitmq/exchangeQueueUnbind.http{2 HTTP}
 
 ### Bind/ Unbind exchange to exchange
 
 Create or delete an Exchange to exchange binding
 
-<<< @../../examples/request/rabbitmq/exchangeExchangeBind.http{2}
+<<< @../../examples/request/rabbitmq/exchangeExchangeBind.http{2 HTTP}
 
-<<< @../../examples/request/rabbitmq/exchangeQueueUnbind.http{2}
+<<< @../../examples/request/rabbitmq/exchangeQueueUnbind.http{2 HTTP}
 
 ### Delete
 
 Delete an exchange or queue
 
-<<< @../../examples/request/rabbitmq/exchangeDelete.http{2}
+<<< @../../examples/request/rabbitmq/exchangeDelete.http{2 HTTP}
 
-<<< @../../examples/request/rabbitmq/queueDelete.http
+<<< @../../examples/request/rabbitmq/queueDelete.http{HTTP}
 
 | Header | Description |
 | - | - |

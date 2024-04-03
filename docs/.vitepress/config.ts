@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import { readFileSync } from "node:fs";
 
 export default defineConfig({
   vite: {
@@ -39,15 +40,19 @@ export default defineConfig({
     lineNumbers: true,
     languages: [
       {
-        id: "http",
-        scopeName: "source.http",
-        path: "./http.tmLanguage.json",
-        aliases: ["Http", "HTTP"],
+        ...JSON.parse(
+          readFileSync("./docs/.vitepress/http.tmLanguage.json", "utf8")
+        ),
+        embeddedLangs: ["json", "javascript", "html", "graphql"],
+        scopeName: "source.httpyac",
       },
     ],
   },
   themeConfig: {
     logo: "/favicon.png",
+    search: {
+      provider: "local",
+    },
     nav: [
       {
         text: "Guide",

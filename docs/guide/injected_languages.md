@@ -7,7 +7,7 @@ The parser logic allows to parse other file formats as well and to determine the
 
 In Markdown, code blocks can be given a language. If this is set to `http`, httpyac activates and offers to send the request.
 
-<<< @../../examples/injection/markdown.md{3}
+<<< @../../examples/injection/markdown.md{3 HTTP}
 
 
 ## Asciidoctor

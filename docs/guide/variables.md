@@ -3,7 +3,7 @@
 Variables are used for avoiding unnecessary data duplication in requests or for providing an easy way of switching between environments. They can be used inside request line, header fields, request body or in variable definitions. Each variable is represented by a case-sensitive identifier surrounded by double curly braces.
 
 
-<<< @../../examples/variables/variables.http
+<<< @../../examples/variables/variables.http{HTTP}
 
 
 
@@ -23,26 +23,26 @@ You could expand the visiable scope using [`@import`](./variables#import-variabl
 
 You can also explicitly define variables as global by adding them to the global object in the script.
 
-<<< @../../examples/variables/globalVariables.http
+<<< @../../examples/variables/globalVariables.http{HTTP}
 
 
 ## Inline Variables
 Inline Variables can be easily created with the following scheme. Variable Substitution is supported.
 
-<<< @../../examples/variables/variablesDefinition.http
+<<< @../../examples/variables/variablesDefinition.http{HTTP}
 
 Inline Variables in global scripts are set for each request in the file
 
-<<< @../../examples/variables/variablesGlobal.http
+<<< @../../examples/variables/variablesGlobal.http{HTTP}
 
 
 For variables, a distinction is made between fixed and lazy variables. The fixed variables are evaluated directly at definition (request `result` would query `?foo=foobar`). 
 
-<<< @../../examples/variables/variablesFixed.http
+<<< @../../examples/variables/variablesFixed.http{HTTP}
 
 Lazy variables are only evaluated before a request or NodeJS execution  (request `result` would query `?foo=foobar2`). . 
 
-<<< @../../examples/variables/variablesLazy.http
+<<< @../../examples/variables/variablesLazy.http{HTTP}
 
 ::: tip
 If a required variable is not yet defined, it will also be set lazy
@@ -53,15 +53,15 @@ If a required variable is not yet defined, it will also be set lazy
 
 The variables are also imported from other files using [`@import`](/guide/metaData.html#import). Only Variables in File Global Scope are imported.
 
-<<< @../../examples/variables/variablesImport.http{1}
+<<< @../../examples/variables/variablesImport.http{1 HTTP}
 
 To import request Variables, you can also  reference ([`@ref`](/guide/metaData.html#ref-and-forceref)) named responses ([`@name`](/guide/metaData.html#name)) from other files.
 
 :::: code-group
 
-<<< @../../examples/metaData/import.http{1,2} 
+<<< @../../examples/metaData/import.http{1,2 HTTP} 
 
-<<< @../../examples/metaData/name.http{1} 
+<<< @../../examples/metaData/name.http{1 HTTP} 
 
 ::::
 
@@ -74,12 +74,12 @@ Before the request is sent, all variables in the request (request line, headers,
  If the replacement is not desired, this can be prevented using `\{\{...\}\}`. This is replaced by <code v-pre>{{...}}</code>
 :::
 
-<<< @../../examples/variables/escapeVariableSubstitution.http
+<<< @../../examples/variables/escapeVariableSubstitution.http{HTTP}
 ### NodeJs Script
 All entries of the form <span v-pre>{{...}}</span> are interpreted as NodeJS Javascript which returns exactly one value. Since all variables can be easily accessed on the global scope, this allows for simple substitution.
 
 
-<<< @../../examples/variables/nodeJsScript.http
+<<< @../../examples/variables/nodeJsScript.http{HTTP}
 
 ::: tip
 It is possible to create more complex scripts, but this is not recommended and you should use a separate script block instead.
@@ -90,26 +90,26 @@ It is possible to create more complex scripts, but this is not recommended and y
 If the url starts with / and a variable host is defined the URL of this host will be pre pended
 
 
-<<< @../../examples/variables/host.http
+<<< @../../examples/variables/host.http{HTTP}
 
 
 ### Input, Password and QuickPick
 Dynamic Variable Resolution with input field, password field or quick pick is supported.
 
 
-<<< @../../examples/variables/input.http
+<<< @../../examples/variables/input.http{HTTP}
 
-<<< @../../examples/variables/password.http
+<<< @../../examples/variables/password.http{HTTP}
 
-<<< @../../examples/variables/pick.http
+<<< @../../examples/variables/pick.http{HTTP}
 
 ::: tip
 If only a one-time input is desired, the renewed query can be avoided using `-askonce`.
 :::
 
-<<< @../../examples/variables/input-askonce.http
+<<< @../../examples/variables/input-askonce.http{HTTP}
 
-<<< @../../examples/variables/pick-askonce.http
+<<< @../../examples/variables/pick-askonce.http{HTTP}
 
 ### OAuth2 / OpenID Connect
 The following [Open ID Connect](https://openid.net/specs/openid-connect-basic-1_0.html) flows are supported.
@@ -120,7 +120,7 @@ The following [Open ID Connect](https://openid.net/specs/openid-connect-basic-1_
 * Client Credentials Grant (grant_type = client_credentials)
 * Device Authorization Grant (grant_type = device_code)
 
-```http
+```HTTP
 GET /secured_service
 Authorization: openid {{grant_type}} {{prefix}}
 ```
@@ -158,7 +158,7 @@ To get the code from the Open ID server, a http server is started for the Author
 The http server started for the Authorization Flow and Implicit Flow listens on the port of `{{prefix}}_redirectUri`. You can configure a different port for the server to listen to with variable `oauth2_serverPort`. If the port localhost:8000 is mapped to host `https://port-8000.external-domain` in a reverse proxy, you can set variable `{{prefix}}_redirectUri` as `https://port-8000.external-domain/callback` and set variable `oauth2_serverPort` to 8000.
 :::
 
-```http
+```HTTP
 
 @keycloakHost = http://127.0.0.1:8080
 @local_tokenEndpoint = {{keycloakHost}}/auth/realms/local/protocol/openid-connect/token
@@ -170,11 +170,11 @@ GET /secured_service HTTP/1.1
 Authorization: openid client_credentials local
 ```
 
-<<< @../../examples/api/arbeitsagentur.http
+<<< @../../examples/api/arbeitsagentur.http{HTTP}
 
 It is possible to convert the generated token into a token of another realm using [Token Exchange](https://tools.ietf.org/html/rfc8693)
 
-```http
+```HTTP
 GET /secured_service HTTP/1.1
 Authorization: openid client_credentials local token_exchange realm_auth
 ```
@@ -182,37 +182,37 @@ Authorization: openid client_credentials local token_exchange realm_auth
 - .env
 The following examples use the following values as variables.
 
-<<< @../../examples/variables/oauth2/.env
+<<< @../../examples/variables/oauth2/.env{ini}
 
 - Authorization Code Flow
 
-<<< @../../examples/variables/oauth2/authorization_code.http
+<<< @../../examples/variables/oauth2/authorization_code.http{HTTP}
 
 - Authorization Code Flow with PKCE
 
-<<< @../../examples/variables/oauth2/authorization_code_pkce.http
+<<< @../../examples/variables/oauth2/authorization_code_pkce.http{HTTP}
 
 - Implicit Flow
 
-<<< @../../examples/variables/oauth2/implicit.http
+<<< @../../examples/variables/oauth2/implicit.http{HTTP}
 
 - Client Credentials Flow
 
-<<< @../../examples/variables/oauth2/clientcredentials.http
+<<< @../../examples/variables/oauth2/clientcredentials.http{HTTP}
 
 - Device Code Flow
 
-<<< @../../examples/variables/oauth2/device_code.http
+<<< @../../examples/variables/oauth2/device_code.http{HTTP}
 
 - Password Flow
 
-<<< @../../examples/variables/oauth2/password.http
+<<< @../../examples/variables/oauth2/password.http{HTTP}
 
 ### AWS Signature v4
 
 AWS Signature v4 authenticates requests to AWS services.
 
-<<< @../../examples/variables/aws.http
+<<< @../../examples/variables/aws.http{HTTP}
 
 ### SSL Client Certificate
 
@@ -238,33 +238,33 @@ To use SSL Client Certificates, the `clientCertificates` setting must be set. Th
 }
 ```
 
-<<< @../../examples/variables/clientCertificate.http
+<<< @../../examples/variables/clientCertificate.http{HTTP}
 
 > path should be absolute or relative to workspace root
 
 It is also possible to attach the certificate using (X-)ClientCert header. The header will be removed.
 
-<<< @../../examples/variables/clientCertificateHeader.http
+<<< @../../examples/variables/clientCertificateHeader.http{HTTP}
 
 ### Basic Authentication
 A support method is provided for using Basic Authentication. Just specify the username and password separated by spaces and the base64 encoding will be applied automatically
 
 
-<<< @../../examples/variables/basicAuth.http
+<<< @../../examples/variables/basicAuth.http{HTTP}
 
 If the username or password contains spaces, a `:` can be used alternatively.
 
-<<< @../../examples/variables/basicAuthColon.http
+<<< @../../examples/variables/basicAuthColon.http{HTTP}
 
 ### Digest Authentication
 A support method is provided for using Digest Authentication. Just specify the username and password separated by spaces and the digest access authentication will be applied automatically
 
 
-<<< @../../examples/variables/digest.http
+<<< @../../examples/variables/digest.http{HTTP}
 
 If the username or password contains spaces, a `:` can be used alternatively.
 
-<<< @../../examples/variables/digestAuthColon.http
+<<< @../../examples/variables/digestAuthColon.http{HTTP}
 
 
 ### Intellij Dynamic Variables
@@ -277,7 +277,7 @@ If the username or password contains spaces, a `:` can be used alternatively.
 | $randomInt| generates a random integer between 0 and 1000. |
 
 
-<<< @../../examples/variables/intellij.http
+<<< @../../examples/variables/intellij.http{HTTP}
 
 ### Rest Client Dynamic Variables
 [Rest Client dynamic variables](https://github.com/Huachao/vscode-restclient#system-variables) are partially supported.
@@ -293,7 +293,7 @@ If the username or password contains spaces, a `:` can be used alternatively.
 | $dotenv [key] | lookup key in dotenv variables |
 
 
-<<< @../../examples/variables/restClient.http
+<<< @../../examples/variables/restClient.http{HTTP}
 
 
 ### XPath Query
@@ -305,9 +305,9 @@ $xpath(:<variableName>) <xpath>
 
 > If no variableName is provided and the last response is of Mimetype XML, the last response.body is used
 
-<<< @../../examples/variables/xpath.http
+<<< @../../examples/variables/xpath.http{HTTP}
 
 
 > You could provide XPath Namespaces using `@xpath_ns`
 
-<<< @../../examples/assert/xpath_namespace.http
+<<< @../../examples/assert/xpath_namespace.http{HTTP}
