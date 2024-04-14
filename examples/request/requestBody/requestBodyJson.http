@@ -1,0 +1,9 @@
+POST https://httpbin.org/anything
+Content-Type: application/json
+
+{
+  "test": "foo",
+  "sub": {
+    "foo": "bar"
+  }
+}
