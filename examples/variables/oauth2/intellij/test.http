@@ -1,0 +1,2 @@
+GET https://httpbin.org/anything
+Authorization: Bearer {{$auth.token("auth-id")}}
