@@ -26,11 +26,10 @@ The file should export an object containing options:
 module.exports = {
   // options...
   log: {
-    level: models.LogLevel.warn,
+    level: "warn",
     supportAnsiColors: true,
   },
   cookieJarEnabled: true,
-  envDirName: 'env',
 }
 ```
 
