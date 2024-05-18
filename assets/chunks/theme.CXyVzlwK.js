@@ -1,6 +1,6 @@
 function __vite__mapDeps(indexes) {
   if (!__vite__mapDeps.viteFileDeps) {
-    __vite__mapDeps.viteFileDeps = ["assets/chunks/VPLocalSearchBox.CCGJGpcG.js","assets/chunks/framework.CL6Y9brc.js"]
+    __vite__mapDeps.viteFileDeps = ["assets/chunks/VPLocalSearchBox.Bagz6UEG.js","assets/chunks/framework.CL6Y9brc.js"]
   }
   return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
 }
@@ -1700,7 +1700,7 @@ const _hoisted_1$d = ["aria-label"], _hoisted_2$a = { class: "DocSearch-Button-C
 }, _sfc_main$i = /* @__PURE__ */ defineComponent({
   __name: "VPNavBarSearch",
   setup(__props) {
-    const VPLocalSearchBox = defineAsyncComponent(() => __vitePreload(() => import("./VPLocalSearchBox.CCGJGpcG.js"), __vite__mapDeps([0,1]))), VPAlgoliaSearchBox = () => null, { theme: theme2 } = useData(), loaded = ref(!1), actuallyLoaded = ref(!1);
+    const VPLocalSearchBox = defineAsyncComponent(() => __vitePreload(() => import("./VPLocalSearchBox.Bagz6UEG.js"), __vite__mapDeps([0,1]))), VPAlgoliaSearchBox = () => null, { theme: theme2 } = useData(), loaded = ref(!1), actuallyLoaded = ref(!1);
     onMounted(() => {
     });
     function load() {
