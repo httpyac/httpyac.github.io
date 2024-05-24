@@ -27,7 +27,7 @@
   "author": "AnWeber",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.12.3",
-    "vitepress": "1.0.2"
+    "@types/node": "^20.12.12",
+    "vitepress": "1.2.2"
   }
 }
