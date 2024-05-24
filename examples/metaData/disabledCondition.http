@@ -1,5 +1,5 @@
 @callRequest={{false}}
 ###
 
-# @disabled false
+# @disabled !callRequest
 GET https://httpbin.org/json
