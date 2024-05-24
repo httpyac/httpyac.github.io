@@ -1,5 +1,5 @@
 import { U as inBrowser, ab as useUpdateHead, ac as RouterSymbol, ad as initData, ae as dataSymbol, af as Content, ag as ClientOnly, ah as siteDataRef, ai as createSSRApp, aj as createRouter, ak as pathToFile, d as defineComponent, u as useData, y as onMounted, x as watchEffect, al as usePrefetch, am as useCopyCode, an as useCodeGroups, ao as h } from "./chunks/framework.BEP_U3Id.js";
-import { t as theme } from "./chunks/theme.zcLezvWz.js";
+import { t as theme } from "./chunks/theme.CoE5Gkzi.js";
 function resolveThemeExtends(theme2) {
   if (theme2.extends) {
     const base = resolveThemeExtends(theme2.extends);
