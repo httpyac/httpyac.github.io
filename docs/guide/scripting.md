@@ -126,6 +126,13 @@ If no event is specified for global registration, the script is executed before 
 
 ![events](./scripting.svg)
 
+## Dynamic canceling current execution
+
+It is possible to interrupt the execution of the current HttpRegion directly. If a script exports a variable `$cancel`, the further execution of the current HttpRegion is canceled.
+
+
+<<< @../../examples/script/script_cancel.http{2 HTTP}
+
 ## Intellij Script
 
 Intellij Scripts are supported. An [Http client](https://www.jetbrains.com/help/idea/http-client-reference.html) and [response](https://www.jetbrains.com/help/idea/http-response-reference.html) object corresponding to the interface is created and are available in the script.

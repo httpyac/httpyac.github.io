@@ -1,0 +1,5 @@
+{{
+  exports.$cancel = true;
+}}
+GET https://httpbin.org/json
+
