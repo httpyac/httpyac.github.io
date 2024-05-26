@@ -5145,6 +5145,9 @@ svg.DocSearch-Hit-Select-Icon {
   top: 2px;
   position: relative;
 }
+.dark img[src$=svg] {
+  filter: invert(1);
+}
 .VPLocalSearchBox[data-v-639d7ab9] {
   position: fixed;
   z-index: 100;
