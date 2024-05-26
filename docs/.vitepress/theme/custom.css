@@ -50,4 +50,5 @@
   position: relative;
 }
 
+.dark img[src$="svg"] {filter: invert(1);}
 
