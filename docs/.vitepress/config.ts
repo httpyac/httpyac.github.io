@@ -123,6 +123,10 @@ export default defineConfig({
         ],
       },
     ],
+    socialLinks: [
+      { icon: "discord", link: "https://discord.gg/eTc4MyRh6P" },
+      { icon: "github", link: "https://github.com/anweber/httpyac" },
+    ],
     sidebar: [
       {
         text: "Guide",
