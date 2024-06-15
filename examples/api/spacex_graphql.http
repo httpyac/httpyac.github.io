@@ -1,4 +1,4 @@
-POST https://api.spacex.land/graphql
+POST https://main--spacex-l4uc6p.apollographos.net/graphql
 Content-Type: application/json
 
 
@@ -22,5 +22,5 @@ query launchesQuery($limit: Int!){
 }
 
 {
-    "limit": 10
+  "limit": 10
 }
