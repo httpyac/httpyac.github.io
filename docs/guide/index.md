@@ -6,7 +6,7 @@ httpYac provides a system to provide a simple way to create, execute, and store 
 - CLI application to allow CI to use created http requests for testing
 - httpBook for documentation of requests in a Jupyter Notebook Format
 
-The goal is to create a simple, free and extensible development tool that follows known standards if possible. For example, for the description language of the requests, the specification mostly repeats [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3https://tools.ietf.org/html/rfc7230#section-3) with several extensions intended for easier requests composing and editing.
+The goal is to create a simple, free and extensible development tool that follows known standards if possible. For example, for the description language of the requests, the specification mostly repeats [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3) with several extensions intended for easier requests composing and editing.
 
 
 
