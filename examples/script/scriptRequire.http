@@ -1,6 +1,6 @@
 
 {{
-  const { authenticate } = require('./scriptRequire');
+  const { authenticate } = require('./scriptRequire.cjs');
   const authDate = new Date();
 
   exports.authDate = authDate.toUTCString();
