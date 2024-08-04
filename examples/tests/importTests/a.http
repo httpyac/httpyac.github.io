@@ -1,0 +1,5 @@
+# @name getHttpbinA
+GET https://httpbin.org/get?source=getHttpbinA
+X-Foo: barA
+
+?? status == 204
