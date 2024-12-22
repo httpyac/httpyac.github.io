@@ -22,7 +22,7 @@ Conidtions are used to assert the field of the response
 | < | Field is lower as expected | `?? duration < 300` |
 | <= | Field is lower or euqals as expected | `?? status <= 200` |
 | startsWith | Field starts with expected | `?? status startsWith 20` |
-| endsWith | Field end with expected | `?? status startsWith 00` |
+| endsWith | Field end with expected | `?? status endsWith 00` |
 | includes / contains | Field includes expected | `?? header content-type includes json` |
 | exists / isTrue | Field exists/ is truthy | `?? header range exists` |
 | isFalse | Field is falsy | `?? header range isFalse` |
