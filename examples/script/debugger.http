@@ -6,8 +6,8 @@
   .update(`${request.method}\u2028${request.url}\u2028${date.getTime()}`).digest("base64");
   debugger;
   exports.authDate = date.toUTCString();
-  exports.authentcation = `Basic ${signatureBase64}`;
+  exports.authentication = `Basic ${signatureBase64}`;
 }}
 GET https://httpbin.org/json
 Date: {{authDate}}
-Authentication: {{authentcation}}
+Authentication: {{authentication}}

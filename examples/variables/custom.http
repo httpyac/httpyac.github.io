@@ -10,10 +10,10 @@
   const signature = `${method}\u2028${requestUri}\u2028${timeInMillis}`;
   const signatureBase64 = crypto.createHmac('sha256', 'secret').update(signature).digest("base64");
   exports.authDate = date.toUTCString();
-  exports.authentcation = `Basic ${signatureBase64}`;
+  exports.authentication = `Basic ${signatureBase64}`;
 }}
 
 
 GET /anything
-Authentication: {{authentcation}}
+Authentication: {{authentication}}
 Date: {{authDate}}
