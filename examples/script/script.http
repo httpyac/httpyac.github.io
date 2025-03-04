@@ -5,16 +5,16 @@
   const signatureBase64 = crypto.createHmac('sha256', 'secret')
   .update(`${request.method}\u2028${request.url}\u2028${date.getTime()}`).digest("base64");
   exports.authDate = date.toUTCString();
-  exports.authentcation = `Basic ${signatureBase64}`;
+  exports.authentication = `Basic ${signatureBase64}`;
 }}
 GET https://httpbin.org/anything
 Date: {{authDate}}
-Authentication: {{authentcation}}
+Authentication: {{authentication}}
 
 {{
   // post request script
   const assert = require('assert');
-  test("authentcation is valid", () => {
-    assert.equal(response.parsedBody.headers.Authentication, authentcation);
+  test("authentication is valid", () => {
+    assert.equal(response.parsedBody.headers.Authentication, authentication);
   });
 }}
