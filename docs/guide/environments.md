@@ -32,7 +32,7 @@ Since rejectUnauthorized and the use of a proxy can be different per environment
 :::
 
 ## JSON
-Environments can be provided with setting `environments` in [.httpyac.js](/config/) . All settings with key `$shared` are shared between all environments All settings with key `$default` are used only if no environment is selected
+Environments can be provided with setting `environments` in [.httpyac.js](/config/). All settings with key `$shared` are shared between all environments. All settings with key `$default` are used only if no environment is selected
 
 ```json
 {
