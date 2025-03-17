@@ -18,7 +18,7 @@ The scope is the current context of execution in which variables are "visible" o
 - Request Variables: Variables defined in current region
 
 ::: tip
-You could expand the visiable scope using [`@import`](./variables#import-variables), [`@ref` and `@forceRef`](./metaData.html#ref-and-forceref).
+You could expand the visible scope using [`@import`](./variables#import-variables), [`@ref` and `@forceRef`](./metaData.html#ref-and-forceref).
 :::
 
 You can also explicitly define variables as global by adding them to the global object in the script.
