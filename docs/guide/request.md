@@ -194,7 +194,7 @@ You can use Variable Substitution in file import and in proto-loader options.
 :::
 <<< @../../examples/request/grpc/protoImportVariables.http{3 HTTP}
 
-::: warn
+::: warning
 IncludeDirs of @grpc/proto-loader currently supports only absolute paths. 
 :::
 
