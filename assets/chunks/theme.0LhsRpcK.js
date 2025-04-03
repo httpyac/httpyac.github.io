@@ -1,4 +1,4 @@
-const __vite__fileDeps=["assets/chunks/VPLocalSearchBox.BAT7hZIw.js","assets/chunks/framework.BEP_U3Id.js"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
+const __vite__fileDeps=["assets/chunks/VPLocalSearchBox.CB-m09Mw.js","assets/chunks/framework.BEP_U3Id.js"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
 import { d as defineComponent, o as openBlock, c as createElementBlock, r as renderSlot, n as normalizeClass, a as createTextVNode, t as toDisplayString, b as createBlock, w as withCtx, e as createCommentVNode, T as Transition, _ as _export_sfc, u as useData$1, i as isExternal, f as treatAsHtml, g as withBase, h as computed, j as createBaseVNode, k as unref, p as pushScopeId, l as popScopeId, m as isActive, q as useMediaQuery, s as ref, v as watch, x as watchEffect, y as onMounted, z as onUnmounted, A as watchPostEffect, B as onUpdated, C as getScrollOffset, D as resolveComponent, F as Fragment, E as renderList, G as shallowRef, H as onContentUpdated, I as createVNode, J as resolveDynamicComponent, K as EXTERNAL_URL_RE, L as useRoute, M as mergeProps, N as inject, O as useWindowSize, P as normalizeStyle, Q as onKeyStroke, R as nextTick, S as useWindowScroll, U as inBrowser, V as readonly, W as defineAsyncComponent, X as __vitePreload, Y as useScrollLock, Z as provide, $ as withKeys, a0 as toHandlers, a1 as withModifiers, a2 as useSlots } from "./framework.BEP_U3Id.js";
 const _sfc_main$W = /* @__PURE__ */ defineComponent({
   __name: "VPBadge",
@@ -1700,7 +1700,7 @@ const _hoisted_1$d = ["aria-label"], _hoisted_2$a = { class: "DocSearch-Button-C
 }, _sfc_main$i = /* @__PURE__ */ defineComponent({
   __name: "VPNavBarSearch",
   setup(__props) {
-    const VPLocalSearchBox = defineAsyncComponent(() => __vitePreload(() => import("./VPLocalSearchBox.BAT7hZIw.js"), __vite__mapDeps([0,1]))), VPAlgoliaSearchBox = () => null, { theme: theme2 } = useData(), loaded = ref(!1), actuallyLoaded = ref(!1);
+    const VPLocalSearchBox = defineAsyncComponent(() => __vitePreload(() => import("./VPLocalSearchBox.CB-m09Mw.js"), __vite__mapDeps([0,1]))), VPAlgoliaSearchBox = () => null, { theme: theme2 } = useData(), loaded = ref(!1), actuallyLoaded = ref(!1);
     onMounted(() => {
     });
     function load() {
