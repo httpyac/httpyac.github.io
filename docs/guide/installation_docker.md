@@ -8,7 +8,7 @@ httpyac CLI provides a command line interface to execute *.http and *.rest files
 create alias for docker image
 
 ``` bash
-alias httpyac="docker run -it -v ${PWD}:/data ghcr.io/anweber/httpyac:latest"
+alias httpyac="docker run -it --rm --network=host -v ${PWD}:/data ghcr.io/anweber/httpyac:latest"
 ```
 and use it
 
