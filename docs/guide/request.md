@@ -223,6 +223,15 @@ Using [header notation](/guide/request.html#headers) it is also possible to send
 
 Header `ChannelCredentials` or `Authorization`are special and defines the [authentication](https://grpc.io/docs/guides/auth/#nodejs) used by gRPC. If no such header is specified, `grpc.credentials.createInsecure()` is used automatically
 
+#### Secure Connections (TLS/SSL)
+
+Use this configuration when connecting to a gRPC server over HTTPS.
+This example enables TLS using the system’s default root certificate authorities.
+
+<<< @../../examples/request/grpc/grpcSSL.http{1 HTTP}
+
+For advanced scenarios (custom CA, client certificates, or mutual TLS), see the [gRPC authentication guide](https://grpc.io/docs/guides/auth/#nodejs)
+
 ### Server Streaming RPC
 
 [Server Streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#server-streaming-rpc) is similar to a unary RPC, except that the server returns a stream of messages in response to a client’s request.
