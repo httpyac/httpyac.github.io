@@ -11,18 +11,18 @@ Simple Assertions are started using `??` followed by the field which should be c
 
 ### Conditions
 
-Conidtions are used to assert the field of the response
+Conditions are used to assert the field of the response
 
 | Condition | Description | Example |
 | - | - | - |
 | == / equals | Field and expected value are equals | `?? status == 200` |
 | != | Field and expected value are not equals | `?? status != 201` |
 | > | Field is greater as expected | `?? status > 199` |
-| >= | Field is greater or euqals as expected  | `?? status >= 200` |
+| >= | Field is greater or equals as expected  | `?? status >= 200` |
 | < | Field is lower as expected | `?? duration < 300` |
-| <= | Field is lower or euqals as expected | `?? status <= 200` |
+| <= | Field is lower or equals as expected | `?? status <= 200` |
 | startsWith | Field starts with expected | `?? status startsWith 20` |
-| endsWith | Field end with expected | `?? status endsWith 00` |
+| endsWith | Field ends with expected | `?? status endsWith 00` |
 | includes / contains | Field includes expected | `?? header content-type includes json` |
 | exists / isTrue | Field exists/ is truthy | `?? header range exists` |
 | isFalse | Field is falsy | `?? header range isFalse` |
@@ -50,7 +50,7 @@ Check the value of a received response header. Header assert consists of the key
 
 ### Duration Assert
 
-Check the total duration (sending plus receiving time in milliseconds) of the request. Use keyword duration followed by a optional Timings Identifer (firstByte, download, wait, request, tcp, tls, total) and a condition. 
+Check the total duration (sending plus receiving time in milliseconds) of the request. Use keyword duration followed by a optional Timings Identifier (firstByte, download, wait, request, tcp, tls, total) and a condition. 
 
 <<< @../../examples/assert/duration.http{3 HTTP}
 
@@ -60,19 +60,19 @@ Check the value of the received HTTP response body when decoded as a string. Bod
 
 <<< @../../examples/assert/body.http{3 HTTP}
 
-If the body is JSON you could also assert spefic fields of the body. You could use keyword body followed by the property name and a condition to assert the property.
+If the body is JSON you could also assert specific fields of the body. You could use keyword body followed by the property name and a condition to assert the property.
 
 <<< @../../examples/assert/body_property.http{3 HTTP}
 
-### Javascript Assert
+### JavaScript Assert
 
-With Javascript Assert you could assert already extracted variables or more complex field access logic. You could use keyword js followed by the Javascript to execute and a condition to assert the field
+With JavaScript Assert you could assert already extracted variables or more complex field access logic. You could use keyword js followed by the JavaScript to execute and a condition to assert the field
 
 <<< @../../examples/assert/javascript.http{3 HTTP}
 
 ### XPath Assert
 
-Check the value of a XPath query on the received HTTP body decoded as a string. XPath assert consists of the keyword xpath followed by a condition and a expected value.
+Check the value of a XPath query on the received HTTP body decoded as a string. XPath assert consists of the keyword xpath followed by a condition and an expected value.
 
 <<< @../../examples/assert/xpath.http{3 HTTP}
 
