@@ -63,6 +63,16 @@ module.exports = () => {}
 ```
 
 
+## Community Plugins
+
+The following plugins are built and maintained by the httpYac community.
+
+| Plugin | Description |
+|---|---|
+| [httpyac-plugin-reporter-html](https://github.com/AbhilashBiradar/httpyac-plugin-reporter-html) | Generates a single standalone HTML report for all HTTP requests and test results |
+
+> Want to add your plugin? Open a [pull request](https://github.com/httpyac/httpyac.github.io/pulls) and add an entry to the table above.
+
 ## Parsing FlowChart
 
 ![parse flow](./parse_flow.svg)
