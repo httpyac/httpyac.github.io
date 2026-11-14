@@ -16,7 +16,7 @@ The response is not used further in the program. Instead, it is only used to ini
 
 ## Output Redirection
 
-httpYac canc redirect response body to a custom file. It supports two operators:
+httpYac can redirect response body to a custom file. It supports two operators:
 
 * `>>` operator always creates a new file, adding an `-n` suffix to a file name if the requested file name already exists.
 
